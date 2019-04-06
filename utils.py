@@ -7,22 +7,22 @@ def create_graphs(args):
     graphs=[]
 
     graphlist = [
-        'dataset/archs/DistillerSystem_adapterPattern.graphml',
-        'dataset/archs/DistillerSystem_bridgePattern.graphml',
-        'dataset/archs/DistillerSystem_compositePattern.graphml',
-        'dataset/archs/DistillerSystem_pipeandfilterPattern.graphml',
-        'dataset/archs/DistillerSystem_proxyPattern.graphml',
-        'dataset/archs/DistillerSystem_publishandsubscribePattern.graphml',
-        'dataset/archs/DistillerSystem_toolboxadapterPattern.graphml',
-        'dataset/archs/DistillerSystem.graphml',
-        'dataset/archs/FighterModel_adapterPattern.graphml',
-        'dataset/archs/FighterModel_bridgePattern.graphml',
-        'dataset/archs/FighterModel_compositePattern.graphml',
-        'dataset/archs/FighterModel_pipeandfilterPattern.graphml',
-        'dataset/archs/FighterModel_proxyPattern.graphml',
-        'dataset/archs/FighterModel_publishandsubscribePattern.graphml',
-        'dataset/archs/FighterModel_toolboxadapterPattern.graphml',
-        'dataset/archs/fighterModel.graphml'
+        'dataset/DistillerSystem_adapterPattern.graphml',
+        'dataset/DistillerSystem_bridgePattern.graphml',
+        'dataset/DistillerSystem_compositePattern.graphml',
+        'dataset/DistillerSystem_pipeandfilterPattern.graphml',
+        'dataset/DistillerSystem_proxyPattern.graphml',
+        'dataset/DistillerSystem_publishandsubscribePattern.graphml',
+        'dataset/DistillerSystem_toolboxadapterPattern.graphml',
+        'dataset/DistillerSystem.graphml',
+        'dataset/FighterModel_adapterPattern.graphml',
+        'dataset/FighterModel_bridgePattern.graphml',
+        'dataset/FighterModel_compositePattern.graphml',
+        'dataset/FighterModel_pipeandfilterPattern.graphml',
+        'dataset/FighterModel_proxyPattern.graphml',
+        'dataset/FighterModel_publishandsubscribePattern.graphml',
+        'dataset/FighterModel_toolboxadapterPattern.graphml',
+        'dataset/fighterModel.graphml'
         ]
 
     for name in graphlist:

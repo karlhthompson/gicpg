@@ -1,0 +1,2543 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d2"/>
+<key attr.name="patt" attr.type="string" for="node" id="d1"/>
+<key attr.name="data" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="NA3:FighterModel">
+  <data key="d0">NA3</data>
+</node>
+<node id="Package:FighterArchitecture">
+  <data key="d0">Package</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Dependency:HighlevelArchitecture">
+  <data key="d0">Dependency</data>
+</node>
+<node id="Class:Aircraft">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:SizeCapacity">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:WeightCapacity">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:PowerCapacity">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:CoolingCapacity">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFlightDataRecorderSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsMissionSupportSystem">
+  <data key="d0">Property</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsElectricalPowerSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsPropulsionSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAirframe">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAvionics">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCrewSystems">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFlightControlSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsHydraulicSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEnviromentalControlSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsBrakingSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFuelSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Airframe">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:PropulsionSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsEngineStatusandWarningSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsThrustControlSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEngineSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFuelControlSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAutomaticRelightSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Avionics">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsCommunicationSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsNavigationSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAvionicsBus">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsSurrveillanceSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsDatalinkNetworkConnectivitySystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:FlightControlSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsLandingGearControls">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:FuelSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsFuelTank">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAirRefuelingSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsGroundFuelingDefuelingSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ElectricalPowerSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsExteriorLighting">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsInteriorLighting">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsExternalPowerReceptacle">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEmergencyPowerSource">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFireWarningLight">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:HydraulicSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CrewSystems">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsICS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsOxygenSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCockpitSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsControlsDisplaysHMISystems">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEscapeEgressSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:FlightDataRecorderSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsFDR">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCVR">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCircularMemoryStorage">
+  <data key="d0">Property</data>
+</node>
+<node id="Operation:Operation_0">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:Operation_0(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:BrakingSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsAntiSkidBrakingSubsystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsParkingBrake">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:EnviromentalControlSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsTemperatureControl">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:MissionSupportSystem">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsUniquePlanningComponent">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsPlaybackControls">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsOffboardDTDAdapter">
+  <data key="d0">Property</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsDataTransferUnit">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAircraftNameplate">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsIMDS">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Terminal_System">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsTerminalTarget">
+  <data key="d0">Property</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:TerminalTarget">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Operation:TransmitData">
+  <data key="d0">Operation</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Parameter:TransmitData(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:MissionSupportAdapter">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Package:AvionicsSystemsPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:AvionicsBus">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CommunicationSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsMultibandRadio">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsADS_B_Out">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsVHF_Comms">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsUHF_Comms">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsADS_B_In">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:NavigationSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsILS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFlyByWire">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsGyroscope">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsGPS_Receiver">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFlightPlanSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsRadar">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAttitudeIndicator">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAutopilot">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsDME">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsINSAndGPS_Combo">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsTACAN">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsVHFOmniRange">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:SurrveillanceSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsTCAS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsRadarAltimeter">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsModeS_Transponder">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAirDataComputer">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsTAWS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsGPWS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsIFF_Transponder">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsIFF">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:DatalinkNetworkConnectivitySystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsGSS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsGBTS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsDataLink">
+  <data key="d0">Property</data>
+</node>
+<node id="Package:NavigationSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:TACAN">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GPS_Receiver">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:INSAndGPS_Combo">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:DME">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:VHFOmniRange">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:FlyByWire">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Gyroscope">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AttitudeIndicator">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Autopilot">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ILS">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsGlideScope">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsILS_Reciever">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:FlightPlanSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Radar">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ILS_Reciever">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GlideScope">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:CommunicationSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:UHF_Comms">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:VHF_Comms">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:MultibandRadio">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ADS_B_Out">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ADS_B_In">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:SurveillanceSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:RadarAltimeter">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GPWS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:TAWS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:TCAS">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsTCAS_Computer">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:TCAS_Computer">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ModeS_Transponder">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AirDataComputer">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:IFF">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:IFF_Transponder">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:DatalinkNetworkConnectivitySystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:GSS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GBTS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:DataLink">
+  <data key="d0">Class</data>
+</node>
+<node id="Port:pLink">
+  <data key="d0">Port</data>
+</node>
+<node id="Package:PropulsionSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:EngineSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CEMS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:FuelControlSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ThrustControlSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EngineStatusandWarningSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AutomaticRelightSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:AirframeSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Package:VehicleSubsystemsPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Package:ElectricalPowerSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:InteriorLighting">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:frontCockpitUtilityLamp">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:rearCockpitUtilityLamp">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ExteriorLighting">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:UtilityLight">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EmergencyPowerSource">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ExternalPowerReceptacle">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:FireWarningLight">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:HydraulicsSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Package:EnviromentalControlSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:TemperatureControl">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:FuelSystemPkg">
+  <data key="d0">Package</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:FuelTank">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:DefuelingAdapter">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:RefuelingAdapter">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:GroundFuelingDefuelingSystem">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsDefuelingAdapter">
+  <data key="d0">Property</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Property:itsRefuelingAdapter">
+  <data key="d0">Property</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:AirRefuelingSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:BrakingSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:AntiSkidBrakingSubsystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ParkingBrake">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:CrewSystemsPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:OxygenSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsOBOGS">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:eos">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsOxygenMask">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:oxConMonitor">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsBreathingRegulator">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ICS">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsAudioDevice">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsMicrophone">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsICSControlStation">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsInterphone">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:EscapeEgressSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsRecoveryParachuteSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEscapeSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEjectionSeat">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsFiringMechanism">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:CockpitSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsCockpitStowage">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsPersonnelRestraintSystem">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsSeatCushion">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsHeadrest">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ControlsDisplaysHMISystems">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsHTD">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsRadarDisplay">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsThrottleDetent">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsLAD">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsBackupFlightInstruments">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsHOTASControls">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsStandbyFlightInstrument">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsICDTI">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsClock">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEmergencyControlMarkings">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsSideStick">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCanopyLockWarningLight">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsBrightnessControl">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAirspeedIndicator">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsOxygenSystemControlAndDisplay">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsWindspeedIndicator">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsSAD">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsBITDisplay">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsMasterCaution">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsMasterWarning">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsIRA_Display">
+  <data key="d0">Property</data>
+</node>
+<node id="Package:ICSPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:Microphone">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Interphone">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AudioDevice">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ICSControlStation">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:EscapeEgressSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:EjectionSeat">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:headrest">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:armRestraint">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:survivalKit">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:cushion">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsArmedLever">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:legRestraint">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsInertialReelLock">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:EscapeSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsEjectionModeControl">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsEjectionControl">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCanopyBreaker">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsCanopyLockingMechanism">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ArmedLever">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AutomatedEscapeSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CanopyBreaker">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:FiringMechanism">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:InertialReelLock">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:LimbRestraints">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:SurvivalKit">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:elt">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:CanopyLockingMechanism">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:RecoveryParachuteSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EmergencyLocatorTransmitter">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EjectionControl">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EjectionModeControl">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:OxygenSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:OxygenMask">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:OBOGS">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:pressureSensor">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:airInlet">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:OxygenConcentrationMonitor">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:BreathingRegulator">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EmergencyOxygenSource">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AirInlet">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:PressureSensor">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:CockpitSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:CockpitStowage">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Headrest">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:SeatCushion">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:PersonnelRestraintSystem">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:ControlsDisplaysHMISystemsPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:ThrottleDetent">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:MasterWarning">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:MasterCaution">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:EmergencyControlMarkings">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CanopyLockWarningLight">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Clock">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AirspeedIndicator">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:BITDisplay">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:BrightnessControl">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:LAD">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:RadarDisplay">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:SAD">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:WindspeedIndicator">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:OxygenSystemControlAndDisplay">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:ICDTI">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:HTD">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:IRA_Display">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:StandbyFlightInstrument">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:BackupFlightInstruments">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:HOTASControls">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:SideStick">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:FlightControlSytemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:LandingGearControls">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:FlightDataRecorderSystemPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:CircularMemoryStorage">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:CVR">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:FDR">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:MissionSupportSystemPkg">
+  <data key="d0">Package</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:UniquePlanningComponent">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:OffboardDTDAdapter">
+  <data key="d0">Class</data>
+  <data key="d1">Adapter</data>
+</node>
+<node id="Class:DataTransferUnit">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:AircraftNameplate">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:IMDS">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:PlaybackControls">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:GenericApplications">
+  <data key="d0">Package</data>
+</node>
+<node id="Dependency:GenericStateMachineBlock">
+  <data key="d0">Dependency</data>
+</node>
+<node id="Profile:GenericApplications_profile">
+  <data key="d0">Profile</data>
+</node>
+<node id="Stereotype:GenStateMachine">
+  <data key="d0">Stereotype</data>
+</node>
+<node id="Property:base_Class">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:base_Interface">
+  <data key="d0">Property</data>
+</node>
+<node id="Stereotype:GenSWAPValue">
+  <data key="d0">Stereotype</data>
+</node>
+<node id="Property:Size">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:Weight">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:Power">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:Cooling">
+  <data key="d0">Property</data>
+</node>
+<node id="Stereotype:GenCombined">
+  <data key="d0">Stereotype</data>
+</node>
+<node id="Stereotype:GenSecondStateMachine">
+  <data key="d0">Stereotype</data>
+</node>
+<node id="Stereotype:GenSecCombined">
+  <data key="d0">Stereotype</data>
+</node>
+<node id="Extension:Class_GenStateMachine">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Interface_GenStateMachine">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Class_GenSWAPValue">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Interface_GenSWAPValue">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Class_GenCombined">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Interface_GenCombined">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Class_GenSecondStateMachine">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Interface_GenSecondStateMachine">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Class_GenSecCombined">
+  <data key="d0">Extension</data>
+</node>
+<node id="Extension:Interface_GenSecCombined">
+  <data key="d0">Extension</data>
+</node>
+<node id="Dependency:GenericBlockwithSWaP">
+  <data key="d0">Dependency</data>
+</node>
+<node id="Dependency:GenericSecondaryStateMachineBlock">
+  <data key="d0">Dependency</data>
+</node>
+<node id="Dependency:GenericSecondBlockwithSWaP">
+  <data key="d0">Dependency</data>
+</node>
+<node id="Class:GenericSecondaryStateMachineBlock">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GenericBlockwithSWaP">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GenericSecondBlockwithSWaP">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:GenericStateMachineBlock">
+  <data key="d0">Class</data>
+</node>
+<node id="Package:GeneralEventsPkg">
+  <data key="d0">Package</data>
+</node>
+<node id="Signal:SystemCompromised">
+  <data key="d0">Signal</data>
+</node>
+<node id="STD_TYPE"/>
+<edge source="NA3:FighterModel" target="Package:FighterArchitecture">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Dependency:HighlevelArchitecture">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:Aircraft">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:Airframe">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:PropulsionSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:Avionics">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:FlightControlSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:FuelSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:ElectricalPowerSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:HydraulicSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:CrewSystems">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:FlightDataRecorderSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:BrakingSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:EnviromentalControlSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:MissionSupportSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:Terminal_System">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:TerminalTarget">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Class:MissionSupportAdapter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:AvionicsSystemsPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:PropulsionSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:AirframeSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:VehicleSubsystemsPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:CrewSystemsPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:FlightControlSytemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:FlightDataRecorderSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FighterArchitecture" target="Package:MissionSupportSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:SizeCapacity">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:WeightCapacity">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:PowerCapacity">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:CoolingCapacity">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsFlightDataRecorderSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsMissionSupportSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsElectricalPowerSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsPropulsionSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsAirframe">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsAvionics">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsCrewSystems">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsFlightControlSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsHydraulicSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsEnviromentalControlSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsBrakingSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Aircraft" target="Property:itsFuelSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:SizeCapacity" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:WeightCapacity" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:PowerCapacity" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:CoolingCapacity" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFlightDataRecorderSystem" target="Class:FlightDataRecorderSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsMissionSupportSystem" target="Class:MissionSupportSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsElectricalPowerSystem" target="Class:ElectricalPowerSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsPropulsionSystem" target="Class:PropulsionSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAirframe" target="Class:Airframe">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAvionics" target="Class:Avionics">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCrewSystems" target="Class:CrewSystems">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFlightControlSystem" target="Class:FlightControlSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsHydraulicSystem" target="Class:HydraulicSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEnviromentalControlSystem" target="Class:EnviromentalControlSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsBrakingSystem" target="Class:BrakingSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFuelSystem" target="Class:FuelSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:PropulsionSystem" target="Property:itsEngineStatusandWarningSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:PropulsionSystem" target="Property:itsThrustControlSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:PropulsionSystem" target="Property:itsEngineSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:PropulsionSystem" target="Property:itsFuelControlSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:PropulsionSystem" target="Property:itsAutomaticRelightSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsEngineStatusandWarningSystem" target="Class:EngineStatusandWarningSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsThrustControlSystem" target="Class:ThrustControlSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEngineSystem" target="Class:EngineSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFuelControlSystem" target="Class:FuelControlSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAutomaticRelightSystem" target="Class:AutomaticRelightSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:Avionics" target="Property:itsCommunicationSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Avionics" target="Property:itsNavigationSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Avionics" target="Property:itsAvionicsBus">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Avionics" target="Property:itsSurrveillanceSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:Avionics" target="Property:itsDatalinkNetworkConnectivitySystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsCommunicationSystem" target="Class:CommunicationSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsNavigationSystem" target="Class:NavigationSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAvionicsBus" target="Class:AvionicsBus">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsSurrveillanceSystem" target="Class:SurrveillanceSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsDatalinkNetworkConnectivitySystem" target="Class:DatalinkNetworkConnectivitySystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:FlightControlSystem" target="Property:itsLandingGearControls">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsLandingGearControls" target="Class:LandingGearControls">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:FuelSystem" target="Property:itsFuelTank">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:FuelSystem" target="Property:itsAirRefuelingSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:FuelSystem" target="Property:itsGroundFuelingDefuelingSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsFuelTank" target="Class:FuelTank">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAirRefuelingSystem" target="Class:AirRefuelingSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsGroundFuelingDefuelingSystem" target="Class:GroundFuelingDefuelingSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:ElectricalPowerSystem" target="Property:itsExteriorLighting">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ElectricalPowerSystem" target="Property:itsInteriorLighting">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ElectricalPowerSystem" target="Property:itsExternalPowerReceptacle">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ElectricalPowerSystem" target="Property:itsEmergencyPowerSource">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ElectricalPowerSystem" target="Property:itsFireWarningLight">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsExteriorLighting" target="Class:ExteriorLighting">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsInteriorLighting" target="Class:InteriorLighting">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsExternalPowerReceptacle" target="Class:ExternalPowerReceptacle">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEmergencyPowerSource" target="Class:EmergencyPowerSource">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFireWarningLight" target="Class:FireWarningLight">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:CrewSystems" target="Property:itsICS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CrewSystems" target="Property:itsOxygenSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CrewSystems" target="Property:itsCockpitSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CrewSystems" target="Property:itsControlsDisplaysHMISystems">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CrewSystems" target="Property:itsEscapeEgressSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsICS" target="Class:ICS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsOxygenSystem" target="Class:OxygenSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCockpitSystem" target="Class:CockpitSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsControlsDisplaysHMISystems" target="Class:ControlsDisplaysHMISystems">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEscapeEgressSystem" target="Class:EscapeEgressSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:FlightDataRecorderSystem" target="Property:itsFDR">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:FlightDataRecorderSystem" target="Property:itsCVR">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:FlightDataRecorderSystem" target="Property:itsCircularMemoryStorage">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:FlightDataRecorderSystem" target="Operation:Operation_0">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsFDR" target="Class:FDR">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCVR" target="Class:CVR">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCircularMemoryStorage" target="Class:CircularMemoryStorage">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Operation:Operation_0" target="Parameter:Operation_0(Result)">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Parameter:Operation_0(Result)" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:BrakingSystem" target="Property:itsAntiSkidBrakingSubsystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:BrakingSystem" target="Property:itsParkingBrake">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsAntiSkidBrakingSubsystem" target="Class:AntiSkidBrakingSubsystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsParkingBrake" target="Class:ParkingBrake">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:EnviromentalControlSystem" target="Property:itsTemperatureControl">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsTemperatureControl" target="Class:TemperatureControl">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsUniquePlanningComponent">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsPlaybackControls">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsOffboardDTDAdapter">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsDataTransferUnit">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsAircraftNameplate">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportSystem" target="Property:itsIMDS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsUniquePlanningComponent" target="Class:UniquePlanningComponent">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsPlaybackControls" target="Class:PlaybackControls">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsOffboardDTDAdapter" target="Class:OffboardDTDAdapter">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsDataTransferUnit" target="Class:DataTransferUnit">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAircraftNameplate" target="Class:AircraftNameplate">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsIMDS" target="Class:IMDS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:Terminal_System" target="Property:itsTerminalTarget">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsTerminalTarget" target="Class:TerminalTarget">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:TerminalTarget" target="Operation:TransmitData">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Operation:TransmitData" target="Parameter:TransmitData(Result)">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Parameter:TransmitData(Result)" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:MissionSupportAdapter" target="Property:itsMissionSupportSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:MissionSupportAdapter" target="Class:TerminalTarget">
+  <data key="d2">generalization</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Class:AvionicsBus">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Class:CommunicationSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Class:NavigationSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Class:SurrveillanceSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Class:DatalinkNetworkConnectivitySystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Package:NavigationSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Package:CommunicationSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Package:SurveillanceSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:AvionicsSystemsPkg" target="Package:DatalinkNetworkConnectivitySystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:CommunicationSystem" target="Property:itsMultibandRadio">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CommunicationSystem" target="Property:itsADS_B_Out">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CommunicationSystem" target="Property:itsVHF_Comms">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CommunicationSystem" target="Property:itsUHF_Comms">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CommunicationSystem" target="Property:itsADS_B_In">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsMultibandRadio" target="Class:MultibandRadio">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsADS_B_Out" target="Class:ADS_B_Out">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsVHF_Comms" target="Class:VHF_Comms">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsUHF_Comms" target="Class:UHF_Comms">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsADS_B_In" target="Class:ADS_B_In">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsILS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsFlyByWire">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsGyroscope">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsGPS_Receiver">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsFlightPlanSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsRadar">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsAttitudeIndicator">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsAutopilot">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsDME">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsINSAndGPS_Combo">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsTACAN">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:NavigationSystem" target="Property:itsVHFOmniRange">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsILS" target="Class:ILS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFlyByWire" target="Class:FlyByWire">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsGyroscope" target="Class:Gyroscope">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsGPS_Receiver" target="Class:GPS_Receiver">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFlightPlanSystem" target="Class:FlightPlanSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsRadar" target="Class:Radar">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAttitudeIndicator" target="Class:AttitudeIndicator">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAutopilot" target="Class:Autopilot">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsDME" target="Class:DME">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsINSAndGPS_Combo" target="Class:INSAndGPS_Combo">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsTACAN" target="Class:TACAN">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsVHFOmniRange" target="Class:VHFOmniRange">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsTCAS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsRadarAltimeter">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsModeS_Transponder">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsAirDataComputer">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsTAWS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsGPWS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsIFF_Transponder">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:SurrveillanceSystem" target="Property:itsIFF">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsTCAS" target="Class:TCAS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsRadarAltimeter" target="Class:RadarAltimeter">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsModeS_Transponder" target="Class:ModeS_Transponder">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAirDataComputer" target="Class:AirDataComputer">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsTAWS" target="Class:TAWS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsGPWS" target="Class:GPWS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsIFF_Transponder" target="Class:IFF_Transponder">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsIFF" target="Class:IFF">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:DatalinkNetworkConnectivitySystem" target="Property:itsGSS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:DatalinkNetworkConnectivitySystem" target="Property:itsGBTS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:DatalinkNetworkConnectivitySystem" target="Property:itsDataLink">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsGSS" target="Class:GSS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsGBTS" target="Class:GBTS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsDataLink" target="Class:DataLink">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:TACAN">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:GPS_Receiver">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:INSAndGPS_Combo">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:DME">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:VHFOmniRange">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:FlyByWire">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:Gyroscope">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:AttitudeIndicator">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:Autopilot">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:ILS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:FlightPlanSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:Radar">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:ILS_Reciever">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:NavigationSystemPkg" target="Class:GlideScope">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:ILS" target="Property:itsGlideScope">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ILS" target="Property:itsILS_Reciever">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsGlideScope" target="Class:GlideScope">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsILS_Reciever" target="Class:ILS_Reciever">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:CommunicationSystemPkg" target="Class:UHF_Comms">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CommunicationSystemPkg" target="Class:VHF_Comms">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CommunicationSystemPkg" target="Class:MultibandRadio">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CommunicationSystemPkg" target="Class:ADS_B_Out">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CommunicationSystemPkg" target="Class:ADS_B_In">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:RadarAltimeter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:GPWS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:TAWS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:TCAS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:TCAS_Computer">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:ModeS_Transponder">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:AirDataComputer">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:IFF">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:SurveillanceSystemPkg" target="Class:IFF_Transponder">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:TCAS" target="Property:itsTCAS_Computer">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsTCAS_Computer" target="Class:TCAS_Computer">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:DatalinkNetworkConnectivitySystemPkg" target="Class:GSS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:DatalinkNetworkConnectivitySystemPkg" target="Class:GBTS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:DatalinkNetworkConnectivitySystemPkg" target="Class:DataLink">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:DataLink" target="Port:pLink">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Port:pLink" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:EngineSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:CEMS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:FuelControlSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:ThrustControlSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:EngineStatusandWarningSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:PropulsionSystemPkg" target="Class:AutomaticRelightSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:VehicleSubsystemsPkg" target="Package:ElectricalPowerSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:VehicleSubsystemsPkg" target="Package:HydraulicsSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:VehicleSubsystemsPkg" target="Package:EnviromentalControlSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:VehicleSubsystemsPkg" target="Package:FuelSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:VehicleSubsystemsPkg" target="Package:BrakingSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:InteriorLighting">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:ExteriorLighting">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:UtilityLight">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:EmergencyPowerSource">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:ExternalPowerReceptacle">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ElectricalPowerSystemPkg" target="Class:FireWarningLight">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:InteriorLighting" target="Property:frontCockpitUtilityLamp">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:InteriorLighting" target="Property:rearCockpitUtilityLamp">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:frontCockpitUtilityLamp" target="Class:UtilityLight">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:rearCockpitUtilityLamp" target="Class:UtilityLight">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:EnviromentalControlSystemPkg" target="Class:TemperatureControl">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FuelSystemPkg" target="Class:FuelTank">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FuelSystemPkg" target="Class:DefuelingAdapter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FuelSystemPkg" target="Class:RefuelingAdapter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FuelSystemPkg" target="Class:GroundFuelingDefuelingSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FuelSystemPkg" target="Class:AirRefuelingSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsDefuelingAdapter">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsRefuelingAdapter">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsDefuelingAdapter" target="Class:DefuelingAdapter">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsRefuelingAdapter" target="Class:RefuelingAdapter">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:BrakingSystemPkg" target="Class:AntiSkidBrakingSubsystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:BrakingSystemPkg" target="Class:ParkingBrake">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Class:OxygenSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Class:ICS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Class:EscapeEgressSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Class:CockpitSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Class:ControlsDisplaysHMISystems">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Package:ICSPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Package:EscapeEgressSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Package:OxygenSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Package:CockpitSystemPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CrewSystemsPkg" target="Package:ControlsDisplaysHMISystemsPkg">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:OxygenSystem" target="Property:itsOBOGS">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:OxygenSystem" target="Property:eos">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:OxygenSystem" target="Property:itsOxygenMask">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:OxygenSystem" target="Property:oxConMonitor">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:OxygenSystem" target="Property:itsBreathingRegulator">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsOBOGS" target="Class:OBOGS">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:eos" target="Class:EmergencyOxygenSource">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsOxygenMask" target="Class:OxygenMask">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:oxConMonitor" target="Class:OxygenConcentrationMonitor">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsBreathingRegulator" target="Class:BreathingRegulator">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:ICS" target="Property:itsAudioDevice">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ICS" target="Property:itsMicrophone">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ICS" target="Property:itsICSControlStation">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ICS" target="Property:itsInterphone">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsAudioDevice" target="Class:AudioDevice">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsMicrophone" target="Class:Microphone">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsICSControlStation" target="Class:ICSControlStation">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsInterphone" target="Class:Interphone">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:EscapeEgressSystem" target="Property:itsRecoveryParachuteSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeEgressSystem" target="Property:itsEscapeSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeEgressSystem" target="Property:itsEjectionSeat">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeEgressSystem" target="Property:itsFiringMechanism">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsRecoveryParachuteSystem" target="Class:RecoveryParachuteSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEscapeSystem" target="Class:EscapeSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEjectionSeat" target="Class:EjectionSeat">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsFiringMechanism" target="Class:FiringMechanism">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:CockpitSystem" target="Property:itsCockpitStowage">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CockpitSystem" target="Property:itsPersonnelRestraintSystem">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CockpitSystem" target="Property:itsSeatCushion">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:CockpitSystem" target="Property:itsHeadrest">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsCockpitStowage" target="Class:CockpitStowage">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsPersonnelRestraintSystem" target="Class:PersonnelRestraintSystem">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsSeatCushion" target="Class:SeatCushion">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsHeadrest" target="Class:Headrest">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsHTD">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsRadarDisplay">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsThrottleDetent">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsLAD">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsBackupFlightInstruments">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsHOTASControls">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsStandbyFlightInstrument">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsICDTI">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsClock">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsEmergencyControlMarkings">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsSideStick">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsCanopyLockWarningLight">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsBrightnessControl">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsAirspeedIndicator">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsOxygenSystemControlAndDisplay">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsWindspeedIndicator">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsSAD">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsBITDisplay">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsMasterCaution">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsMasterWarning">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:ControlsDisplaysHMISystems" target="Property:itsIRA_Display">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsHTD" target="Class:HTD">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsRadarDisplay" target="Class:RadarDisplay">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsThrottleDetent" target="Class:ThrottleDetent">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsLAD" target="Class:LAD">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsBackupFlightInstruments" target="Class:BackupFlightInstruments">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsHOTASControls" target="Class:HOTASControls">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsStandbyFlightInstrument" target="Class:StandbyFlightInstrument">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsICDTI" target="Class:ICDTI">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsClock" target="Class:Clock">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEmergencyControlMarkings" target="Class:EmergencyControlMarkings">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsSideStick" target="Class:SideStick">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCanopyLockWarningLight" target="Class:CanopyLockWarningLight">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsBrightnessControl" target="Class:BrightnessControl">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsAirspeedIndicator" target="Class:AirspeedIndicator">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsOxygenSystemControlAndDisplay" target="Class:OxygenSystemControlAndDisplay">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsWindspeedIndicator" target="Class:WindspeedIndicator">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsSAD" target="Class:SAD">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsBITDisplay" target="Class:BITDisplay">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsMasterCaution" target="Class:MasterCaution">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsMasterWarning" target="Class:MasterWarning">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsIRA_Display" target="Class:IRA_Display">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:ICSPkg" target="Class:Microphone">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ICSPkg" target="Class:Interphone">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ICSPkg" target="Class:AudioDevice">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ICSPkg" target="Class:ICSControlStation">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:EjectionSeat">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:EscapeSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:ArmedLever">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:AutomatedEscapeSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:CanopyBreaker">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:FiringMechanism">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:InertialReelLock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:LimbRestraints">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:SurvivalKit">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:CanopyLockingMechanism">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:RecoveryParachuteSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:EmergencyLocatorTransmitter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:EjectionControl">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:EscapeEgressSystemPkg" target="Class:EjectionModeControl">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:headrest">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:armRestraint">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:survivalKit">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:cushion">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:itsArmedLever">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:legRestraint">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EjectionSeat" target="Property:itsInertialReelLock">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:headrest" target="Class:Headrest">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:armRestraint" target="Class:LimbRestraints">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:survivalKit" target="Class:SurvivalKit">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:cushion" target="Class:SeatCushion">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsArmedLever" target="Class:ArmedLever">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:legRestraint" target="Class:LimbRestraints">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsInertialReelLock" target="Class:InertialReelLock">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:EscapeSystem" target="Property:itsEjectionModeControl">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeSystem" target="Property:itsEjectionControl">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeSystem" target="Property:itsCanopyBreaker">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:EscapeSystem" target="Property:itsCanopyLockingMechanism">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:itsEjectionModeControl" target="Class:EjectionModeControl">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsEjectionControl" target="Class:EjectionControl">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCanopyBreaker" target="Class:CanopyBreaker">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:itsCanopyLockingMechanism" target="Class:CanopyLockingMechanism">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Class:SurvivalKit" target="Property:elt">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:elt" target="Class:EmergencyLocatorTransmitter">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:OxygenMask">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:OBOGS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:OxygenConcentrationMonitor">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:BreathingRegulator">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:EmergencyOxygenSource">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:AirInlet">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:OxygenSystemPkg" target="Class:PressureSensor">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Class:OBOGS" target="Property:pressureSensor">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Class:OBOGS" target="Property:airInlet">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:pressureSensor" target="Class:PressureSensor">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:airInlet" target="Class:AirInlet">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Package:CockpitSystemPkg" target="Class:CockpitStowage">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CockpitSystemPkg" target="Class:Headrest">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CockpitSystemPkg" target="Class:SeatCushion">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:CockpitSystemPkg" target="Class:PersonnelRestraintSystem">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:ThrottleDetent">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:MasterWarning">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:MasterCaution">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:EmergencyControlMarkings">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:CanopyLockWarningLight">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:Clock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:AirspeedIndicator">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:BITDisplay">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:BrightnessControl">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:LAD">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:RadarDisplay">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:SAD">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:WindspeedIndicator">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:OxygenSystemControlAndDisplay">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:ICDTI">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:HTD">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:IRA_Display">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:StandbyFlightInstrument">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:BackupFlightInstruments">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:HOTASControls">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:ControlsDisplaysHMISystemsPkg" target="Class:SideStick">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FlightControlSytemPkg" target="Class:LandingGearControls">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FlightDataRecorderSystemPkg" target="Class:CircularMemoryStorage">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FlightDataRecorderSystemPkg" target="Class:CVR">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:FlightDataRecorderSystemPkg" target="Class:FDR">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:UniquePlanningComponent">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:OffboardDTDAdapter">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:DataTransferUnit">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:AircraftNameplate">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:IMDS">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:MissionSupportSystemPkg" target="Class:PlaybackControls">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Dependency:GenericStateMachineBlock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Profile:GenericApplications_profile">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Dependency:GenericBlockwithSWaP">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Dependency:GenericSecondaryStateMachineBlock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Dependency:GenericSecondBlockwithSWaP">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Class:GenericSecondaryStateMachineBlock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Class:GenericBlockwithSWaP">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Class:GenericSecondBlockwithSWaP">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Package:GenericApplications" target="Class:GenericStateMachineBlock">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Stereotype:GenStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Stereotype:GenSWAPValue">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Stereotype:GenCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Stereotype:GenSecondStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Stereotype:GenSecCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Class_GenStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Interface_GenStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Class_GenSWAPValue">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Interface_GenSWAPValue">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Class_GenCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Interface_GenCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Class_GenSecondStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Interface_GenSecondStateMachine">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Class_GenSecCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Profile:GenericApplications_profile" target="Extension:Interface_GenSecCombined">
+  <data key="d2">part-of</data>
+</edge>
+<edge source="Stereotype:GenStateMachine" target="Property:base_Class">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenStateMachine" target="Property:base_Interface">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:base_Class" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:base_Interface" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:Size">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:Weight">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:Power">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:Cooling">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:base_Class">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSWAPValue" target="Property:base_Interface">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Property:Size" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:Weight" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:Power" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Property:Cooling" target="STD_TYPE">
+  <data key="d2">is-type</data>
+</edge>
+<edge source="Stereotype:GenCombined" target="Property:base_Class">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenCombined" target="Property:base_Interface">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenCombined" target="Stereotype:GenSWAPValue">
+  <data key="d2">generalization</data>
+</edge>
+<edge source="Stereotype:GenSecondStateMachine" target="Property:base_Class">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSecondStateMachine" target="Property:base_Interface">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSecCombined" target="Property:base_Class">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSecCombined" target="Property:base_Interface">
+  <data key="d2">prop</data>
+</edge>
+<edge source="Stereotype:GenSecCombined" target="Stereotype:GenCombined">
+  <data key="d2">generalization</data>
+</edge>
+<edge source="Class:GenericBlockwithSWaP" target="Class:GenericStateMachineBlock">
+  <data key="d2">generalization</data>
+</edge>
+<edge source="Class:GenericSecondBlockwithSWaP" target="Class:GenericSecondaryStateMachineBlock">
+  <data key="d2">generalization</data>
+</edge>
+<edge source="Package:GeneralEventsPkg" target="Signal:SystemCompromised">
+  <data key="d2">part-of</data>
+</edge>
+</graph></graphml>

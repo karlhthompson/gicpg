@@ -1,0 +1,2141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key attr.name="data" attr.type="string" for="edge" id="d1" />
+  <key attr.name="data" attr.type="string" for="node" id="d0" />
+  <graph edgedefault="undirected">
+    <node id="ROOT:Distiller">
+      <data key="d0">ROOT</data>
+    </node>
+    <node id="Package:Structure">
+      <data key="d0">Package</data>
+    </node>
+    <node id="InformationFlow:cIn_hx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:qIn_bx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:hOut_in">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:bx1_drain">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:bx1_hx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:hx1_cOut">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:drain_rOut">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:hx1_dOut">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:out_fIn">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:hx1_feed">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:feed_bx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:pIn_cx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:cx1_bx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="InformationFlow:hx1_bx1">
+      <data key="d0">InformationFlow</data>
+    </node>
+    <node id="Abstraction:Distill Water">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Class:Distiller">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:bxLevelLow">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:bxLevelHigh">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:bxTemp">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Port:cIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:qIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:cOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:rOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:dOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:pIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Property:feed">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:ui1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:bx1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:cx1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:hx1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:drain">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Operation:powerLampOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:powerLampOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:operatingLampOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:operatingLampOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:levelHighLampOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:levelHighLampOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:drainingLampOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:drainingLampOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:levelLowLampOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:levelLowLampOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:turnOff">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:turnOff(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Abstraction:Boiler">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Class:Boiler">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:fIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:f1Out">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:f2Out">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:blrSig">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Operation:heaterOn">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:heaterOn(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:heaterOff">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:heaterOff(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Abstraction:HeatExchanger">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Class:HeatExchanger">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:hIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:hOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Abstraction:Drain">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Interface:v_implicitContract">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Class:Valve">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:in">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:out">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:v">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Operation:open">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:open(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:close">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:close(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Usage:ILamp">
+      <data key="d0">Usage</data>
+    </node>
+    <node id="Interface:pl_implicitContract">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Usage:IValve">
+      <data key="d0">Usage</data>
+    </node>
+    <node id="Interface:v1_implicitContract">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:v2_implicitContract">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Class:Controller">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:pl">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:v1">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:v2">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:pwr">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:pOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Usage:IPower">
+      <data key="d0">Usage</data>
+    </node>
+    <node id="Class:ControlPanel">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Interface:IPower">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:ILamp">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:IValve">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Signal:evTurnOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evTurnOff">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evPowerOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Class:StructureTopLevelClass">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:water_in">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:heat_in">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:hx_water_out">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:part_1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:s1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:b1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:bx_steam_out">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:p1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:m2_2">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:water_out">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:s2">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:m2_1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:part_0">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Class:part_0_ImplicitClass">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Class:part_1_ImplicitClass">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Abstraction:Water Initial Temp">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="InformationItem:water_inRepresentation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:heat_inRepresentation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:hx_water_outRepresentation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:s1Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:bx_steam_outRepresentation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:water_outRepresentation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:s2Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:m2_2Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:m2_1Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:p1Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="InformationItem:b1Representation">
+      <data key="d0">InformationItem</data>
+    </node>
+    <node id="Package:Behavior">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Interface:mRate_implicitType">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:sh_implicitType">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:qRate_implicitType">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Class:SinglePhaseHeatTransferEqn">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:tIn">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:mRate">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:tOut">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:sh">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:qRate">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Interface:r1_implicitType">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Interface:r2_implicitType">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Class:equivalent">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:r1">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Port:r2">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Class:SinglePhaseChangeEqn">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Port:lh">
+      <data key="d0">Port</data>
+    </node>
+    <node id="Class:HeatWater">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Class:BoilWater">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Abstraction:hx_water_out">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:hx1">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:water_in">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:bx1">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:drain">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:bx_steam_out">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:heat_in">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:s1">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:s2">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:water_out">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:m2_1">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:feed">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Abstraction:m2_2">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="Class:DistillWater">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:a2">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:a4">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:a1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:a3">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Class:CondenseSteam">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Class:DrainResidue">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Interaction:sd Operate Distiller">
+      <data key="d0">Interaction</data>
+    </node>
+    <node id="Property:OperatorRole">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:DistillerRole">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Signal:evShutdown">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Class:BehaviorTopLevelClass">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:boiling">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:condensing">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:c2">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:htx">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:c1">
+      <data key="d0">Property</data>
+    </node>
+    <node id="CallEvent:Distiller.powerLampOnCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.powerLampOnSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="CallEvent:Distiller.operatingLampOnCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.operatingLampOnSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="CallEvent:Distiller.levelHighLampOnCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.levelHighLampOnSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="CallEvent:Distiller.drainingLampOnCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.drainingLampOnSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="CallEvent:Distiller.levelLowLampOnCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.levelLowLampOnSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="CallEvent:Distiller.turnOffCalling">
+      <data key="d0">CallEvent</data>
+    </node>
+    <node id="SendOperationEvent:Distiller.turnOffSending">
+      <data key="d0">SendOperationEvent</data>
+    </node>
+    <node id="Property:N/A">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:recovered">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:external">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:steam">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:coldDirty">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:hotDirty">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:hiPress">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:loPress">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:pure">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Package:UseCases">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Actor:Operator">
+      <data key="d0">Actor</data>
+    </node>
+    <node id="Actor:Distiller">
+      <data key="d0">Actor</data>
+    </node>
+    <node id="Abstraction:Purify Water">
+      <data key="d0">Abstraction</data>
+    </node>
+    <node id="UseCase:Operate Distiller">
+      <data key="d0">UseCase</data>
+    </node>
+    <node id="Signal:evPowerLampOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evOperatingLampOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evHighLevelLampOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evDrainingLampOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evLevelLowLampOn">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evPowerLampOff">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Property:itsOperator">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:itsOperate Distiller">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:itsDistiller">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Package:ValueTypes">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Usage:Real">
+      <data key="d0">Usage</data>
+    </node>
+    <node id="DataType:degC">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="DataType:Pa">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="DataType:g_per_s">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="DataType:cal_per_s">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="DataType:cal_per_g">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="DataType:cal_per_g_per_degC">
+      <data key="d0">DataType</data>
+    </node>
+    <node id="InstanceSpecification:calorie_per_gram">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:gram_per_second">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:degreeCelsius">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:calorie_per_second">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:Pascal">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:calorie_per_gram_per_degreeCelsius">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:latentHeat">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:specificHeat">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:massFlowRate">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:heatFlowRate">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="InstanceSpecification:pressure">
+      <data key="d0">InstanceSpecification</data>
+    </node>
+    <node id="Package:Requirements">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Class:Distill Water">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Package:Source">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Class:Original Statement">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Package:FlowItemTypes">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Class:H2O">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:massFlowRate">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:temp">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:specificHeat">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:latentHeat">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Class:Fluid">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:press">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Class:Heat">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:flowRate">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Class:Residue">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Class:Power">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Interface:BoilerData">
+      <data key="d0">Interface</data>
+    </node>
+    <node id="Signal:evAddLatentHeatOfVaporization">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evRemoveLatenHeatOfVaporization">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evAddLatentHeatOfLiquification">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evRemoveLatentHeatOfLiquification">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Signal:evRemoveLatentHeatOfVaporization">
+      <data key="d0">Signal</data>
+    </node>
+    <node id="Package:ProfileExtension">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Profile:ProfileExtension_profile">
+      <data key="d0">Profile</data>
+    </node>
+    <node id="Stereotype:callout">
+      <data key="d0">Stereotype</data>
+    </node>
+    <node id="Property:targetGUID">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_Comment">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Stereotype:effbd">
+      <data key="d0">Stereotype</data>
+    </node>
+    <node id="Property:base_Activity">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Stereotype:streaming">
+      <data key="d0">Stereotype</data>
+    </node>
+    <node id="Property:base_ObjectNode">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_Pin">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_Parameter">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_State">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_ActivityNode">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_StateMachine">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_Transition">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Property:base_ActivityEdge">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Stereotype:allocate">
+      <data key="d0">Stereotype</data>
+    </node>
+    <node id="Property:base_ActivityPartition">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Extension:Comment_callout">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:Activity_effbd">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:ObjectNode_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:Pin_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:Parameter_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:State_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:ActivityNode_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:Activity_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:StateMachine_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:Transition_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:ActivityEdge_streaming">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="Extension:ActivityPartition_allocate">
+      <data key="d0">Extension</data>
+    </node>
+    <node id="STD_TYPE" />
+    <node id="ROOT:Composite">
+      <data key="d0">ROOT</data>
+    </node>
+    <node id="Package:Default">
+      <data key="d0">Package</data>
+    </node>
+    <node id="Class:Component">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:itsComposite">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Operation:FunctionA">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:FunctionA(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Class:Leaf">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Class:Composite">
+      <data key="d0">Class</data>
+    </node>
+    <node id="Property:itsComponent">
+      <data key="d0">Property</data>
+    </node>
+    <node id="Operation:Remove">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:Remove(child)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Parameter:Remove(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:Add">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:Add(child)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Parameter:Add(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Operation:Get">
+      <data key="d0">Operation</data>
+    </node>
+    <node id="Parameter:Get(child)">
+      <data key="d0">Parameter</data>
+    </node>
+    <node id="Parameter:Get(Result)">
+      <data key="d0">Parameter</data>
+    </node>
+    <edge source="ROOT:Distiller" target="Package:Structure">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:Behavior">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:UseCases">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:ValueTypes">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:Requirements">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:FlowItemTypes">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="ROOT:Distiller" target="Package:ProfileExtension">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:cIn_hx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:qIn_bx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:hOut_in">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:bx1_drain">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:bx1_hx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:hx1_cOut">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:drain_rOut">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:hx1_dOut">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:out_fIn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:hx1_feed">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:feed_bx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:pIn_cx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:cx1_bx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationFlow:hx1_bx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Abstraction:Distill Water">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:Distiller">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Abstraction:Boiler">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:Boiler">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Abstraction:HeatExchanger">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:HeatExchanger">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Abstraction:Drain">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:v_implicitContract">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:Valve">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Usage:ILamp">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:pl_implicitContract">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Usage:IValve">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:v1_implicitContract">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:v2_implicitContract">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:Controller">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Usage:IPower">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:ControlPanel">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:IPower">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:ILamp">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Interface:IValve">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Signal:evTurnOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Signal:evTurnOff">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Signal:evPowerOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:StructureTopLevelClass">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:part_0_ImplicitClass">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Class:part_1_ImplicitClass">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="Abstraction:Water Initial Temp">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:water_inRepresentation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:heat_inRepresentation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:hx_water_outRepresentation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:s1Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:bx_steam_outRepresentation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:water_outRepresentation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:s2Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:m2_2Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:m2_1Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:p1Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Structure" target="InformationItem:b1Representation">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Abstraction:Distill Water" target="Package:Behavior">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:bxLevelLow">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:bxLevelHigh">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:bxTemp">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:cIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:qIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:cOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:rOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:dOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Port:pIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:feed">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:ui1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:bx1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:cx1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:hx1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Property:drain">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:powerLampOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:operatingLampOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:levelHighLampOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:drainingLampOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:levelLowLampOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Distiller" target="Operation:turnOff">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:bxLevelLow" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:bxLevelHigh" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:bxTemp" target="DataType:degC">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:cIn" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:cIn" target="Class:HeatExchanger">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:qIn" target="Class:Heat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:qIn" target="Class:Boiler">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:cOut" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:cOut" target="Class:HeatExchanger">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:rOut" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:dOut" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:pIn" target="Class:Power">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:pIn" target="Class:Boiler">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:ui1" target="Class:ControlPanel">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:cx1" target="Class:Controller">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:powerLampOn" target="Parameter:powerLampOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:powerLampOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:operatingLampOn" target="Parameter:operatingLampOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:operatingLampOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:levelHighLampOn" target="Parameter:levelHighLampOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:levelHighLampOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:drainingLampOn" target="Parameter:drainingLampOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:drainingLampOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:levelLowLampOn" target="Parameter:levelLowLampOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:levelLowLampOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:turnOff" target="Parameter:turnOff(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:turnOff(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:Boiler" target="Package:Behavior">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Abstraction:Boiler" target="Abstraction:bx1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Boiler" target="Port:fIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Boiler" target="Port:f1Out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Boiler" target="Port:f2Out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Boiler" target="Port:blrSig">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Boiler" target="Operation:heaterOn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Boiler" target="Operation:heaterOff">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:fIn" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:f1Out" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:f2Out" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:blrSig" target="Interface:BoilerData">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:blrSig" target="Class:Controller">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:heaterOn" target="Parameter:heaterOn(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:heaterOn(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:heaterOff" target="Parameter:heaterOff(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:heaterOff(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:HeatExchanger" target="Port:hIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:HeatExchanger" target="Port:hOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:HeatExchanger" target="Abstraction:hx1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:hIn" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:hOut" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:v_implicitContract" target="Interface:IValve">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Interface:v_implicitContract" target="Port:v">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Valve" target="Port:in">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Valve" target="Port:out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Valve" target="Port:v">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Valve" target="Operation:open">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Valve" target="Operation:close">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Valve" target="Abstraction:drain">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Valve" target="Abstraction:feed">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:in" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:out" target="Class:Fluid">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:open" target="Parameter:open(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:open(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Operation:close" target="Parameter:close(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Parameter:close(Result)" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:pl_implicitContract" target="Interface:IPower">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Interface:pl_implicitContract" target="Interface:ILamp">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Interface:pl_implicitContract" target="Port:pl">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:v1_implicitContract" target="Port:v1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:v2_implicitContract" target="Port:v2">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Controller" target="Port:pl">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Controller" target="Port:v1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Controller" target="Port:v2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Controller" target="Port:pwr">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Controller" target="Port:pOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:pl" target="Class:ControlPanel">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:pwr" target="Class:Power">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:pOut" target="Class:Power">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:water_in">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:heat_in">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:hx_water_out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:part_1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:s1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:b1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:bx_steam_out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:p1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:m2_2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:water_out">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:s2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:m2_1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:StructureTopLevelClass" target="Property:part_0">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:part_1" target="Class:part_1_ImplicitClass">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:b1" target="Class:Power">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:p1" target="Class:Power">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:part_0" target="Class:part_0_ImplicitClass">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interface:mRate_implicitType">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interface:sh_implicitType">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interface:qRate_implicitType">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:SinglePhaseHeatTransferEqn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interface:r1_implicitType">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interface:r2_implicitType">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:equivalent">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:SinglePhaseChangeEqn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:HeatWater">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:BoilWater">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:hx_water_out">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:hx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:water_in">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:bx1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:drain">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:bx_steam_out">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:heat_in">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:s1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:s2">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:water_out">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:m2_1">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:feed">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Abstraction:m2_2">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:DistillWater">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:CondenseSteam">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:DrainResidue">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Interaction:sd Operate Distiller">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Signal:evShutdown">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="Class:BehaviorTopLevelClass">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.powerLampOnCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.powerLampOnSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.operatingLampOnCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.operatingLampOnSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.levelHighLampOnCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.levelHighLampOnSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.drainingLampOnCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.drainingLampOnSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.levelLowLampOnCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.levelLowLampOnSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="CallEvent:Distiller.turnOffCalling">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.turnOffSending">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Interface:mRate_implicitType" target="Port:mRate">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:sh_implicitType" target="Port:sh">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:qRate_implicitType" target="Port:qRate">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Port:tIn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Port:mRate">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Port:tOut">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Port:sh">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Port:qRate">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseHeatTransferEqn" target="Property:htx">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:tIn" target="DataType:degC">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:mRate" target="DataType:g_per_s">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:mRate" target="Class:SinglePhaseChangeEqn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Port:tOut" target="DataType:degC">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:qRate" target="DataType:cal_per_s">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:qRate" target="Class:SinglePhaseChangeEqn">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Interface:r1_implicitType" target="Port:r1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interface:r2_implicitType" target="Port:r2">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:equivalent" target="Port:r1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:equivalent" target="Port:r2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:equivalent" target="Property:c2">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:equivalent" target="Property:c1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:SinglePhaseChangeEqn" target="Port:lh">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:SinglePhaseChangeEqn" target="Property:boiling">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:SinglePhaseChangeEqn" target="Property:condensing">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Port:lh" target="DataType:cal_per_g">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:HeatWater" target="Property:a1">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:BoilWater" target="Property:a2">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:BoilWater" target="Property:N/A">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:hx_water_out" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:water_in" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:bx_steam_out" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:heat_in" target="Class:Heat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:s1" target="Class:Residue">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:s2" target="Class:Residue">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:water_out" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:m2_1" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:m2_2" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:DistillWater" target="Property:a2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:DistillWater" target="Property:a4">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:DistillWater" target="Property:a1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:DistillWater" target="Property:a3">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:DistillWater" target="Property:N/A">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:a4" target="Class:DrainResidue">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:a3" target="Class:CondenseSteam">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:CondenseSteam" target="Property:N/A">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:DrainResidue" target="Property:N/A">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Interaction:sd Operate Distiller" target="Property:OperatorRole">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Interaction:sd Operate Distiller" target="Property:DistillerRole">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:OperatorRole" target="Actor:Operator">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:DistillerRole" target="Actor:Distiller">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:BehaviorTopLevelClass" target="Property:boiling">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:BehaviorTopLevelClass" target="Property:condensing">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:BehaviorTopLevelClass" target="Property:c2">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:BehaviorTopLevelClass" target="Property:htx">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:BehaviorTopLevelClass" target="Property:c1">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:recovered">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:external">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:steam">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:coldDirty">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:hotDirty">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:hiPress">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:loPress">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:N/A" target="Property:pure">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:recovered" target="Class:Heat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:external" target="Class:Heat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:steam" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:coldDirty" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:hotDirty" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:hiPress" target="Class:Residue">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:loPress" target="Class:Residue">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:pure" target="Class:H2O">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Package:UseCases" target="Actor:Operator">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Actor:Distiller">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Abstraction:Purify Water">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="UseCase:Operate Distiller">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evPowerLampOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evOperatingLampOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evHighLevelLampOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evDrainingLampOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evLevelLowLampOn">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:UseCases" target="Signal:evPowerLampOff">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Actor:Operator" target="Property:itsOperator">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Actor:Distiller" target="Property:itsDistiller">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Abstraction:Purify Water" target="Package:Requirements">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="UseCase:Operate Distiller" target="Property:itsOperate Distiller">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:itsOperator" target="Property:itsOperate Distiller">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Property:itsOperate Distiller" target="Property:itsDistiller">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="Usage:Real">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:degC">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:Pa">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:g_per_s">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:cal_per_s">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:cal_per_g">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="DataType:cal_per_g_per_degC">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:calorie_per_gram">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:gram_per_second">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:degreeCelsius">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:calorie_per_second">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:Pascal">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:calorie_per_gram_per_degreeCelsius">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:latentHeat">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:specificHeat">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:massFlowRate">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:heatFlowRate">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:ValueTypes" target="InstanceSpecification:pressure">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="DataType:degC" target="Property:temp">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="DataType:Pa" target="Property:press">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="DataType:g_per_s" target="Property:massFlowRate">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="DataType:cal_per_s" target="Property:flowRate">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="DataType:cal_per_g" target="Property:latentHeat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="DataType:cal_per_g_per_degC" target="Property:specificHeat">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Package:Requirements" target="Class:Distill Water">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Requirements" target="Package:Source">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Source" target="Class:Original Statement">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Class:H2O">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Class:Fluid">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Class:Heat">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Class:Residue">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Class:Power">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Interface:BoilerData">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Signal:evAddLatentHeatOfVaporization">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Signal:evRemoveLatenHeatOfVaporization">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Signal:evAddLatentHeatOfLiquification">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Signal:evRemoveLatentHeatOfLiquification">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:FlowItemTypes" target="Signal:evRemoveLatentHeatOfVaporization">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Class:H2O" target="Property:massFlowRate">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:H2O" target="Property:temp">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:H2O" target="Property:specificHeat">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:H2O" target="Property:latentHeat">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:H2O" target="Class:Fluid">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Property:temp" target="Class:Fluid">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:temp" target="Class:Residue">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Fluid" target="Property:press">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:press" target="Class:Residue">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Heat" target="Property:flowRate">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Package:ProfileExtension" target="Profile:ProfileExtension_profile">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Stereotype:callout">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Stereotype:effbd">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Stereotype:streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Stereotype:allocate">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Comment_callout">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Activity_effbd">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:ObjectNode_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Pin_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Parameter_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:State_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:ActivityNode_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Activity_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:StateMachine_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:Transition_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:ActivityEdge_streaming">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Profile:ProfileExtension_profile" target="Extension:ActivityPartition_allocate">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Stereotype:callout" target="Property:targetGUID">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:callout" target="Property:base_Comment">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:targetGUID" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_Comment" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Stereotype:effbd" target="Property:base_Activity">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:base_Activity" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_Activity" target="Stereotype:streaming">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_ObjectNode">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_Pin">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_Parameter">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_State">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_ActivityNode">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_StateMachine">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_Transition">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Stereotype:streaming" target="Property:base_ActivityEdge">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:base_ObjectNode" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_Pin" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_Parameter" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_State" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_ActivityNode" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_StateMachine" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_Transition" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:base_ActivityEdge" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Stereotype:allocate" target="Property:base_ActivityPartition">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Property:base_ActivityPartition" target="STD_TYPE">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="STD_TYPE" target="Parameter:FunctionA(Result)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="STD_TYPE" target="Parameter:Remove(Result)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="STD_TYPE" target="Parameter:Add(Result)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="STD_TYPE" target="Parameter:Get(Result)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="ROOT:Composite" target="Package:Default">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Default" target="Class:Component">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Default" target="Class:Leaf">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Package:Default" target="Class:Composite">
+      <data key="d1">part-of</data>
+    </edge>
+    <edge source="Class:Component" target="Property:itsComposite">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Component" target="Operation:FunctionA">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Component" target="Class:Leaf">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Class:Component" target="Class:Composite">
+      <data key="d1">generalization</data>
+    </edge>
+    <edge source="Class:Component" target="Property:itsComponent">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Component" target="Parameter:Remove(child)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Component" target="Parameter:Add(child)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Class:Component" target="Parameter:Get(child)">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:itsComposite" target="Class:Composite">
+      <data key="d1">is-type</data>
+    </edge>
+    <edge source="Property:itsComposite" target="Property:itsComponent">
+      <data key="d1">association</data>
+    </edge>
+    <edge source="Operation:FunctionA" target="Parameter:FunctionA(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Composite" target="Property:itsComponent">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Composite" target="Operation:Remove">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Composite" target="Operation:Add">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Class:Composite" target="Operation:Get">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Remove" target="Parameter:Remove(child)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Remove" target="Parameter:Remove(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Add" target="Parameter:Add(child)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Add" target="Parameter:Add(Result)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Get" target="Parameter:Get(child)">
+      <data key="d1">prop</data>
+    </edge>
+    <edge source="Operation:Get" target="Parameter:Get(Result)">
+      <data key="d1">prop</data>
+    </edge>
+  </graph>
+</graphml>

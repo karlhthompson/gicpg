@@ -28,8 +28,8 @@ class Args():
         self.embedding_size_rnn_output = 8 # the embedding size for output rnn
         self.embedding_size_output = int(64/self.parameter_shrink) # the embedding size for output (VAE/MLP)
 
-        self.batch_size = 2 # normal: 32, and the rest should be changed accordingly
-        self.test_batch_size = 2 # normal: 32
+        self.batch_size = 4 # normal: 32, and the rest should be changed accordingly
+        self.test_batch_size = 4 # normal: 32
         self.test_total_size = 10 # normal: 1000
         self.num_layers = 4
 
@@ -49,9 +49,8 @@ class Args():
         self.sample_time = 2 # sample time in each time step, when validating
 
         ### output config
-        # self.dir_input = "/dfs/scratch0/jiaxuany0/"
         self.dir_input = "./"
-        self.model_save_path = self.dir_input+'model_save/' # only for nll evaluation
+        self.model_save_path = self.dir_input+'models/' # only for nll evaluation
         self.graph_save_path = self.dir_input+'graphs/'
 
         self.load = False # if load model, default lr is very low
