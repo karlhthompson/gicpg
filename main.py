@@ -28,7 +28,7 @@ if __name__ == '__main__':
     confgname = "tensorboard/run"+time
     configure(confgname.replace(":","-"), flush_secs=5)
 
-    graphs = create_graphs.create(args)
+    graphs = create_graphs(args)
     
     # split datasets
     graphs_len = len(graphs)
@@ -36,29 +36,12 @@ if __name__ == '__main__':
         graphs_test = graphs
         graphs_train = graphs
         graphs_validate = graphs
-    elif graphs_len == 2:
-        graphs_test = graphs
-        graphs_train = graphs
-        graphs_validate = graphs
-        # graphs_test = graphs[int(0.5 * graphs_len):]
-        # graphs_train = graphs[0:int(0.5*graphs_len)]
-        # graphs_validate = graphs[0:int(0.5*graphs_len)]
     else:
         random.seed(123)
         shuffle(graphs)
         graphs_test = graphs[int(0.8 * graphs_len):]
         graphs_train = graphs[0:int(0.8*graphs_len)]
         graphs_validate = graphs[0:int(0.2*graphs_len)]
-
-    # if use pre-saved graphs
-    # dir_input = "/dfs/scratch0/jiaxuany0/graphs/"
-    # fname_test = dir_input + args.note + '_' + args.graph_type + '_' + str(args.num_layers) + '_' + str(
-    #     args.hidden_size_rnn) + '_test_' + str(0) + '.dat'
-    # graphs = load_graph_list(fname_test, is_real=True)
-    # graphs_test = graphs[int(0.8 * graphs_len):]
-    # graphs_train = graphs[0:int(0.8 * graphs_len)]
-    # graphs_validate = graphs[int(0.2 * graphs_len):int(0.4 * graphs_len)]
-
 
     graph_validate_len = 0
     for graph in graphs_validate:
@@ -73,13 +56,9 @@ if __name__ == '__main__':
     graph_test_len /= len(graphs_test)
     print('graph_test_len', graph_test_len)
 
-
-
     args.max_num_node = max([len(graphs[i].nodes._nodes._atlas) for i in range(len(graphs))])
     max_num_edge = max([graphs[i].number_of_edges() for i in range(len(graphs))])
     min_num_edge = min([graphs[i].number_of_edges() for i in range(len(graphs))])
-    # max_num_edge = max([len(graphs[i].edges._adjdict._atlas) for i in range(len(graphs))])
-    # min_num_edge = min([len(graphs[i].edges._adjdict._atlas) for i in range(len(graphs))])
 
     # args.max_num_node = 2000
     # show graphs statistics
@@ -94,40 +73,14 @@ if __name__ == '__main__':
     save_graph_list(graphs, args.graph_save_path + args.fname_test + '0.dat')
     print('train and test graphs saved at: ', args.graph_save_path + args.fname_test + '0.dat')
 
-    ### comment when normal training, for graph completion only
-    # p = 0.5
-    # for graph in graphs_train:
-    #     for node in list(graph.nodes()):
-    #         # print('node',node)
-    #         if np.random.rand()>p:
-    #             graph.remove_node(node)
-        # for edge in list(graph.edges()):
-        #     # print('edge',edge)
-        #     if np.random.rand()>p:
-        #         graph.remove_edge(edge[0],edge[1])
-
-
     ### dataset initialization
-    if 'nobfs' in args.note:
-        print('nobfs')
-        dataset = Graph_sequence_sampler_pytorch_nobfs(graphs_train, max_num_node=args.max_num_node)
-        args.max_prev_node = args.max_num_node-1
-    if 'barabasi_noise' in args.graph_type:
-        print('barabasi_noise')
-        dataset = Graph_sequence_sampler_pytorch_canonical(graphs_train,max_prev_node=args.max_prev_node)
-        args.max_prev_node = args.max_num_node - 1
-    else:
-        dataset = Graph_sequence_sampler_pytorch(graphs_train,max_prev_node=args.max_prev_node,max_num_node=args.max_num_node)
+    dataset = Graph_sequence_sampler_pytorch(graphs_train,max_prev_node=args.max_prev_node,max_num_node=args.max_num_node)
     sample_strategy = torch.utils.data.sampler.WeightedRandomSampler([1.0 / len(dataset) for i in range(len(dataset))],
-                                                                     num_samples=args.batch_size*args.batch_ratio, replacement=True)
+                      num_samples=args.batch_size*args.batch_ratio, replacement=True)
     dataset_loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, num_workers=args.num_workers,
-                                               sampler=sample_strategy)
+                     sampler=sample_strategy)
 
     ### model initialization
-    ## Graph RNN VAE model
-    # lstm = LSTM_plain(input_size=args.max_prev_node, embedding_size=args.embedding_size_lstm,
-    #                   hidden_size=args.hidden_size, num_layers=args.num_layers)
-
     if 'GraphRNN_VAE' in args.note:
         rnn = GRU_plain(input_size=args.max_prev_node, embedding_size=args.embedding_size_rnn,
                         hidden_size=args.hidden_size_rnn, num_layers=args.num_layers, has_input=True,
@@ -148,10 +101,3 @@ if __name__ == '__main__':
 
     ### start training
     train(args, dataset_loader, rnn, output)
-
-    ### graph completion
-    # train_graph_completion(args,dataset_loader,rnn,output)
-
-    ### nll evaluation
-    # train_nll(args, dataset_loader, dataset_loader, rnn, output, max_iter = 200, graph_validate_len=graph_validate_len,graph_test_len=graph_test_len)
-

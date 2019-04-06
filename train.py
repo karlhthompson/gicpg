@@ -24,7 +24,6 @@ from utils import *
 from model import *
 from data import *
 from args import Args
-import create_graphs
 
 
 def train_vae_epoch(epoch, args, rnn, output, data_loader,
@@ -665,51 +664,5 @@ def train(args, dataset_train, rnn, output):
                 fname = args.model_save_path + args.fname + 'output_' + str(epoch) + '.dat'
                 torch.save(output.state_dict(), fname)
         epoch += 1
+        
     np.save(args.timing_save_path+args.fname,time_all)
-
-
-########### for graph completion task
-def train_graph_completion(args, dataset_test, rnn, output):
-    fname = args.model_save_path + args.fname + 'lstm_' + str(args.load_epoch) + '.dat'
-    rnn.load_state_dict(torch.load(fname))
-    fname = args.model_save_path + args.fname + 'output_' + str(args.load_epoch) + '.dat'
-    output.load_state_dict(torch.load(fname))
-
-    epoch = args.load_epoch
-    print('model loaded!, epoch: {}'.format(args.load_epoch))
-
-    for sample_time in range(1,4):
-        if 'GraphRNN_MLP' in args.note:
-            G_pred = test_mlp_partial_simple_epoch(epoch, args, rnn, output, dataset_test,sample_time=sample_time)
-        if 'GraphRNN_VAE' in args.note:
-            G_pred = test_vae_partial_epoch(epoch, args, rnn, output, dataset_test,sample_time=sample_time)
-        # save graphs
-        fname = args.graph_save_path + args.fname_pred + str(epoch) +'_'+str(sample_time) + 'graph_completion.dat'
-        save_graph_list(G_pred, fname)
-    print('graph completion done, graphs saved')
-
-
-########### for NLL evaluation
-def train_nll(args, dataset_train, dataset_test, rnn, output,graph_validate_len,graph_test_len, max_iter = 1000):
-    fname = args.model_save_path + args.fname + 'lstm_' + str(args.load_epoch) + '.dat'
-    rnn.load_state_dict(torch.load(fname))
-    fname = args.model_save_path + args.fname + 'output_' + str(args.load_epoch) + '.dat'
-    output.load_state_dict(torch.load(fname))
-
-    epoch = args.load_epoch
-    print('model loaded!, epoch: {}'.format(args.load_epoch))
-    fname_output = args.nll_save_path + args.note + '_' + args.graph_type + '.csv'
-    with open(fname_output, 'w+') as f:
-        f.write(str(graph_validate_len)+','+str(graph_test_len)+'\n')
-        f.write('train,test\n')
-        for iter in range(max_iter):
-            if 'GraphRNN_MLP' in args.note:
-                nll_train = train_mlp_forward_epoch(epoch, args, rnn, output, dataset_train)
-                nll_test = train_mlp_forward_epoch(epoch, args, rnn, output, dataset_test)
-            if 'GraphRNN_RNN' in args.note:
-                nll_train = train_rnn_forward_epoch(epoch, args, rnn, output, dataset_train)
-                nll_test = train_rnn_forward_epoch(epoch, args, rnn, output, dataset_test)
-            print('train',nll_train,'test',nll_test)
-            f.write(str(nll_train)+','+str(nll_test)+'\n')
-
-    print('NLL evaluation done')

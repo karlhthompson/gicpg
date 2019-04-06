@@ -4,15 +4,13 @@ class Args():
     def __init__(self):
         ### if clean tensorboard
         self.clean_tensorboard = False
+        
         ### Which CUDA GPU device is used for training
         self.cuda = -1
 
         ### Which GraphRNN model variant is used.
-        # The simple version of Graph RNN
         self.note = 'GraphRNN_MLP'
-        # The dependent Bernoulli sequence version of GraphRNN
         # self.note = 'GraphRNN_RNN'
-        # Graph RNN VAE
         # self.note = 'GraphRNN_VAE'
 
         ### Which dataset is used to train the model
