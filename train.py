@@ -19,6 +19,7 @@ import pickle
 from tensorboard_logger import configure, log_value
 import scipy.misc
 import time as tm
+import os
 
 from utils import *
 from model import *
@@ -128,13 +129,6 @@ def test_vae_epoch(epoch, args, rnn, output, test_batch_size=16, save_histogram=
         adj_pred = decode_adj(y_pred_long_data[i].cpu().numpy())
         G_pred = get_graph(adj_pred) # get a graph from zero-padded adj
         G_pred_list.append(G_pred)
-
-    # save prediction histograms, plot histogram over each time step
-    if save_histogram:
-        save_prediction_histogram(y_pred_data.cpu().numpy(),
-                              fname_pred=args.figure_prediction_save_path+args.fname_pred+str(epoch)+'.jpg',
-                              max_num_node=max_num_node)
-
 
     return G_pred_list
 
