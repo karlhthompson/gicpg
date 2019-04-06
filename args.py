@@ -15,46 +15,15 @@ class Args():
         # Graph RNN VAE
         # self.note = 'GraphRNN_VAE'
 
-        ## for comparison, removing the BFS compoenent
-        # self.note = 'GraphRNN_MLP_nobfs'
-        # self.note = 'GraphRNN_RNN_nobfs'
-
         ### Which dataset is used to train the model
-        # self.graph_type = 'DD'
         self.graph_type = 'arch'
-        # self.graph_type = 'caveman'
-        # self.graph_type = 'caveman_small'
-        # self.graph_type = 'caveman_small_single'
-        # self.graph_type = 'community4'
-        # self.graph_type = 'grid'
-        # self.graph_type = 'grid_small'
-        # self.graph_type = 'ladder_small'
-
-        # self.graph_type = 'enzymes'
-        # self.graph_type = 'enzymes_small'
-        # self.graph_type = 'barabasi'
-        # self.graph_type = 'barabasi_small'
-        # self.graph_type = 'citeseer'
-        # self.graph_type = 'citeseer_small'
-
-        # self.graph_type = 'barabasi_noise'
-        # self.noise = 10
-        #
-        # if self.graph_type == 'barabasi_noise':
-        #     self.graph_type = self.graph_type+str(self.noise)
 
         # if none, then auto calculate
         self.max_num_node = None # max number of nodes in a graph
         self.max_prev_node = None # max previous node that looks back
 
         ### network config
-        ## GraphRNN
-        if 'small' in self.graph_type:
-            self.parameter_shrink = 2
-        elif 'arch' in self.graph_type:
-            self.parameter_shrink = 2
-        else:
-            self.parameter_shrink = 1
+        self.parameter_shrink = 1
         self.hidden_size_rnn = int(128/self.parameter_shrink) # hidden size for main RNN
         self.hidden_size_rnn_output = 16 # hidden size for output RNN
         self.embedding_size_rnn = int(64/self.parameter_shrink) # the size for LSTM input
@@ -91,25 +60,12 @@ class Args():
         self.figure_prediction_save_path = self.dir_input+'figures_prediction/'
         self.nll_save_path = self.dir_input+'nll/'
 
-
         self.load = False # if load model, default lr is very low
         self.load_epoch = 3000 # normal: 3000
         self.save = True
-
-
-        ### baseline config
-        # self.generator_baseline = 'Gnp'
-        self.generator_baseline = 'BA'
-
-        self.metric_baseline = 'general'
-        # self.metric_baseline = 'degree'
-        # self.metric_baseline = 'clustering'
-
 
         ### filenames to save intemediate and final outputs
         self.fname = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_'
         self.fname_pred = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_pred_'
         self.fname_train = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_train_'
         self.fname_test = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_test_'
-        self.fname_baseline = self.graph_save_path + self.graph_type + self.generator_baseline+'_'+self.metric_baseline
-
