@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d1"/>
+<key attr.name="data" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="ROOT:PipeAndFilter">
+  <data key="d0">ROOT</data>
+</node>
+<node id="Package:Default">
+  <data key="d0">Package</data>
+</node>
+<node id="Interface:DataIn_implicitContract">
+  <data key="d0">Interface</data>
+</node>
+<node id="Usage:FilterOutput">
+  <data key="d0">Usage</data>
+</node>
+<node id="Interface:DataOut_implicitContract">
+  <data key="d0">Interface</data>
+</node>
+<node id="Class:Filter">
+  <data key="d0">Class</data>
+</node>
+<node id="Port:DataIn">
+  <data key="d0">Port</data>
+</node>
+<node id="Port:DataOut">
+  <data key="d0">Port</data>
+</node>
+<node id="Operation:FilterData">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:FilterData(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Usage:FilterInput">
+  <data key="d0">Usage</data>
+</node>
+<node id="Class:Pipe">
+  <data key="d0">Class</data>
+</node>
+<node id="Interface:FilterInput">
+  <data key="d0">Interface</data>
+</node>
+<node id="Interface:FilterOutput">
+  <data key="d0">Interface</data>
+</node>
+<node id="Interface:RawInput">
+  <data key="d0">Interface</data>
+</node>
+<node id="STD_TYPE"/>
+<edge source="ROOT:PipeAndFilter" target="Package:Default">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Interface:DataIn_implicitContract">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Usage:FilterOutput">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Interface:DataOut_implicitContract">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Filter">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Usage:FilterInput">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Pipe">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Interface:FilterInput">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Interface:FilterOutput">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Interface:RawInput">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Interface:DataIn_implicitContract" target="Interface:FilterInput">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Interface:DataIn_implicitContract" target="Interface:RawInput">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Class:Filter" target="Port:DataIn">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Filter" target="Port:DataOut">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Filter" target="Operation:FilterData">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Port:DataIn" target="Interface:DataIn_implicitContract">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Port:DataOut" target="Interface:DataOut_implicitContract">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Operation:FilterData" target="Parameter:FilterData(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:FilterData(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Pipe" target="Port:DataOut">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Pipe" target="Port:DataIn">
+  <data key="d1">prop</data>
+</edge>
+</graph></graphml>

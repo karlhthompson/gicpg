@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d1"/>
+<key attr.name="data" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="ROOT:Toolbox">
+  <data key="d0">ROOT</data>
+</node>
+<node id="Package:Default">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:Toolbox">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsScrewdriver">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsHammer">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsWrench">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Hammer">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsToolbox">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Screwdriver">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:Wrench">
+  <data key="d0">Class</data>
+</node>
+<node id="Class:RatchetWrench">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:maleDriveSize">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsAdapter">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Adapter">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:femaleDriveSize">
+  <data key="d0">Property</data>
+</node>
+<node id="Property:itsSocket">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Socket">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:driveSize">
+  <data key="d0">Property</data>
+</node>
+<node id="STD_TYPE"/>
+<edge source="ROOT:Toolbox" target="Package:Default">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Toolbox">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Hammer">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Screwdriver">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Wrench">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:RatchetWrench">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Adapter">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Socket">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Class:Toolbox" target="Property:itsScrewdriver">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Toolbox" target="Property:itsHammer">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Toolbox" target="Property:itsWrench">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:itsScrewdriver" target="Class:Screwdriver">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsHammer" target="Class:Hammer">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsWrench" target="Class:Wrench">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Hammer" target="Property:itsToolbox">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:itsToolbox" target="Class:Toolbox">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsToolbox" target="Property:itsScrewdriver">
+  <data key="d1">association</data>
+</edge>
+<edge source="Property:itsToolbox" target="Property:itsHammer">
+  <data key="d1">association</data>
+</edge>
+<edge source="Property:itsToolbox" target="Property:itsWrench">
+  <data key="d1">association</data>
+</edge>
+<edge source="Class:Screwdriver" target="Property:itsToolbox">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Wrench" target="Property:itsToolbox">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:RatchetWrench" target="Property:maleDriveSize">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:RatchetWrench" target="Property:itsAdapter">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:RatchetWrench" target="Class:Wrench">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Property:maleDriveSize" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsAdapter" target="Class:Adapter">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Adapter" target="Property:maleDriveSize">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Adapter" target="Property:femaleDriveSize">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Adapter" target="Property:itsSocket">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:femaleDriveSize" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsSocket" target="Class:Socket">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Socket" target="Property:driveSize">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:driveSize" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+</graph></graphml>

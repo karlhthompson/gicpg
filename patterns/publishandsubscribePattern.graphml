@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d1"/>
+<key attr.name="data" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="ROOT:PublishAndSubscribePattern">
+  <data key="d0">ROOT</data>
+</node>
+<node id="Package:Default">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:Subscriber">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsPublisher">
+  <data key="d0">Property</data>
+</node>
+<node id="Operation:update">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:update(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:Publisher">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsSubscriber">
+  <data key="d0">Property</data>
+</node>
+<node id="Operation:subscribe">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:subscribe(s)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Parameter:subscribe(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Operation:unsubscribe">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:unsubscribe(s)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Parameter:unsubscribe(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Operation:notify">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:notify(s)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Parameter:notify(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:ConcreteSubscriber">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsConcretePublisher">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ConcretePublisher">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:state">
+  <data key="d0">Property</data>
+</node>
+<node id="Operation:setStatus">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:setStatus(s)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Parameter:setStatus(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:State">
+  <data key="d0">Class</data>
+</node>
+<node id="STD_TYPE"/>
+<edge source="ROOT:PublishAndSubscribePattern" target="Package:Default">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Subscriber">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Publisher">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:ConcreteSubscriber">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:ConcretePublisher">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:State">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Class:Subscriber" target="Property:itsPublisher">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Subscriber" target="Operation:update">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:itsPublisher" target="Class:Publisher">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Property:itsPublisher" target="Property:itsSubscriber">
+  <data key="d1">association</data>
+</edge>
+<edge source="Operation:update" target="Parameter:update(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:update(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Publisher" target="Property:itsSubscriber">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Publisher" target="Operation:subscribe">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Publisher" target="Operation:unsubscribe">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Publisher" target="Operation:notify">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:itsSubscriber" target="Class:Subscriber">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Operation:subscribe" target="Parameter:subscribe(s)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:subscribe" target="Parameter:subscribe(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:subscribe(s)" target="Class:Subscriber">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Parameter:subscribe(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Operation:unsubscribe" target="Parameter:unsubscribe(s)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:unsubscribe" target="Parameter:unsubscribe(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:unsubscribe(s)" target="Class:Subscriber">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Parameter:unsubscribe(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Operation:notify" target="Parameter:notify(s)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:notify" target="Parameter:notify(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:notify(s)" target="Class:Subscriber">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Parameter:notify(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:ConcreteSubscriber" target="Property:itsConcretePublisher">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:ConcreteSubscriber" target="Class:Subscriber">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Property:itsConcretePublisher" target="Class:ConcretePublisher">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:ConcretePublisher" target="Property:state">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:ConcretePublisher" target="Operation:setStatus">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:ConcretePublisher" target="Class:Publisher">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Property:state" target="Class:State">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Operation:setStatus" target="Parameter:setStatus(s)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:setStatus" target="Parameter:setStatus(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:setStatus(s)" target="Class:State">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Parameter:setStatus(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+</graph></graphml>

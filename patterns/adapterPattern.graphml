@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d1"/>
+<key attr.name="data" attr.type="string" for="node" id="d0"/>
+<graph edgedefault="directed"><node id="ROOT:AdapterPattern">
+  <data key="d0">ROOT</data>
+</node>
+<node id="Package:Default">
+  <data key="d0">Package</data>
+</node>
+<node id="Class:Client">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsITarget">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:ITarget">
+  <data key="d0">Class</data>
+</node>
+<node id="Operation:FunctionA">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:FunctionA(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="Class:Adapter">
+  <data key="d0">Class</data>
+</node>
+<node id="Property:itsAdaptee">
+  <data key="d0">Property</data>
+</node>
+<node id="Class:Adaptee">
+  <data key="d0">Class</data>
+</node>
+<node id="Operation:FunctionB">
+  <data key="d0">Operation</data>
+</node>
+<node id="Parameter:FunctionB(Result)">
+  <data key="d0">Parameter</data>
+</node>
+<node id="STD_TYPE"/>
+<edge source="ROOT:AdapterPattern" target="Package:Default">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Client">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:ITarget">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Adapter">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Package:Default" target="Class:Adaptee">
+  <data key="d1">part-of</data>
+</edge>
+<edge source="Class:Client" target="Property:itsITarget">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Property:itsITarget" target="Class:ITarget">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:ITarget" target="Operation:FunctionA">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:FunctionA" target="Parameter:FunctionA(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:FunctionA(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Adapter" target="Property:itsAdaptee">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Adapter" target="Operation:FunctionA">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Class:Adapter" target="Class:ITarget">
+  <data key="d1">generalization</data>
+</edge>
+<edge source="Property:itsAdaptee" target="Class:Adaptee">
+  <data key="d1">is-type</data>
+</edge>
+<edge source="Class:Adaptee" target="Operation:FunctionB">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Operation:FunctionB" target="Parameter:FunctionB(Result)">
+  <data key="d1">prop</data>
+</edge>
+<edge source="Parameter:FunctionB(Result)" target="STD_TYPE">
+  <data key="d1">is-type</data>
+</edge>
+</graph></graphml>
