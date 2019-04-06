@@ -11,14 +11,6 @@ if __name__ == '__main__':
         os.makedirs(args.model_save_path)
     if not os.path.isdir(args.graph_save_path):
         os.makedirs(args.graph_save_path)
-    if not os.path.isdir(args.figure_save_path):
-        os.makedirs(args.figure_save_path)
-    if not os.path.isdir(args.timing_save_path):
-        os.makedirs(args.timing_save_path)
-    if not os.path.isdir(args.figure_prediction_save_path):
-        os.makedirs(args.figure_prediction_save_path)
-    if not os.path.isdir(args.nll_save_path):
-        os.makedirs(args.nll_save_path)
 
     time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     # logging.basicConfig(filename='logs/train' + time + '.log', level=logging.DEBUG)

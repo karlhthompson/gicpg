@@ -53,10 +53,6 @@ class Args():
         self.dir_input = "./"
         self.model_save_path = self.dir_input+'model_save/' # only for nll evaluation
         self.graph_save_path = self.dir_input+'graphs/'
-        self.figure_save_path = self.dir_input+'figures/'
-        self.timing_save_path = self.dir_input+'timing/'
-        self.figure_prediction_save_path = self.dir_input+'figures_prediction/'
-        self.nll_save_path = self.dir_input+'nll/'
 
         self.load = False # if load model, default lr is very low
         self.load_epoch = 3000 # normal: 3000

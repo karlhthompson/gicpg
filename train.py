@@ -20,6 +20,7 @@ from tensorboard_logger import configure, log_value
 import scipy.misc
 import time as tm
 import os
+import shutil
 
 from utils import *
 from model import *
