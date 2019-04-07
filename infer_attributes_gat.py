@@ -28,7 +28,7 @@ import os
 
 # Load the architecture graph
 graphname = "FighterModel"
-Gnx = nx.read_graphml("architectures/" + graphname + ".graphml")
+Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
 nodes = list(Gnx.nodes)
 Gnx.node[nodes[0]]['data'] = 'Package'
 Gnx.node[nodes[-1]]['data'] = 'Package'
@@ -72,15 +72,15 @@ node_type = [v for k, v in nx.get_node_attributes(Gnx, 'data').items()]
 d = {"node_type": node_type}
 if "in_degree" in feature_names:
     indeg = [v for k, v in Gnx.in_degree]
-    # indeg = np.divide(indeg, max(indeg))
-    # indeg[indeg>=0.5] = 1
-    # indeg[indeg<0.5] = 0
+    indeg = np.divide(indeg, max(indeg))
+    indeg[indeg>=0.5] = 1
+    indeg[indeg<0.5] = 0
     d["in_degree"] = indeg
 if "out_degree" in feature_names:
     outdeg = [v for k, v in Gnx.out_degree]
-    # outdeg = np.divide(outdeg, max(outdeg))
-    # outdeg[outdeg>=0.5] = 1
-    # outdeg[outdeg<0.5] = 0
+    outdeg = np.divide(outdeg, max(outdeg))
+    outdeg[outdeg>=0.5] = 1
+    outdeg[outdeg<0.5] = 0
     d["out_degree"] = outdeg
 if "in_degree_centrality" in feature_names:
     indeg_cent = [v for k, v in nx.algorithms.in_degree_centrality(Gnx).items()]
@@ -108,9 +108,9 @@ if "betweenness_centrality" in feature_names:
     d["betweenness_centrality"] = between_cent
 if "clustering_coefficient" in feature_names:
     clustering_co = [v for k, v in nx.algorithms.clustering(Gnx).items()]
-    # clustering_co = np.divide(clustering_co, max(clustering_co))
-    # clustering_co[clustering_co>=0.5] = 1
-    # clustering_co[clustering_co<0.5] = 0
+    clustering_co = np.divide(clustering_co, max(clustering_co))
+    clustering_co[clustering_co>=0.5] = 1
+    clustering_co[clustering_co<0.5] = 0
     d["clustering_coefficient"] = clustering_co
 if "square_clustering" in feature_names:
     sq_clustering = [v for k, v in nx.algorithms.square_clustering(Gnx).items()]
@@ -120,9 +120,9 @@ if "square_clustering" in feature_names:
     d["square_clustering"] = sq_clustering
 if "core_number" in feature_names:
     core_number = [v for k, v in nx.algorithms.core_number(Gnx).items()]
-    # core_number = np.divide(core_number, max(core_number))
-    # core_number[core_number>=0.5] = 1
-    # core_number[core_number<0.5] = 0
+    core_number = np.divide(core_number, max(core_number))
+    core_number[core_number>=0.5] = 1
+    core_number[core_number<0.5] = 0
     d["core_number"] = core_number
 if "pagerank" in feature_names:
     pagerank = [v for k, v in nx.algorithms.pagerank(Gnx).items()]

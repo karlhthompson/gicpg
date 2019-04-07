@@ -22,7 +22,7 @@ nbd = GaussianNB()
 
 # Load the graph
 graphname = "FighterModel"
-Gnx = nx.read_graphml("architectures/" + graphname + ".graphml")
+Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
 nodes = list(Gnx.nodes)
 Gnx.node[nodes[0]]['data'] = 'Package'
 Gnx.node[nodes[-1]]['data'] = 'Package'

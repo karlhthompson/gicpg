@@ -142,5 +142,5 @@ def graph_classifier(G):
     return G2
 
 if __name__ == '__main__':
-    G = graph_classifier(nx.read_graphml('architectures/FighterModel.graphml'))
+    G = graph_classifier(nx.read_graphml('dataset/FighterModel.graphml'))
     print(nx.info(G))

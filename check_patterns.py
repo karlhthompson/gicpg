@@ -1,48 +1,64 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+# Created By  : Karl Thompson
+# Created Date: Mon March 25 17:34:00 CDT 2019
+# =============================================================================
+"""check_patterns - Check whether a given graph contains a given pattern"""
+# =============================================================================
+# Imports
+# =============================================================================
 import networkx as nx
 from networkx.algorithms.isomorphism import GraphMatcher
 import matplotlib.pyplot as plt 
 import pickle
+import os
 
-# Load graphs
-G1 = nx.read_graphml('architectures/DistillerSystem.graphml')
-G2 = nx.read_graphml('patterns/facadePattern.graphml')
+def check_patterns(G1, G2, saveisolist=False, readisolist=False, plot=False):
+    # Check isomorphism
+    GM = GraphMatcher(G1=G1, G2=G2, node_match=None, edge_match=None)
+    isomorph = GM.subgraph_is_isomorphic()
 
-# Transform to undirected
-G1 = G1.to_undirected()
-G2 = G2.to_undirected()
+    if saveisolist:
+        # Check if the pickles folder exists
+        if not os.path.isdir("./pickles/"):
+            os.makedirs("./pickles/")
 
-# # Write node match function
-# def node_match(n1,n2):
-#     if n1==G1.nodes['ROOT:Distiller'] and n2==G2.nodes['ROOT:FacadePattern']:
-#         value = True
-#     else:
-#         value = False
-#     return value
+        # List all isomorphisms between the two graphs
+        isomorph_list = list(GM.subgraph_isomorphisms_iter())
 
-# # Check isomorphism
-# GM = GraphMatcher(G1=G1, G2=G2, node_match=None, edge_match=None)
-# isomorph = GM.subgraph_is_isomorphic()
-# print(isomorph)
+        # Save isomorphism list
+        pickling_on = open('pickles/distiller2facade.pickle',"wb")
+        pickle.dump(isomorph_list, pickling_on)
+        pickling_on.close()
 
-# # List all isomorphisms between the two graphs
-# isomorph_list = list(GM.subgraph_isomorphisms_iter())
-# # print(isomorph_list)
+    if readisolist:
+        # Read pickle file
+        pickle_off = open('pickles/distiller2facade.pickle',"rb")
+        isomorph_list = pickle.load(pickle_off)
+        pickle_off.close()
 
-# # Save isomorphism list
-# pickling_on = open('pickles/distiller2facade.pickle',"wb")
-# pickle.dump(isomorph_list, pickling_on)
-# pickling_on.close()
+    if plot:
+        # Plot a sample isomorph
+        options = {'line_color': 'grey', 'font_size': 10, 'node_size': 10, 'with_labels': True}
+        G3 = G1.subgraph(isomorph_list[0])
+        plt.figure(1)
+        nx.draw(G3, **options)
+        plt.figure(2)
+        nx.draw(G2, **options)
+        plt.show()
 
-# Read pickle file
-pickle_off = open('pickles/distiller2facade.pickle',"rb")
-isomorph_list = pickle.load(pickle_off)
-pickle_off.close()
+    return isomorph
 
-# Plot a sample isomorph
-options = {'line_color': 'grey', 'font_size': 10, 'node_size': 10, 'with_labels': True}
-G3 = G1.subgraph(isomorph_list[0])
-plt.figure(1)
-nx.draw(G3, **options)
-plt.figure(2)
-nx.draw(G2, **options)
-plt.show()
+if __name__ == '__main__':
+    # Load graphs
+    G1 = nx.read_graphml('dataset/fighterModel.graphml')
+    G2 = nx.read_graphml('patterns/facadePattern.graphml')
+
+    # # Transform to undirected
+    # G1 = G1.to_undirected()
+    # G2 = G2.to_undirected()
+
+    # Check whether the graphs contain the pattern
+    isomorph = check_patterns(G1, G2)
+    print("Is the generated and pattern graphs isomorphic: %s" % isomorph)
