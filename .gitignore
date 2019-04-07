@@ -108,3 +108,5 @@ graphs/
 tensorboard/
 models/
 pickles/
+.temp/
+.vscode/

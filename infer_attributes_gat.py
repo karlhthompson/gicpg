@@ -194,6 +194,8 @@ val_gen = generator.flow(val_data.index, val_targets)
 
 if not os.path.isdir(".temp/logs"):
     os.makedirs(".temp/logs")
+if not os.path.isdir(".temp/output"):
+    os.makedirs(".temp/output")
 
 es_callback = EarlyStopping(
     monitor="val_weighted_acc", 
