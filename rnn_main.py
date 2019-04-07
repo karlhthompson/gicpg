@@ -1,4 +1,4 @@
-from train import *
+from rnn_train import *
 
 if __name__ == '__main__':
     # All necessary arguments are defined in args.py

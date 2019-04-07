@@ -3,8 +3,8 @@ import torch.utils.data
 import networkx as nx
 import numpy as np
 import random
-from model import *
-from utils import *
+from rnn_model import *
+from rnn_utils import *
 
 
 class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):

@@ -22,10 +22,10 @@ import time as tm
 import os
 import shutil
 
-from utils import *
-from model import *
-from data import *
-from args import Args
+from rnn_utils import *
+from rnn_model import *
+from rnn_data import *
+from rnn_args import Args
 
 
 def train_vae_epoch(epoch, args, rnn, output, data_loader,
