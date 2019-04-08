@@ -2,14 +2,8 @@ import pickle
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# # Original Graphs
-# from data import Graph_load_batch
-# graphs = Graph_load_batch(min_num_nodes=100, max_num_nodes=500, name='DD',node_attributes=False,graph_labels=False)
-# graphs= Graph_load_batch(min_num_nodes=10, name='ENZYMES')
-# G1 = graphs[20]
-
 # Architecture Graphs
-G1 = nx.read_graphml('dataset/archs/fighterModel.graphml')
+G1 = nx.read_graphml('dataset/arch_1.graphml')
 # G1 = G1.to_undirected()
 # G1 = max(nx.connected_component_subgraphs(G1), key=len)
 

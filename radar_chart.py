@@ -73,17 +73,12 @@ def radarplot(G1,G2):
 # Test the function
 if __name__ == '__main__':
 
-    G1 = nx.read_graphml('architectures/fighterModel.graphml')
+    G1 = nx.read_graphml('dataset/arch_1.graphml')
     G1 = G1.to_undirected()
     G1 = G1.subgraph(max(nx.connected_component_subgraphs(G1), key=len))
 
-    # G2 = nx.read_graphml('architectures/DistillerSystem.graphml')
-    # G2 = G2.to_undirected()
-    # G2 = G2.subgraph(max(nx.connected_component_subgraphs(G2), key=len))
+    G2 = nx.read_graphml('dataset/arch_2.graphml')
+    G2 = G2.to_undirected()
+    G2 = G2.subgraph(max(nx.connected_component_subgraphs(G2), key=len))
 
-    G3 = nx.read_edgelist('snap/p2p-Gnutella08.txt')
-    nodelist = list(G3.nodes)
-    G3 = G3.subgraph(nodelist[000:300])
-    G3 = G3.subgraph(max(nx.connected_component_subgraphs(G3), key=len))
-
-    radarplot(G1,G3)
+    radarplot(G1,G2)

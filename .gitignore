@@ -34,6 +34,7 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+architectures_codes.txt
 
 # Unit test / coverage reports
 htmlcov/
@@ -102,6 +103,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# project files
+readgraph.py
 
 # project folders
 graphs/

@@ -63,7 +63,7 @@ def infer_attributes_nb(Gnx, nbd, savepred=True):
 
 if __name__ == '__main__':
     # Load the graph
-    graphname = "FighterModel"
+    graphname = "arch_1"
     Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
     nodes = list(Gnx.nodes)
     Gnx.node[nodes[0]]['data'] = 'Package'

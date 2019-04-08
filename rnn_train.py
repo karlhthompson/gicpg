@@ -22,7 +22,6 @@ import time as tm
 import os
 import shutil
 
-from rnn_utils import *
 from rnn_model import *
 from rnn_data import *
 from rnn_args import Args

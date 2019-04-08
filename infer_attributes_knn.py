@@ -90,7 +90,7 @@ def infer_attributes_knn(Gnx, savepred=True, plot=False):
 
 if __name__ == '__main__':
     # Load the graph
-    graphname = "FighterModel"
+    graphname = "arch_1"
     Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
     nodes = list(Gnx.nodes)
     Gnx.node[nodes[0]]['data'] = 'Package'

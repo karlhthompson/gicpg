@@ -74,14 +74,14 @@ def combine_graphs(G1, G2, plot=False):
 
 if __name__ == '__main__':
     # Input graph 1
-    archname = 'FighterModel'
+    archname = 'arch_1'
     G1 = nx.read_graphml('dataset/' + archname + '.graphml')
     # G1 = G1.to_undirected()
     # G1 = G1.subgraph(max(nx.connected_component_subgraphs(G1), key=len))
 
     # Input graph 2
-    pattname = 'facadePattern'
-    G2 = nx.read_graphml('patterns/' + pattname + '.graphml')
+    pattname = 'patt_8'
+    G2 = nx.read_graphml('dataset/' + pattname + '.graphml')
     # G2 = G2.to_undirected()
 
     # Combine the two graphs

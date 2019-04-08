@@ -28,13 +28,13 @@ def check_patterns(G1, G2, saveisolist=False, readisolist=False, plot=False):
         isomorph_list = list(GM.subgraph_isomorphisms_iter())
 
         # Save isomorphism list
-        pickling_on = open('pickles/distiller2facade.pickle',"wb")
+        pickling_on = open('pickles/arch2_patt8.pickle',"wb")
         pickle.dump(isomorph_list, pickling_on)
         pickling_on.close()
 
     if readisolist:
         # Read pickle file
-        pickle_off = open('pickles/distiller2facade.pickle',"rb")
+        pickle_off = open('pickles/arch2_patt8.pickle',"rb")
         isomorph_list = pickle.load(pickle_off)
         pickle_off.close()
 
@@ -52,8 +52,8 @@ def check_patterns(G1, G2, saveisolist=False, readisolist=False, plot=False):
 
 if __name__ == '__main__':
     # Load graphs
-    G1 = nx.read_graphml('dataset/fighterModel.graphml')
-    G2 = nx.read_graphml('patterns/facadePattern.graphml')
+    G1 = nx.read_graphml('dataset/arch_1.graphml')
+    G2 = nx.read_graphml('dataset/patt_8.graphml')
 
     # # Transform to undirected
     # G1 = G1.to_undirected()

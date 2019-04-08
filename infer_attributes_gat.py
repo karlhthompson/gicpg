@@ -267,7 +267,7 @@ def infer_attributes_gat(Gnx, savepred=True, plot=False):
 
 if __name__ == '__main__':
     # Load the architecture graph
-    graphname = "FighterModel"
+    graphname = "arch_1"
     Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
     nodes = list(Gnx.nodes)
     Gnx.node[nodes[0]]['data'] = 'Package'

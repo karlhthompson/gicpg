@@ -3,9 +3,136 @@ import torch.utils.data
 import networkx as nx
 import numpy as np
 import random
-from rnn_model import *
-from rnn_utils import *
+import pickle
+from os import listdir
+from os.path import isfile, join
 
+from rnn_model import *
+
+def create_graphs(args):
+    graphs=[]
+
+    graphlist = [f for f in listdir("./dataset") if isfile(join("./dataset", f))]
+
+    for name in graphlist:
+        G = nx.read_graphml('dataset/' + name)
+        G = G.to_undirected()
+        G = max(nx.connected_component_subgraphs(G), key=len)
+        nodes = G.nodes._nodes
+        G_sub = G.subgraph(nodes)
+        graphs.append(G_sub)
+
+    args.max_prev_node = 300 # Original: 300
+
+    return graphs
+
+def get_graph(adj):
+    '''
+    get a graph from zero-padded adj
+    :param adj:
+    :return:
+    '''
+    # remove all zeros rows and columns
+    # adj = adj[~np.all(adj == 0, axis=1)]
+    # adj = adj[:, ~np.all(adj == 0, axis=0)]
+    adj = np.asmatrix(adj)
+    G = nx.from_numpy_matrix(adj, create_using=nx.DiGraph) ############ VERY IMPORTANT ##############
+    return G
+
+def save_graph_list(G_list, fname):
+    with open(fname, "wb") as f:
+        pickle.dump(G_list, f)
+
+def bfs_seq(G, start_id):
+    '''
+    get a bfs node sequence
+    :param G:
+    :param start_id:
+    :return:
+    '''
+    dictionary = dict(nx.bfs_successors(G, start_id))
+    start = [start_id]
+    output = [start_id]
+    while len(start) > 0:
+        next = []
+        while len(start) > 0:
+            current = start.pop(0)
+            neighbor = dictionary.get(current)
+            if neighbor is not None:
+                next = next + neighbor
+        output = output + next
+        start = next
+    return output
+
+def encode_adj(adj, max_prev_node=10, is_full = False):
+    '''
+
+    :param adj: n*n, rows means time step, while columns are input dimension
+    :param max_degree: we want to keep row number, but truncate column numbers
+    :return:
+    '''
+    if is_full:
+        max_prev_node = adj.shape[0]-1
+
+    # pick up lower tri
+    adj = np.tril(adj, k=-1)
+    n = adj.shape[0]
+    adj = adj[1:n, 0:n-1]
+
+    # use max_prev_node to truncate
+    # note: now adj is a (n-1)*(n-1) matrix
+    adj_output = np.zeros((adj.shape[0], max_prev_node))
+    for i in range(adj.shape[0]):
+        input_start = max(0, i - max_prev_node + 1)
+        input_end = i + 1
+        output_start = max_prev_node + input_start - input_end
+        output_end = max_prev_node
+        adj_output[i, output_start:output_end] = adj[i, input_start:input_end]
+        adj_output[i,:] = adj_output[i,:][::-1] # reverse order
+
+    return adj_output
+
+def decode_adj(adj_output):
+    '''
+        recover to adj from adj_output
+        note: here adj_output have shape (n-1)*m
+    '''
+    max_prev_node = adj_output.shape[1]
+    adj = np.zeros((adj_output.shape[0], adj_output.shape[0]))
+    for i in range(adj_output.shape[0]):
+        input_start = max(0, i - max_prev_node + 1)
+        input_end = i + 1
+        output_start = max_prev_node + max(0, i - max_prev_node + 1) - (i + 1)
+        output_end = max_prev_node
+        adj[i, input_start:input_end] = adj_output[i,::-1][output_start:output_end] # reverse order
+    adj_full = np.zeros((adj_output.shape[0]+1, adj_output.shape[0]+1))
+    n = adj_full.shape[0]
+    adj_full[1:n, 0:n-1] = np.tril(adj, 0)
+    # adj_full = adj_full + adj_full.T ########################## VERY IMPORTANT ##############################
+
+    return adj_full
+
+def encode_adj_flexible(adj):
+    '''
+    return a flexible length of output
+    note that here there is no loss when encoding/decoding an adj matrix
+    :param adj: adj matrix
+    :return:
+    '''
+    # pick up lower tri
+    adj = np.tril(adj, k=-1)
+    n = adj.shape[0]
+    adj = adj[1:n, 0:n-1]
+
+    adj_output = []
+    input_start = 0
+    for i in range(adj.shape[0]):
+        input_end = i + 1
+        adj_slice = adj[i, input_start:input_end]
+        adj_output.append(adj_slice)
+        non_zero = np.nonzero(adj_slice)[0]
+        input_start = input_end-len(adj_slice)+np.amin(non_zero)
+    return adj_output
 
 class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
     def __init__(self, G_list, max_num_node=None, max_prev_node=None, iteration=20000):
@@ -26,8 +153,6 @@ class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
             print('max previous node: {}'.format(self.max_prev_node))
         else:
             self.max_prev_node = max_prev_node
-
-        # self.max_prev_node = max_prev_node
 
         # # sort Graph in descending order
         # len_batch_order = np.argsort(np.array(self.len_all))[::-1]
@@ -80,98 +205,3 @@ class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
             max_prev_node.append(max_encoded_len)
         max_prev_node = sorted(max_prev_node)[-1*topk:]
         return max_prev_node
-
-
-def bfs_seq(G, start_id):
-    '''
-    get a bfs node sequence
-    :param G:
-    :param start_id:
-    :return:
-    '''
-    dictionary = dict(nx.bfs_successors(G, start_id))
-    start = [start_id]
-    output = [start_id]
-    while len(start) > 0:
-        next = []
-        while len(start) > 0:
-            current = start.pop(0)
-            neighbor = dictionary.get(current)
-            if neighbor is not None:
-                next = next + neighbor
-        output = output + next
-        start = next
-    return output
-
-
-def encode_adj(adj, max_prev_node=10, is_full = False):
-    '''
-
-    :param adj: n*n, rows means time step, while columns are input dimension
-    :param max_degree: we want to keep row number, but truncate column numbers
-    :return:
-    '''
-    if is_full:
-        max_prev_node = adj.shape[0]-1
-
-    # pick up lower tri
-    adj = np.tril(adj, k=-1)
-    n = adj.shape[0]
-    adj = adj[1:n, 0:n-1]
-
-    # use max_prev_node to truncate
-    # note: now adj is a (n-1)*(n-1) matrix
-    adj_output = np.zeros((adj.shape[0], max_prev_node))
-    for i in range(adj.shape[0]):
-        input_start = max(0, i - max_prev_node + 1)
-        input_end = i + 1
-        output_start = max_prev_node + input_start - input_end
-        output_end = max_prev_node
-        adj_output[i, output_start:output_end] = adj[i, input_start:input_end]
-        adj_output[i,:] = adj_output[i,:][::-1] # reverse order
-
-    return adj_output
-
-
-def decode_adj(adj_output):
-    '''
-        recover to adj from adj_output
-        note: here adj_output have shape (n-1)*m
-    '''
-    max_prev_node = adj_output.shape[1]
-    adj = np.zeros((adj_output.shape[0], adj_output.shape[0]))
-    for i in range(adj_output.shape[0]):
-        input_start = max(0, i - max_prev_node + 1)
-        input_end = i + 1
-        output_start = max_prev_node + max(0, i - max_prev_node + 1) - (i + 1)
-        output_end = max_prev_node
-        adj[i, input_start:input_end] = adj_output[i,::-1][output_start:output_end] # reverse order
-    adj_full = np.zeros((adj_output.shape[0]+1, adj_output.shape[0]+1))
-    n = adj_full.shape[0]
-    adj_full[1:n, 0:n-1] = np.tril(adj, 0)
-    # adj_full = adj_full + adj_full.T ########################## VERY IMPORTANT ##############################
-
-    return adj_full
-
-
-def encode_adj_flexible(adj):
-    '''
-    return a flexible length of output
-    note that here there is no loss when encoding/decoding an adj matrix
-    :param adj: adj matrix
-    :return:
-    '''
-    # pick up lower tri
-    adj = np.tril(adj, k=-1)
-    n = adj.shape[0]
-    adj = adj[1:n, 0:n-1]
-
-    adj_output = []
-    input_start = 0
-    for i in range(adj.shape[0]):
-        input_end = i + 1
-        adj_slice = adj[i, input_start:input_end]
-        adj_output.append(adj_slice)
-        non_zero = np.nonzero(adj_slice)[0]
-        input_start = input_end-len(adj_slice)+np.amin(non_zero)
-    return adj_output
