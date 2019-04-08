@@ -114,3 +114,4 @@ models/
 pickles/
 *.vscode/
 .temp/
+readgraph.py

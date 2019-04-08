@@ -18,7 +18,7 @@ print("Average clustering: %s" % nx.average_clustering(G1))
 # print("global efficiency: %s" % nx.algorithms.global_efficiency(G1))
 
 # Generated Graphs
-fname = 'graphs/GraphRNN_MLP_arch_4_128_pred_35500_3.dat'
+fname = 'graphs/GraphRNN_MLP_arch_4_128_pred_10000_3.dat'
 with open(fname, "rb") as f:
     graph_list = pickle.load(f)
 # for i in range(len(graph_list)):
