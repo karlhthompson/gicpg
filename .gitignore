@@ -105,12 +105,12 @@ venv.bak/
 .mypy_cache/
 
 # project files
-readgraph.py
+*.readgraph.py
 
 # project folders
 graphs/
 tensorboard/
 models/
 pickles/
-.vscode/
+*.vscode/
 .temp/
