@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key attr.name="data" attr.type="string" for="edge" id="d1"/>
 <key attr.name="data" attr.type="string" for="node" id="d0"/>
-<graph edgedefault="directed"><node id="ROOT:BridgePattern">
-  <data key="d0">ROOT</data>
+<graph edgedefault="directed"><node id="Package:patt_2">
+  <data key="d0">Package</data>
 </node>
 <node id="Package:Default">
   <data key="d0">Package</data>
@@ -38,7 +38,7 @@
   <data key="d0">Class</data>
 </node>
 <node id="STD_TYPE"/>
-<edge source="ROOT:BridgePattern" target="Package:Default">
+<edge source="Package:patt_2" target="Package:Default">
   <data key="d1">part-of</data>
 </edge>
 <edge source="Package:Default" target="Class:Abstraction">

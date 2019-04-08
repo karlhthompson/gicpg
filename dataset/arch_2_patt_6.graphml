@@ -3,8 +3,8 @@
   <key attr.name="data" attr.type="string" for="edge" id="d1" />
   <key attr.name="data" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="ROOT:Distiller">
-      <data key="d0">ROOT</data>
+    <node id="Package:Arch2">
+      <data key="d0">Package</data>
     </node>
     <node id="Package:Structure">
       <data key="d0">Package</data>
@@ -54,7 +54,7 @@
     <node id="Abstraction:Distill Water">
       <data key="d0">Abstraction</data>
     </node>
-    <node id="Class:Distiller">
+    <node id="Class:Arch2">
       <data key="d0">Class</data>
     </node>
     <node id="Property:bxLevelLow">
@@ -468,13 +468,13 @@
     <node id="Class:DrainResidue">
       <data key="d0">Class</data>
     </node>
-    <node id="Interaction:sd Operate Distiller">
+    <node id="Interaction:sd Operate Arch2">
       <data key="d0">Interaction</data>
     </node>
     <node id="Property:OperatorRole">
       <data key="d0">Property</data>
     </node>
-    <node id="Property:DistillerRole">
+    <node id="Property:Arch2Role">
       <data key="d0">Property</data>
     </node>
     <node id="Signal:evShutdown">
@@ -498,40 +498,40 @@
     <node id="Property:c1">
       <data key="d0">Property</data>
     </node>
-    <node id="CallEvent:Distiller.powerLampOnCalling">
+    <node id="CallEvent:Arch2.powerLampOnCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.powerLampOnSending">
+    <node id="SendOperationEvent:Arch2.powerLampOnSending">
       <data key="d0">SendOperationEvent</data>
     </node>
-    <node id="CallEvent:Distiller.operatingLampOnCalling">
+    <node id="CallEvent:Arch2.operatingLampOnCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.operatingLampOnSending">
+    <node id="SendOperationEvent:Arch2.operatingLampOnSending">
       <data key="d0">SendOperationEvent</data>
     </node>
-    <node id="CallEvent:Distiller.levelHighLampOnCalling">
+    <node id="CallEvent:Arch2.levelHighLampOnCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.levelHighLampOnSending">
+    <node id="SendOperationEvent:Arch2.levelHighLampOnSending">
       <data key="d0">SendOperationEvent</data>
     </node>
-    <node id="CallEvent:Distiller.drainingLampOnCalling">
+    <node id="CallEvent:Arch2.drainingLampOnCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.drainingLampOnSending">
+    <node id="SendOperationEvent:Arch2.drainingLampOnSending">
       <data key="d0">SendOperationEvent</data>
     </node>
-    <node id="CallEvent:Distiller.levelLowLampOnCalling">
+    <node id="CallEvent:Arch2.levelLowLampOnCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.levelLowLampOnSending">
+    <node id="SendOperationEvent:Arch2.levelLowLampOnSending">
       <data key="d0">SendOperationEvent</data>
     </node>
-    <node id="CallEvent:Distiller.turnOffCalling">
+    <node id="CallEvent:Arch2.turnOffCalling">
       <data key="d0">CallEvent</data>
     </node>
-    <node id="SendOperationEvent:Distiller.turnOffSending">
+    <node id="SendOperationEvent:Arch2.turnOffSending">
       <data key="d0">SendOperationEvent</data>
     </node>
     <node id="Property:N/A">
@@ -567,13 +567,13 @@
     <node id="Actor:Operator">
       <data key="d0">Actor</data>
     </node>
-    <node id="Actor:Distiller">
+    <node id="Actor:Arch2">
       <data key="d0">Actor</data>
     </node>
     <node id="Abstraction:Purify Water">
       <data key="d0">Abstraction</data>
     </node>
-    <node id="UseCase:Operate Distiller">
+    <node id="UseCase:Operate Arch2">
       <data key="d0">UseCase</data>
     </node>
     <node id="Signal:evPowerLampOn">
@@ -597,10 +597,10 @@
     <node id="Property:itsOperator">
       <data key="d0">Property</data>
     </node>
-    <node id="Property:itsOperate Distiller">
+    <node id="Property:itsOperate Arch2">
       <data key="d0">Property</data>
     </node>
-    <node id="Property:itsDistiller">
+    <node id="Property:itsArch2">
       <data key="d0">Property</data>
     </node>
     <node id="Package:ValueTypes">
@@ -817,8 +817,8 @@
       <data key="d0">Extension</data>
     </node>
     <node id="STD_TYPE" />
-    <node id="ROOT:PublishAndSubscribePattern">
-      <data key="d0">ROOT</data>
+    <node id="Package:PublishAndSubscribePattern">
+      <data key="d0">Package</data>
     </node>
     <node id="Package:Default">
       <data key="d0">Package</data>
@@ -892,25 +892,25 @@
     <node id="Class:State">
       <data key="d0">Class</data>
     </node>
-    <edge source="ROOT:Distiller" target="Package:Structure">
+    <edge source="Package:Arch2" target="Package:Structure">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:Behavior">
+    <edge source="Package:Arch2" target="Package:Behavior">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:UseCases">
+    <edge source="Package:Arch2" target="Package:UseCases">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:ValueTypes">
+    <edge source="Package:Arch2" target="Package:ValueTypes">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:Requirements">
+    <edge source="Package:Arch2" target="Package:Requirements">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:FlowItemTypes">
+    <edge source="Package:Arch2" target="Package:FlowItemTypes">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="ROOT:Distiller" target="Package:ProfileExtension">
+    <edge source="Package:Arch2" target="Package:ProfileExtension">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:Structure" target="InformationFlow:cIn_hx1">
@@ -958,7 +958,7 @@
     <edge source="Package:Structure" target="Abstraction:Distill Water">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Structure" target="Class:Distiller">
+    <edge source="Package:Structure" target="Class:Arch2">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:Structure" target="Abstraction:Boiler">
@@ -1072,67 +1072,67 @@
     <edge source="Abstraction:Distill Water" target="Package:Behavior">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:bxLevelLow">
+    <edge source="Class:Arch2" target="Property:bxLevelLow">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:bxLevelHigh">
+    <edge source="Class:Arch2" target="Property:bxLevelHigh">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:bxTemp">
+    <edge source="Class:Arch2" target="Property:bxTemp">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:cIn">
+    <edge source="Class:Arch2" target="Port:cIn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:qIn">
+    <edge source="Class:Arch2" target="Port:qIn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:cOut">
+    <edge source="Class:Arch2" target="Port:cOut">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:rOut">
+    <edge source="Class:Arch2" target="Port:rOut">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:dOut">
+    <edge source="Class:Arch2" target="Port:dOut">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Port:pIn">
+    <edge source="Class:Arch2" target="Port:pIn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:feed">
+    <edge source="Class:Arch2" target="Property:feed">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:ui1">
+    <edge source="Class:Arch2" target="Property:ui1">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:bx1">
+    <edge source="Class:Arch2" target="Property:bx1">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:cx1">
+    <edge source="Class:Arch2" target="Property:cx1">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:hx1">
+    <edge source="Class:Arch2" target="Property:hx1">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Property:drain">
+    <edge source="Class:Arch2" target="Property:drain">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:powerLampOn">
+    <edge source="Class:Arch2" target="Operation:powerLampOn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:operatingLampOn">
+    <edge source="Class:Arch2" target="Operation:operatingLampOn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:levelHighLampOn">
+    <edge source="Class:Arch2" target="Operation:levelHighLampOn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:drainingLampOn">
+    <edge source="Class:Arch2" target="Operation:drainingLampOn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:levelLowLampOn">
+    <edge source="Class:Arch2" target="Operation:levelLowLampOn">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Class:Distiller" target="Operation:turnOff">
+    <edge source="Class:Arch2" target="Operation:turnOff">
       <data key="d1">prop</data>
     </edge>
     <edge source="Property:bxLevelLow" target="STD_TYPE">
@@ -1495,7 +1495,7 @@
     <edge source="Package:Behavior" target="Class:DrainResidue">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="Interaction:sd Operate Distiller">
+    <edge source="Package:Behavior" target="Interaction:sd Operate Arch2">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:Behavior" target="Signal:evShutdown">
@@ -1504,40 +1504,40 @@
     <edge source="Package:Behavior" target="Class:BehaviorTopLevelClass">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.powerLampOnCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.powerLampOnCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.powerLampOnSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.powerLampOnSending">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.operatingLampOnCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.operatingLampOnCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.operatingLampOnSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.operatingLampOnSending">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.levelHighLampOnCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.levelHighLampOnCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.levelHighLampOnSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.levelHighLampOnSending">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.drainingLampOnCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.drainingLampOnCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.drainingLampOnSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.drainingLampOnSending">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.levelLowLampOnCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.levelLowLampOnCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.levelLowLampOnSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.levelLowLampOnSending">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="CallEvent:Distiller.turnOffCalling">
+    <edge source="Package:Behavior" target="CallEvent:Arch2.turnOffCalling">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:Behavior" target="SendOperationEvent:Distiller.turnOffSending">
+    <edge source="Package:Behavior" target="SendOperationEvent:Arch2.turnOffSending">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Interface:mRate_implicitType" target="Port:mRate">
@@ -1678,16 +1678,16 @@
     <edge source="Class:DrainResidue" target="Property:N/A">
       <data key="d1">is-type</data>
     </edge>
-    <edge source="Interaction:sd Operate Distiller" target="Property:OperatorRole">
+    <edge source="Interaction:sd Operate Arch2" target="Property:OperatorRole">
       <data key="d1">prop</data>
     </edge>
-    <edge source="Interaction:sd Operate Distiller" target="Property:DistillerRole">
+    <edge source="Interaction:sd Operate Arch2" target="Property:Arch2Role">
       <data key="d1">prop</data>
     </edge>
     <edge source="Property:OperatorRole" target="Actor:Operator">
       <data key="d1">is-type</data>
     </edge>
-    <edge source="Property:DistillerRole" target="Actor:Distiller">
+    <edge source="Property:Arch2Role" target="Actor:Arch2">
       <data key="d1">is-type</data>
     </edge>
     <edge source="Class:BehaviorTopLevelClass" target="Property:boiling">
@@ -1756,13 +1756,13 @@
     <edge source="Package:UseCases" target="Actor:Operator">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:UseCases" target="Actor:Distiller">
+    <edge source="Package:UseCases" target="Actor:Arch2">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:UseCases" target="Abstraction:Purify Water">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="Package:UseCases" target="UseCase:Operate Distiller">
+    <edge source="Package:UseCases" target="UseCase:Operate Arch2">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:UseCases" target="Signal:evPowerLampOn">
@@ -1786,19 +1786,19 @@
     <edge source="Actor:Operator" target="Property:itsOperator">
       <data key="d1">is-type</data>
     </edge>
-    <edge source="Actor:Distiller" target="Property:itsDistiller">
+    <edge source="Actor:Arch2" target="Property:itsArch2">
       <data key="d1">is-type</data>
     </edge>
     <edge source="Abstraction:Purify Water" target="Package:Requirements">
       <data key="d1">part-of</data>
     </edge>
-    <edge source="UseCase:Operate Distiller" target="Property:itsOperate Distiller">
+    <edge source="UseCase:Operate Arch2" target="Property:itsOperate Arch2">
       <data key="d1">is-type</data>
     </edge>
-    <edge source="Property:itsOperator" target="Property:itsOperate Distiller">
+    <edge source="Property:itsOperator" target="Property:itsOperate Arch2">
       <data key="d1">association</data>
     </edge>
-    <edge source="Property:itsOperate Distiller" target="Property:itsDistiller">
+    <edge source="Property:itsOperate Arch2" target="Property:itsArch2">
       <data key="d1">association</data>
     </edge>
     <edge source="Package:ValueTypes" target="Usage:Real">
@@ -2086,7 +2086,7 @@
     <edge source="STD_TYPE" target="Parameter:setStatus(Result)">
       <data key="d1">is-type</data>
     </edge>
-    <edge source="ROOT:PublishAndSubscribePattern" target="Package:Default">
+    <edge source="Package:PublishAndSubscribePattern" target="Package:Default">
       <data key="d1">part-of</data>
     </edge>
     <edge source="Package:Default" target="Class:Subscriber">

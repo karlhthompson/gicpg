@@ -4,12 +4,12 @@
   <key attr.name="patt" attr.type="string" for="node" id="d1" />
   <key attr.name="data" attr.type="string" for="node" id="d0" />
   <graph edgedefault="undirected">
-    <node id="NA3:FighterModel">
-      <data key="d0">NA3</data>
-    </node>
-    <node id="Package:FighterArchitecture">
+    <node id="Package:arch_1">
       <data key="d0">Package</data>
-      <data key="d1">Adapter</data>
+    </node>
+    <node id="Package:Arch1Architecture">
+      <data key="d0">Package</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Dependency:HighlevelArchitecture">
       <data key="d0">Dependency</data>
@@ -34,7 +34,7 @@
     </node>
     <node id="Property:itsMissionSupportSystem">
       <data key="d0">Property</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Property:itsElectricalPowerSystem">
       <data key="d0">Property</data>
@@ -197,7 +197,7 @@
     </node>
     <node id="Class:MissionSupportSystem">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Property:itsUniquePlanningComponent">
       <data key="d0">Property</data>
@@ -205,9 +205,9 @@
     <node id="Property:itsPlaybackControls">
       <data key="d0">Property</data>
     </node>
-    <node id="Property:itsOffboardDTDAdapter">
+    <node id="Property:itsOffboardDTDPatt1">
       <data key="d0">Property</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Property:itsDataTransferUnit">
       <data key="d0">Property</data>
@@ -220,26 +220,26 @@
     </node>
     <node id="Class:Terminal_System">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Property:itsTerminalTarget">
       <data key="d0">Property</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:TerminalTarget">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Operation:TransmitData">
       <data key="d0">Operation</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Parameter:TransmitData(Result)">
       <data key="d0">Parameter</data>
     </node>
-    <node id="Class:MissionSupportAdapter">
+    <node id="Class:MissionSupportPatt1">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Package:AvionicsSystemsPkg">
       <data key="d0">Package</data>
@@ -525,30 +525,30 @@
     </node>
     <node id="Package:FuelSystemPkg">
       <data key="d0">Package</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:FuelTank">
       <data key="d0">Class</data>
     </node>
-    <node id="Class:DefuelingAdapter">
+    <node id="Class:DefuelingPatt1">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
-    <node id="Class:RefuelingAdapter">
+    <node id="Class:RefuelingPatt1">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:GroundFuelingDefuelingSystem">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
-    <node id="Property:itsDefuelingAdapter">
+    <node id="Property:itsDefuelingPatt1">
       <data key="d0">Property</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
-    <node id="Property:itsRefuelingAdapter">
+    <node id="Property:itsRefuelingPatt1">
       <data key="d0">Property</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:AirRefuelingSystem">
       <data key="d0">Class</data>
@@ -921,14 +921,14 @@
     </node>
     <node id="Package:MissionSupportSystemPkg">
       <data key="d0">Package</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:UniquePlanningComponent">
       <data key="d0">Class</data>
     </node>
-    <node id="Class:OffboardDTDAdapter">
+    <node id="Class:OffboardDTDPatt1">
       <data key="d0">Class</data>
-      <data key="d1">Adapter</data>
+      <data key="d1">Patt1</data>
     </node>
     <node id="Class:DataTransferUnit">
       <data key="d0">Class</data>
@@ -1036,8 +1036,8 @@
       <data key="d0">Class</data>
     </node>
     <node id="STD_TYPE" />
-    <node id="ROOT:BridgePattern">
-      <data key="d0">ROOT</data>
+    <node id="Package:BridgePattern">
+      <data key="d0">Package</data>
     </node>
     <node id="Package:Default">
       <data key="d0">Package</data>
@@ -1072,82 +1072,82 @@
     <node id="Class:ConcreteImplementation">
       <data key="d0">Class</data>
     </node>
-    <edge source="NA3:FighterModel" target="Package:FighterArchitecture">
+    <edge source="Package:arch_1" target="Package:Arch1Architecture">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Dependency:HighlevelArchitecture">
+    <edge source="Package:Arch1Architecture" target="Dependency:HighlevelArchitecture">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:Aircraft">
+    <edge source="Package:Arch1Architecture" target="Class:Aircraft">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:Airframe">
+    <edge source="Package:Arch1Architecture" target="Class:Airframe">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:PropulsionSystem">
+    <edge source="Package:Arch1Architecture" target="Class:PropulsionSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:Avionics">
+    <edge source="Package:Arch1Architecture" target="Class:Avionics">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:FlightControlSystem">
+    <edge source="Package:Arch1Architecture" target="Class:FlightControlSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:FuelSystem">
+    <edge source="Package:Arch1Architecture" target="Class:FuelSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:ElectricalPowerSystem">
+    <edge source="Package:Arch1Architecture" target="Class:ElectricalPowerSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:HydraulicSystem">
+    <edge source="Package:Arch1Architecture" target="Class:HydraulicSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:CrewSystems">
+    <edge source="Package:Arch1Architecture" target="Class:CrewSystems">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:FlightDataRecorderSystem">
+    <edge source="Package:Arch1Architecture" target="Class:FlightDataRecorderSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:BrakingSystem">
+    <edge source="Package:Arch1Architecture" target="Class:BrakingSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:EnviromentalControlSystem">
+    <edge source="Package:Arch1Architecture" target="Class:EnviromentalControlSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:MissionSupportSystem">
+    <edge source="Package:Arch1Architecture" target="Class:MissionSupportSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:Terminal_System">
+    <edge source="Package:Arch1Architecture" target="Class:Terminal_System">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:TerminalTarget">
+    <edge source="Package:Arch1Architecture" target="Class:TerminalTarget">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Class:MissionSupportAdapter">
+    <edge source="Package:Arch1Architecture" target="Class:MissionSupportPatt1">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:AvionicsSystemsPkg">
+    <edge source="Package:Arch1Architecture" target="Package:AvionicsSystemsPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:PropulsionSystemPkg">
+    <edge source="Package:Arch1Architecture" target="Package:PropulsionSystemPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:AirframeSystemPkg">
+    <edge source="Package:Arch1Architecture" target="Package:AirframeSystemPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:VehicleSubsystemsPkg">
+    <edge source="Package:Arch1Architecture" target="Package:VehicleSubsystemsPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:CrewSystemsPkg">
+    <edge source="Package:Arch1Architecture" target="Package:CrewSystemsPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:FlightControlSytemPkg">
+    <edge source="Package:Arch1Architecture" target="Package:FlightControlSytemPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:FlightDataRecorderSystemPkg">
+    <edge source="Package:Arch1Architecture" target="Package:FlightDataRecorderSystemPkg">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FighterArchitecture" target="Package:MissionSupportSystemPkg">
+    <edge source="Package:Arch1Architecture" target="Package:MissionSupportSystemPkg">
       <data key="d2">part-of</data>
     </edge>
     <edge source="Class:Aircraft" target="Property:SizeCapacity">
@@ -1216,7 +1216,7 @@
     <edge source="Property:itsMissionSupportSystem" target="Class:MissionSupportSystem">
       <data key="d2">is-type</data>
     </edge>
-    <edge source="Property:itsMissionSupportSystem" target="Class:MissionSupportAdapter">
+    <edge source="Property:itsMissionSupportSystem" target="Class:MissionSupportPatt1">
       <data key="d2">prop</data>
     </edge>
     <edge source="Property:itsElectricalPowerSystem" target="Class:ElectricalPowerSystem">
@@ -1444,7 +1444,7 @@
     <edge source="Class:MissionSupportSystem" target="Property:itsPlaybackControls">
       <data key="d2">prop</data>
     </edge>
-    <edge source="Class:MissionSupportSystem" target="Property:itsOffboardDTDAdapter">
+    <edge source="Class:MissionSupportSystem" target="Property:itsOffboardDTDPatt1">
       <data key="d2">prop</data>
     </edge>
     <edge source="Class:MissionSupportSystem" target="Property:itsDataTransferUnit">
@@ -1462,7 +1462,7 @@
     <edge source="Property:itsPlaybackControls" target="Class:PlaybackControls">
       <data key="d2">is-type</data>
     </edge>
-    <edge source="Property:itsOffboardDTDAdapter" target="Class:OffboardDTDAdapter">
+    <edge source="Property:itsOffboardDTDPatt1" target="Class:OffboardDTDPatt1">
       <data key="d2">is-type</data>
     </edge>
     <edge source="Property:itsDataTransferUnit" target="Class:DataTransferUnit">
@@ -1483,7 +1483,7 @@
     <edge source="Class:TerminalTarget" target="Operation:TransmitData">
       <data key="d2">prop</data>
     </edge>
-    <edge source="Class:TerminalTarget" target="Class:MissionSupportAdapter">
+    <edge source="Class:TerminalTarget" target="Class:MissionSupportPatt1">
       <data key="d2">generalization</data>
     </edge>
     <edge source="Operation:TransmitData" target="Parameter:TransmitData(Result)">
@@ -1873,10 +1873,10 @@
     <edge source="Package:FuelSystemPkg" target="Class:FuelTank">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FuelSystemPkg" target="Class:DefuelingAdapter">
+    <edge source="Package:FuelSystemPkg" target="Class:DefuelingPatt1">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:FuelSystemPkg" target="Class:RefuelingAdapter">
+    <edge source="Package:FuelSystemPkg" target="Class:RefuelingPatt1">
       <data key="d2">part-of</data>
     </edge>
     <edge source="Package:FuelSystemPkg" target="Class:GroundFuelingDefuelingSystem">
@@ -1885,16 +1885,16 @@
     <edge source="Package:FuelSystemPkg" target="Class:AirRefuelingSystem">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Class:DefuelingAdapter" target="Property:itsDefuelingAdapter">
+    <edge source="Class:DefuelingPatt1" target="Property:itsDefuelingPatt1">
       <data key="d2">is-type</data>
     </edge>
-    <edge source="Class:RefuelingAdapter" target="Property:itsRefuelingAdapter">
+    <edge source="Class:RefuelingPatt1" target="Property:itsRefuelingPatt1">
       <data key="d2">is-type</data>
     </edge>
-    <edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsDefuelingAdapter">
+    <edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsDefuelingPatt1">
       <data key="d2">prop</data>
     </edge>
-    <edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsRefuelingAdapter">
+    <edge source="Class:GroundFuelingDefuelingSystem" target="Property:itsRefuelingPatt1">
       <data key="d2">prop</data>
     </edge>
     <edge source="Package:BrakingSystemPkg" target="Class:AntiSkidBrakingSubsystem">
@@ -2410,7 +2410,7 @@
     <edge source="Package:MissionSupportSystemPkg" target="Class:UniquePlanningComponent">
       <data key="d2">part-of</data>
     </edge>
-    <edge source="Package:MissionSupportSystemPkg" target="Class:OffboardDTDAdapter">
+    <edge source="Package:MissionSupportSystemPkg" target="Class:OffboardDTDPatt1">
       <data key="d2">part-of</data>
     </edge>
     <edge source="Package:MissionSupportSystemPkg" target="Class:DataTransferUnit">
@@ -2575,7 +2575,7 @@
     <edge source="STD_TYPE" target="Parameter:FunctionImplementation(Result)">
       <data key="d2">is-type</data>
     </edge>
-    <edge source="ROOT:BridgePattern" target="Package:Default">
+    <edge source="Package:BridgePattern" target="Package:Default">
       <data key="d2">part-of</data>
     </edge>
     <edge source="Package:Default" target="Class:Abstraction">
