@@ -6,27 +6,26 @@
 # =============================================================================
 """infer_attributes_ml - Infer attributes of an architecture graph using
 the following machine learning approaches: k-nearest-neighbors, decision
-trees, gaussian processes, and multi-layer perceptron"""
+trees, gradient boosting, and random forest"""
 # =============================================================================
 # Imports
 # =============================================================================
 import networkx as nx
 import pandas as pd
 import numpy as np
-from sklearn import neighbors, tree
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import normalize
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import VotingClassifier
 
-
-def infer_attributes_ml(Gnx, learnlist, clf, savepred=True, plot=False):
+def infer_attributes_ml(Gnx, archname, savepred=True):
     # Load the architecture graph(s)
-    archG = nx.DiGraph()
-    for graphname in learnlist:
-        graph = nx.read_graphml("dataset/" + graphname + ".graphml")
-        nodes = list(graph.nodes)
-        graph.node[nodes[0]]['data'] = 'Package'
-        graph.node[nodes[-1]]['data'] = 'Package'
-        archG = nx.compose(archG, graph)
+    archG = nx.read_graphml("dataset/" + archname + ".graphml")
+    nodes = list(archG.nodes)
+    archG.node[nodes[0]]['data'] = 'Package'
+    archG.node[nodes[-1]]['data'] = 'Package'
 
     # Create node type vector for the arch graph
     node_type_s = np.asarray([v for k, v in nx.get_node_attributes(archG, 'data').items()])
@@ -69,9 +68,17 @@ def infer_attributes_ml(Gnx, learnlist, clf, savepred=True, plot=False):
     node_data2 = np.hstack((indeg2, outdeg2, clustering_co2, core_number2, indeg_cent2, 
                         outdeg_cent2, close_cent2, between_cent2, sq_clustering2, pagerank2))
 
+    # Define the classifier functions
+    clf1 = DecisionTreeClassifier()
+    clf2 = GradientBoostingClassifier()
+    clf3 = KNeighborsClassifier(n_neighbors=10, weights='distance')
+    clf4 = RandomForestClassifier(n_estimators=100)
+    clf = VotingClassifier(estimators=[('clf1', clf1), ('clf2', clf2), 
+            ('clf3', clf3), ('clf4', clf4)], voting='soft')
+
     # Predict node labels
-    X = node_data
-    Xdash = node_data2
+    X = normalize(node_data)
+    Xdash = normalize(node_data2)
     y = node_type.astype(np.int)
     y_pred = clf.fit(X, y).predict(Xdash)
 
@@ -87,52 +94,26 @@ def infer_attributes_ml(Gnx, learnlist, clf, savepred=True, plot=False):
     for pred in range(len(y_pred)):
         y_pred[pred] = unique_types[int(y_pred[pred])]
 
+    # Merge the predicted node labels into the graph
+    node_ids = [k for k, v in Gnx.degree()]
+    for node in range(len(Gnx)):
+        Gnx.node[node_ids[node]]['Type'] = y_pred[node]
+
+    # Save the predicted node labels in excel format
     if savepred:
         if len(archG) == len(Gnx):
-            # Save the output in excel format
             output = pd.DataFrame({'Original': node_type_s, 'Predicted': y_pred})
             output.to_excel(".temp/output/ml_classification_output.xlsx")
         else:
             output = pd.DataFrame({'Predicted': y_pred})
             output.to_excel(".temp/output/ml_classification_output.xlsx")
 
-    if plot:
-        # Create color maps
-        import matplotlib.pyplot as plt
-        from matplotlib.colors import ListedColormap
-        h = .01  # step size in the mesh
-        cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
-        cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
-        clf = neighbors.KNeighborsClassifier(n_neighbors=10, weights='distance')
-        X = X[:, :2]
-        clf.fit(X, y)
-        x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-        y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
-        Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
-        Z = Z.reshape(xx.shape)
-        plt.figure()
-        plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
-        plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold, edgecolor='k', s=20)
-        plt.xlim(xx.min(), xx.max())
-        plt.ylim(yy.min(), yy.max())
-        plt.title("3-Class classification (k = %i, weights = '%s')" % (10, 'distance'))
-        plt.show()
-
-    return y_pred
+    return Gnx
 
 if __name__ == '__main__':
-    # Select which architecture graphs to learn from
-    learnlist = ['arch_2', 'arch_1']
-
     # Load the generated, unlabeled graph
-    Gnx = nx.read_graphml("dataset/" + "arch_2" + ".graphml")
-
-    # Select the classifier
-    clf = tree.DecisionTreeClassifier()
-    # clf = neighbors.KNeighborsClassifier(n_neighbors=10, weights='distance')
-    # clf = GaussianProcessClassifier()
-    # clf = MLPClassifier(activation='tanh', solver='lbfgs')
-
+    Gnx = nx.read_graphml("dataset/" + "arch_1" + ".graphml")
+    # Select which architecture graphs to learn from
+    archname = 'arch_1'
     # Call the inference function
-    y_pred = infer_attributes_ml(Gnx, learnlist, clf, savepred=True, plot=False)
+    Gnx = infer_attributes_ml(Gnx, archname, savepred=True)
