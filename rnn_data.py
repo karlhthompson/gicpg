@@ -36,7 +36,7 @@ def get_graph(adj):
     # adj = adj[~np.all(adj == 0, axis=1)]
     # adj = adj[:, ~np.all(adj == 0, axis=0)]
     adj = np.asmatrix(adj)
-    G = nx.from_numpy_matrix(adj, create_using=nx.DiGraph) ############ VERY IMPORTANT ##############
+    G = nx.from_numpy_matrix(adj, create_using=nx.DiGraph)
     return G
 
 def save_graph_list(G_list, fname):
@@ -108,7 +108,7 @@ def decode_adj(adj_output):
     adj_full = np.zeros((adj_output.shape[0]+1, adj_output.shape[0]+1))
     n = adj_full.shape[0]
     adj_full[1:n, 0:n-1] = np.tril(adj, 0)
-    # adj_full = adj_full + adj_full.T ########################## VERY IMPORTANT ##############################
+    # adj_full = adj_full + adj_full.T 
 
     return adj_full
 
@@ -154,12 +154,9 @@ class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
         else:
             self.max_prev_node = max_prev_node
 
-        # # sort Graph in descending order
-        # len_batch_order = np.argsort(np.array(self.len_all))[::-1]
-        # self.len_all = [self.len_all[i] for i in len_batch_order]
-        # self.adj_all = [self.adj_all[i] for i in len_batch_order]
     def __len__(self):
         return len(self.adj_all)
+        
     def __getitem__(self, idx):
         adj_copy = self.adj_all[idx].copy()
         nat_copy = self.nodeatt[idx].copy()
