@@ -15,41 +15,32 @@ import random
 def node_classifier(G):
     # A function to infer node type based on its degree
 
-    node_ids = [k for k, v in G.in_degree()]
+    node_ids = [k for k, v in G.degree()]
     in_deg = [v for k, v in G.in_degree()]
     out_deg = [v for k, v in G.out_degree()]
 
     for node in range(len(node_ids)):
-        
         G.node[node_ids[node]]['Type'] = {}
-
         if out_deg[node] > 1:
-
             if in_deg[node] > 1:
                 G.node[node_ids[node]]['Type'] = 'Class'
-
             if in_deg[node] < 1:
                 G.node[node_ids[node]]['Type'] = 'Package'
-
             if in_deg[node] == 1 and out_deg[node] > 10:
                 num = random.uniform(0, 1)
                 if num <= 0.33:
                     G.node[node_ids[node]]['Type'] = 'Class'
                 else:
                     G.node[node_ids[node]]['Type'] = 'Package'
-
             if in_deg[node] == 1 and out_deg[node] < 4:
                 num = random.uniform(0, 1)
                 if num <= 0.57:
                     G.node[node_ids[node]]['Type'] = 'Class'
                 else:
                     G.node[node_ids[node]]['Type'] = 'Package'
-
             if in_deg[node] == 1 and  G.node[node_ids[node]]['Type'] == {}:
                 G.node[node_ids[node]]['Type'] = 'Package'
-
         if out_deg[node] == 0:
-
             if in_deg[node] == 1:
                 num = random.uniform(0, 1)
                 if num <= 0.8:
@@ -58,15 +49,11 @@ def node_classifier(G):
                     G.node[node_ids[node]]['Type'] = 'Class'
                 else:
                     G.node[node_ids[node]]['Type'] = 'Package'
-
             if in_deg[node] > 1:
                 G.node[node_ids[node]]['Type'] = 'Class'
-
         if out_deg[node] == 1:
-
             if in_deg[node] == 0:
                 G.node[node_ids[node]]['Type'] = 'Package'
-
             if in_deg[node] == 1:
                 num = random.uniform(0, 1)
                 if num <= 0.92:
@@ -75,70 +62,50 @@ def node_classifier(G):
                     G.node[node_ids[node]]['Type'] = 'Parameter'
                 else:
                     G.node[node_ids[node]]['Type'] = 'Operation'
-
             if in_deg[node] > 1:
                 num = random.uniform(0, 1)
                 if num <= 0.67:
                     G.node[node_ids[node]]['Type'] = 'Class'
                 else:
                     G.node[node_ids[node]]['Type'] = 'Property'
-
     return G
 
 def edge_classifier(G):
     # A function to infer edge type based on its node types
 
     node_ids = [k for k, v in G.in_degree()]
-
     for node1 in range(len(node_ids)):
-
-        for node2 in range(len(node_ids)):
-            
-            if G.has_edge(node_ids[node1], node_ids[node2]):
-                
+        for node2 in range(len(node_ids)):          
+            if G.has_edge(node_ids[node1], node_ids[node2]):             
                 node1type = G.node[node_ids[node1]]['Type']
                 node2type = G.node[node_ids[node2]]['Type']
-
                 G[node_ids[node1]][node_ids[node2]]['EType'] = {}
-
                 if node1type == 'Class' and node2type == 'Property':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'prop'
-
                 if node1type == 'Class' and node2type == 'Operation':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'prop'
-
                 if node1type == 'Class' and node2type == 'Parameter':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'prop'
-
                 if node1type == 'Class' and node2type == 'Class':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'generalization'
-
                 if node1type == 'Operation' and node2type == 'Parameter':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'prop'
-
                 if node1type == 'Package':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'part-of'
-
                 if node1type == 'Parameter' and node2type == 'Class':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'is-type'
-
                 if node1type == 'Class' and node2type == 'Dependency':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'is-type'
-
                 if node1type == 'Property' and node2type == 'Class':
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'is-type'
-
                 if G[node_ids[node1]][node_ids[node2]]['EType'] == {}:
                     G[node_ids[node1]][node_ids[node2]]['EType'] = 'prop'
-
     return G
 
 def graph_classifier(G):
     # A function calling the node and edge classifier functions successively
-
     G1 = node_classifier(G)
     G2 = edge_classifier(G1)
-
     return G2
 
 if __name__ == '__main__':
