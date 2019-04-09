@@ -1,4 +1,3 @@
-# ai-architecture
+# AI-Architecture: Identifying Complex Patterns in Graphs
 
-repository for the “Agile AI-Assisted Architecture Assessment” project
-
+This is an on-going project focusing on identifying and defining patterns in large-scale networks representing operational systems.
