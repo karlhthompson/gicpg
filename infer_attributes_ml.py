@@ -6,7 +6,7 @@
 # =============================================================================
 """infer_attributes_ml - Infer attributes of an architecture graph using
 the following machine learning approaches: k-nearest-neighbors, decision
-trees, gradient boosting, and random forest"""
+trees, gradient boosting, and random forest classification."""
 # =============================================================================
 # Imports
 # =============================================================================
@@ -72,7 +72,7 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
     clf1 = DecisionTreeClassifier()
     clf2 = GradientBoostingClassifier()
     clf3 = KNeighborsClassifier(n_neighbors=10, weights='distance')
-    clf4 = RandomForestClassifier(n_estimators=100)
+    clf4 = RandomForestClassifier(n_estimators=10)
     clf = VotingClassifier(estimators=[('clf1', clf1), ('clf2', clf2), 
             ('clf3', clf3), ('clf4', clf4)], voting='soft', weights=[1,2,1,1])
 
