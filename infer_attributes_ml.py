@@ -13,7 +13,10 @@ trees, gradient boosting, and random forest classification."""
 import networkx as nx
 import pandas as pd
 import numpy as np
+from sklearn import linear_model
 from sklearn.preprocessing import normalize
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
@@ -29,14 +32,10 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
 
     # Create node type vector for the arch graph
     node_type_s = np.asarray([v for k, v in nx.get_node_attributes(archG, 'data').items()])
-    node_type = np.copy(node_type_s)
-    unique_types = np.unique(node_type)
-    number = 0
-    for uni_type in unique_types:
-        for node in range(len(node_type)):
-            if node_type[node] == uni_type:
-                node_type[node] = number
-        number += 1
+    unique_types = np.unique(node_type_s)
+    le = LabelEncoder()
+    le.fit(unique_types)
+    node_type = le.transform(node_type_s)
 
     # Create node data matrix for the arch graph
     indeg = np.asarray([[v] for k, v in archG.in_degree])
@@ -84,9 +83,9 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
 
     # Print model validation results
     if len(archG) == len(Gnx):
-        print("Number of mislabeled points out of a total %d points : %d"
+        print("Number of mislabeled nodes out of a total %d nodes : %d"
             % (node_data.shape[0],(y != y_pred).sum()))
-        print("Percentage of correctly labeled points : %f %%"
+        print("Percentage of correctly labeled nodes : %f %%"
             % np.divide((y == y_pred).sum()*100, (node_data.shape[0])))
 
     # Return node labels to strings
@@ -99,25 +98,86 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
     for node in range(len(Gnx)):
         Gnx.node[node_ids[node]]['Type'] = y_pred[node]
 
-    # Save the predicted node labels in excel format
+    # Create edge type vector for the arch graph
+    archG = nx.convert_node_labels_to_integers(archG)
+    edge_type_s = np.array(list(nx.get_edge_attributes(archG, 'data').items()))[:, 1]
+    unique_types = np.unique(edge_type_s)
+    le = LabelEncoder()
+    le.fit(unique_types)
+    edge_type = le.transform(edge_type_s)
+
+    # Create edge data matrix for the arch graph
+    edgelist = list(nx.edges(archG))
+    att_1 = []
+    att_2 = []
+    for n in range(len(edgelist)):
+        att_1.append(archG.node[int(edgelist[n][0])]['data'])
+        att_2.append(archG.node[int(edgelist[n][1])]['data'])
+    edge_data = np.column_stack((att_1, att_2))
+
+    # Create edge data matrix for the generated graph
+    Gnx = nx.convert_node_labels_to_integers(Gnx)
+    edgelist2 = list(nx.edges(Gnx))
+    att_1 = []
+    att_2 = []
+    for n in range(len(edgelist2)):
+        att_1.append(Gnx.node[int(edgelist2[n][0])]['Type'])
+        att_2.append(Gnx.node[int(edgelist2[n][1])]['Type'])
+    edge_data2 = np.column_stack((att_1, att_2))
+
+    # Encode edge data for both graphs using a one-hot encoder
+    enc = OneHotEncoder(handle_unknown='ignore').fit(edge_data)
+    edge_data_bi = enc.transform(edge_data).toarray()
+    edge_data_bi2 = enc.transform(edge_data2).toarray()
+
+    # Predict edge labels
+    clsf = linear_model.SGDClassifier(max_iter=1000, tol=1e-3)
+    ye_pred = clsf.fit(edge_data_bi, edge_type).predict(edge_data_bi2)
+
+    # Print model validation results
+    if len(archG) == len(Gnx):
+        print("Number of mislabeled edges out of a total %d edges : %d"
+            % (edge_data.shape[0],(edge_type != ye_pred).sum()))
+        print("Percentage of correctly labeled edges : %f %%"
+            % np.divide((edge_type == ye_pred).sum()*100, (edge_data.shape[0])))
+
+    # Return edge labels to strings
+    ye_pred = ye_pred.tolist()
+    for pred in range(len(ye_pred)):
+        ye_pred[pred] = unique_types[int(ye_pred[pred])]
+
+    # Merge the predicted edge labels into the graph
+    n = 0
+    for edge in Gnx.edges:
+        Gnx.edges[edge]['EType'] = ye_pred[n]
+        n += 1
+
+    # Save the predicted node and edge labels in excel format
     if savepred:
         if len(archG) == len(Gnx):
-            output = pd.DataFrame({'Original': node_type_s, 'Predicted': y_pred})
+            output = pd.DataFrame.from_dict({'Orig. Node Labels': node_type_s, 
+                'Pred. Node Labels': y_pred,'Orig. Edge Labels': edge_type_s, 
+                'Pred. Edge Labels': ye_pred}, orient='index')
+            output = output.transpose()
             output.to_excel(".temp/output/ml_classification_output.xlsx")
         else:
-            output = pd.DataFrame({'Predicted': y_pred})
+            output = pd.DataFrame.from_dict({'Pred. Node Labels': y_pred, 
+                'Pred. Edge Labels': ye_pred}, orient='index')
+            output = output.transpose()
             output.to_excel(".temp/output/ml_classification_output.xlsx")
 
     return Gnx
 
 if __name__ == '__main__':
+    # Select which architecture graphs to learn from
+    archname = 'arch_1'
     # Load the generated, unlabeled graph
     import pickle
     fname = 'graphs/GraphRNN_RNN_arch_4_128_pred_6000_1.dat'
     with open(fname, "rb") as f:
         graph_list = pickle.load(f)
     Gnx = graph_list[0]
-    # Select which architecture graphs to learn from
-    archname = 'arch_1'
+    # Optional: load the same architecture graph for validation
+    # Gnx = nx.read_graphml('dataset/' + archname + '.graphml')
     # Call the inference function
     Gnx = infer_attributes_ml(Gnx, archname, savepred=True)
