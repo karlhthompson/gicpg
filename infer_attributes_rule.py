@@ -11,10 +11,11 @@ a rule-based probabilistic clasifier"""
 # =============================================================================
 import networkx as nx 
 import random
+import pickle
+import pandas as pd
 
 def node_classifier(G):
     # A function to infer node type based on its degree
-
     node_ids = [k for k, v in G.degree()]
     in_deg = [v for k, v in G.in_degree()]
     out_deg = [v for k, v in G.out_degree()]
@@ -72,7 +73,6 @@ def node_classifier(G):
 
 def edge_classifier(G):
     # A function to infer edge type based on its node types
-
     node_ids = [k for k, v in G.in_degree()]
     for node1 in range(len(node_ids)):
         for node2 in range(len(node_ids)):          
@@ -106,8 +106,17 @@ def graph_classifier(G):
     # A function calling the node and edge classifier functions successively
     G1 = node_classifier(G)
     G2 = edge_classifier(G1)
+
+    # Save predicted node labels to an excel file
+    node_att = nx.get_node_attributes(G1, 'Type')
+    output = pd.DataFrame({'Predicted': node_att})
+    output.to_excel(".temp/output/rule_classification_output.xlsx")
     return G2
 
 if __name__ == '__main__':
-    G = graph_classifier(nx.read_graphml('dataset/arch_1.graphml'))
-    print(nx.info(G))
+    # Load the generated, unlabeled graph
+    fname = 'graphs/GraphRNN_RNN_arch_4_128_pred_6000_1.dat'
+    with open(fname, "rb") as f:
+        graph_list = pickle.load(f)
+    G = graph_classifier(graph_list[0])
+    # G = graph_classifier(nx.read_graphml('dataset/arch_1.graphml'))

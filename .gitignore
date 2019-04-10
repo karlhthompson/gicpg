@@ -106,7 +106,7 @@ venv.bak/
 
 # project files
 readgraph.py
-infer_attributes_rule
+infer_attributes_rule.py
 
 # project folders
 graphs/

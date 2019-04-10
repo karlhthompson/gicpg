@@ -74,7 +74,7 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
     clf3 = KNeighborsClassifier(n_neighbors=10, weights='distance')
     clf4 = RandomForestClassifier(n_estimators=100)
     clf = VotingClassifier(estimators=[('clf1', clf1), ('clf2', clf2), 
-            ('clf3', clf3), ('clf4', clf4)], voting='soft')
+            ('clf3', clf3), ('clf4', clf4)], voting='soft', weights=[1,2,1,1])
 
     # Predict node labels
     X = normalize(node_data)
@@ -112,7 +112,11 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
 
 if __name__ == '__main__':
     # Load the generated, unlabeled graph
-    Gnx = nx.read_graphml("dataset/" + "arch_1" + ".graphml")
+    import pickle
+    fname = 'graphs/GraphRNN_RNN_arch_4_128_pred_6000_1.dat'
+    with open(fname, "rb") as f:
+        graph_list = pickle.load(f)
+    Gnx = graph_list[0]
     # Select which architecture graphs to learn from
     archname = 'arch_1'
     # Call the inference function
