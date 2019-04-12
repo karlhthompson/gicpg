@@ -21,16 +21,16 @@ class Args():
         self.max_prev_node = None # max previous node that looks back
 
         ### network config
-        self.parameter_shrink = 1
+        self.parameter_shrink = 4
         self.hidden_size_rnn = int(128/self.parameter_shrink) # hidden size for main RNN
         self.hidden_size_rnn_output = 16 # hidden size for output RNN
         self.embedding_size_rnn = int(64/self.parameter_shrink) # the size for LSTM input
         self.embedding_size_rnn_output = 8 # the embedding size for output rnn
         self.embedding_size_output = int(64/self.parameter_shrink) # the embedding size for output (VAE/MLP)
 
-        self.batch_size = 4 # normal: 32, and the rest should be changed accordingly
-        self.test_batch_size = 4 # normal: 32
-        self.test_total_size = 10 # normal: 1000
+        self.batch_size = 1 # normal: 32, and the rest should be changed accordingly
+        self.test_batch_size = 1 # normal: 32
+        self.test_total_size = 100 # normal: 1000
         self.num_layers = 4
 
         ### training config
@@ -43,14 +43,14 @@ class Args():
         self.epochs_save = 250 # normal: 100
 
         self.lr = 0.003
-        self.milestones = [10000, 20000] # normal: [400, 1000]
+        self.milestones = [1000, 2000] # normal: [400, 1000]
         self.lr_rate = 0.3
 
         self.sample_time = 2 # sample time in each time step, when validating
 
         ### output config
         self.dir_input = "./"
-        self.model_save_path = self.dir_input+'models/' # only for nll evaluation
+        self.model_save_path = self.dir_input+'models/'
         self.graph_save_path = self.dir_input+'graphs/'
 
         self.load = False # if load model, default lr is very low

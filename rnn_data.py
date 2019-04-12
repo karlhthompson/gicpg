@@ -15,12 +15,13 @@ def create_graphs(args):
     graphlist = [f for f in listdir("./dataset") if isfile(join("./dataset", f))]
 
     for name in graphlist:
-        G = nx.read_graphml('dataset/' + name)
-        G = G.to_undirected()
-        G = max(nx.connected_component_subgraphs(G), key=len)
-        nodes = G.nodes._nodes
-        G_sub = G.subgraph(nodes)
-        graphs.append(G_sub)
+        if name == 'arch_1.graphml':
+            G = nx.read_graphml('dataset/' + name)
+            G = G.to_undirected()
+            G = max(nx.connected_component_subgraphs(G), key=len)
+            nodes = G.nodes._nodes
+            G_sub = G.subgraph(nodes)
+            graphs.append(G_sub)
 
     args.max_prev_node = 300 # Original: 300
 
