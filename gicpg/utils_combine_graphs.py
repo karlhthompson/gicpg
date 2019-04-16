@@ -10,7 +10,7 @@
 # =============================================================================
 import networkx as nx 
 import matplotlib.pyplot as plt 
-from check_patterns import check_patterns
+from gicpg.utils_check_patterns import check_patterns
 
 def combine_graphs(G1, G2, print_info=False, plot=False):
     # Use the union function
@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
     # Input graph 2
     pattname = 'patt_8'
-    G2 = nx.read_graphml('dataset/' + pattname + '.graphml')
+    G2 = nx.read_graphml('dataset/patterns/' + pattname + '.graphml')
     # G2 = G2.to_undirected()
 
     # Combine the two graphs
