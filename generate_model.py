@@ -6,7 +6,6 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 
-
 def binary_cross_entropy_weight(y_pred, y, has_weight=False, weight_length=1, weight_max=10):
     '''
 

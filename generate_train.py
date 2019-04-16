@@ -4,12 +4,11 @@ import time as tm
 import numpy as np
 from torch import optim
 from torch.autograd import Variable
-from tensorboard_logger import log_value
+from tensorboard_logger import Logger
 from torch.optim.lr_scheduler import MultiStepLR
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 from generate_model import sample_sigmoid, binary_cross_entropy_weight
 from generate_data import decode_adj, get_graph, save_graph_list
-
 
 # Training function
 def train(args, dataset_train, rnn, output):
@@ -118,7 +117,7 @@ def train_mlp_epoch(epoch, args, rnn, output, data_loader,
                 epoch, args.epochs,loss.item(), args.graph_type, args.num_layers, args.hidden_size_rnn))
 
         # logging
-        log_value('loss_'+args.fname, loss.item(), epoch*args.batch_ratio+batch_idx)
+        Logger('loss_'+args.fname, loss.item(), epoch*args.batch_ratio+batch_idx)
 
         loss_sum += loss.item()
     return loss_sum/(batch_idx+1)
