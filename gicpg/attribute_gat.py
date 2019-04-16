@@ -9,22 +9,22 @@ a graph attention network"""
 # =============================================================================
 # Imports
 # =============================================================================
-from keras import layers, optimizers, losses, metrics, Model
-from keras.callbacks import EarlyStopping, ModelCheckpoint
-from sklearn import feature_extraction, model_selection
-from stellargraph.mapper import FullBatchNodeGenerator
-from sklearn.decomposition import PCA
-from stellargraph.layer import GAT
-from itertools import combinations
-from sklearn.manifold import TSNE
-from sklearn.utils import shuffle
-import matplotlib.pyplot as plt
-import stellargraph as sg
-import networkx as nx
-import pandas as pd
-import numpy as np
-import datetime
 import os
+import datetime
+import numpy as np
+import pandas as pd
+import networkx as nx
+import stellargraph as sg
+import matplotlib.pyplot as plt
+from sklearn.utils import shuffle
+from sklearn.manifold import TSNE
+from itertools import combinations
+from stellargraph.layer import GAT
+from sklearn.decomposition import PCA
+from stellargraph.mapper import FullBatchNodeGenerator
+from sklearn import feature_extraction, model_selection
+from keras.callbacks import EarlyStopping, ModelCheckpoint
+from keras import layers, optimizers, losses, metrics, Model
 
 def infer_attributes_gat(Gnx, savepred=True, plot=False):
     # Define node data
