@@ -37,7 +37,7 @@ def radarplot(G1,G2):
     })
 
     # Number of variable
-    categories=list(df)[1:]
+    categories = list(df)[1:]
     N = len(categories)
 
     # Set angle of each axis in the plot
