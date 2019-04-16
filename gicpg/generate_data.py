@@ -13,7 +13,7 @@ def create_graphs(args):
     graphlist = [f for f in listdir("./dataset") if isfile(join("./dataset", f))]
 
     for name in graphlist:
-        if name == 'arch_1.graphml':
+        if 'arch' in name:
             G = nx.read_graphml('dataset/' + name)
             G = G.to_undirected()
             G = max(nx.connected_component_subgraphs(G), key=len)

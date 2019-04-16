@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
     # Input graph 2
     pattname = 'patt_8'
-    G2 = nx.read_graphml('dataset/patterns/' + pattname + '.graphml')
+    G2 = nx.read_graphml('dataset/' + pattname + '.graphml')
     # G2 = G2.to_undirected()
 
     # Combine the two graphs
