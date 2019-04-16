@@ -1,8 +1,7 @@
-### program configuration
+# Configuration File for the Graph Generation Component
 class Args():
     def __init__(self):
-        
-        ### network config
+        ### Network config
         self.parameter_shrink = 4
         self.hidden_size_rnn = int(128/self.parameter_shrink) # hidden size for main RNN
         self.hidden_size_rnn_output = 16 # hidden size for output RNN
@@ -15,7 +14,7 @@ class Args():
         self.test_total_size = 100 # normal: 1000
         self.num_layers = 4
 
-        ### training config
+        ### Training config
         self.num_workers = 4 # num workers to load data, default 4
         self.batch_ratio = 1 # normal: 32, how many batches of samples per epoch, default 32, e.g., 1 epoch = 32 batches
         self.epochs = 10000 # normal: 3000, now one epoch means self.batch_ratio x batch_size
@@ -30,7 +29,7 @@ class Args():
 
         self.sample_time = 2 # sample time in each time step, when validating
 
-        ### output config
+        ### Output config
         self.dir_input = "./"
         self.model_save_path = self.dir_input+'models/'
         self.graph_save_path = self.dir_input+'graphs/'
@@ -39,11 +38,10 @@ class Args():
         self.load_epoch = 3000 # normal: 3000
         self.save = True
 
-        # if none, then auto calculate
         self.max_num_node = None # max number of nodes in a graph
         self.max_prev_node = None # max previous node that looks back
 
-        ### filenames to save intemediate and final outputs
+        ### Filenames to save intemediate and final outputs
         self.note = 'MLP'
         self.graph_type = 'Arch'
         self.fname = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_'
