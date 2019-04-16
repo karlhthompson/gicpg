@@ -135,32 +135,3 @@ class MLP_plain(nn.Module):
     def forward(self, h):
         y = self.deterministic_output(h)
         return y
-
-# a deterministic linear output (update: add noise)
-class MLP_VAE_plain(nn.Module):
-    def __init__(self, h_size, embedding_size, y_size):
-        super(MLP_VAE_plain, self).__init__()
-        self.encode_11 = nn.Linear(h_size, embedding_size) # mu
-        self.encode_12 = nn.Linear(h_size, embedding_size) # lsgms
-
-        self.decode_1 = nn.Linear(embedding_size, embedding_size)
-        self.decode_2 = nn.Linear(embedding_size, y_size) # make edge prediction (reconstruct)
-        self.relu = nn.ReLU()
-
-        for m in self.modules():
-            if isinstance(m, nn.Linear):
-                m.weight.data = init.xavier_uniform_(m.weight.data, gain=nn.init.calculate_gain('relu'))
-
-    def forward(self, h):
-        # encoder
-        z_mu = self.encode_11(h)
-        z_lsgms = self.encode_12(h)
-        # reparameterize
-        z_sgm = z_lsgms.mul(0.5).exp_()
-        eps = Variable(torch.randn(z_sgm.size()))
-        z = eps*z_sgm + z_mu
-        # decoder
-        y = self.decode_1(z)
-        y = self.relu(y)
-        y = self.decode_2(y)
-        return y, z_mu, z_lsgms

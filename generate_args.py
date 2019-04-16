@@ -1,25 +1,7 @@
-
 ### program configuration
 class Args():
     def __init__(self):
-        ### if clean tensorboard
-        self.clean_tensorboard = False
         
-        ### Which CUDA GPU device is used for training
-        self.cuda = -1
-
-        ### Which GraphRNN model variant is used.
-        self.note = 'GraphRNN_MLP'
-        # self.note = 'GraphRNN_RNN'
-        # self.note = 'GraphRNN_VAE'
-
-        ### Which dataset is used to train the model
-        self.graph_type = 'arch'
-
-        # if none, then auto calculate
-        self.max_num_node = None # max number of nodes in a graph
-        self.max_prev_node = None # max previous node that looks back
-
         ### network config
         self.parameter_shrink = 4
         self.hidden_size_rnn = int(128/self.parameter_shrink) # hidden size for main RNN
@@ -57,7 +39,13 @@ class Args():
         self.load_epoch = 3000 # normal: 3000
         self.save = True
 
+        # if none, then auto calculate
+        self.max_num_node = None # max number of nodes in a graph
+        self.max_prev_node = None # max previous node that looks back
+
         ### filenames to save intemediate and final outputs
+        self.note = 'MLP'
+        self.graph_type = 'Arch'
         self.fname = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_'
         self.fname_pred = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_pred_'
         self.fname_train = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_train_'
