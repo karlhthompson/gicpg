@@ -1,13 +1,10 @@
+# Imports
 import torch
-import torch.utils.data
-import networkx as nx
-import numpy as np
-import random
 import pickle
+import numpy as np
+import networkx as nx
 from os import listdir
 from os.path import isfile, join
-
-from rnn_model import *
 
 def create_graphs(args):
     graphs=[]
@@ -160,7 +157,6 @@ class Graph_sequence_sampler_pytorch(torch.utils.data.Dataset):
         
     def __getitem__(self, idx):
         adj_copy = self.adj_all[idx].copy()
-        nat_copy = self.nodeatt[idx].copy()
         x_batch = np.zeros((self.n, self.max_prev_node))  # here zeros are padded for small graph
         x_batch[0,:] = 1 # the first input token is all ones
         y_batch = np.zeros((self.n, self.max_prev_node))  # here zeros are padded for small graph

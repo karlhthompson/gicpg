@@ -1,16 +1,13 @@
-from __future__ import unicode_literals, print_function, division
-from io import open
-
+# Imports
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
-from torch import optim
-import torch.nn.functional as F
 import torch.nn.init as init
+import torch.nn.functional as F
+from torch.autograd import Variable
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 
 
-def binary_cross_entropy_weight(y_pred, y,has_weight=False, weight_length=1, weight_max=10):
+def binary_cross_entropy_weight(y_pred, y, has_weight=False, weight_length=1, weight_max=10):
     '''
 
     :param y_pred:
@@ -43,7 +40,7 @@ def sample_sigmoid(y, sample, thresh=0.5, sample_time=2):
     y = torch.sigmoid(y)
     # do sampling
     if sample:
-        if sample_time>1:
+        if sample_time > 1:
             y_result = Variable(torch.rand(y.size(0),y.size(1),y.size(2)))
             # loop over all batches
             for i in range(y_result.size(0)):
@@ -51,7 +48,7 @@ def sample_sigmoid(y, sample, thresh=0.5, sample_time=2):
                 for j in range(sample_time):
                     y_thresh = Variable(torch.rand(y.size(1), y.size(2)))
                     y_result[i] = torch.gt(y[i], y_thresh).float()
-                    if (torch.sum(y_result[i]).data>0).any():
+                    if (torch.sum(y_result[i]).data > 0).any():
                         break
                     # else:
                     #     print('all zero',j)

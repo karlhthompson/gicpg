@@ -1,6 +1,9 @@
+# Imports
 import os
-
-# from rnn_train import *
+from generate_args import Args
+from generate_model import *
+from generate_data import *
+from generate_train import *
 
 # Load the training arguments
 args = Args()
