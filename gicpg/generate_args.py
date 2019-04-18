@@ -44,7 +44,7 @@ class Args():
         ### Filenames to save intemediate and final outputs
         self.note = 'MLP'
         self.graph_type = 'Arch'
-        self.fname = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_'
-        self.fname_pred = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_pred_'
-        self.fname_train = self.note+'_'+self.graph_type+'_'+str(self.num_layers)+'_'+ str(self.hidden_size_rnn)+'_train_'
-        self.fname_test = self.note + '_' + self.graph_type + '_' + str(self.num_layers) + '_' + str(self.hidden_size_rnn) + '_test_'
+        self.fname = self.note + '_' + self.graph_type + '_'
+        self.fname_pred = self.note + '_' + self.graph_type + '_pred_'
+        self.fname_train = self.note + '_' + self.graph_type + '_train_'
+        self.fname_test = self.note + '_' + self.graph_type + '_test_'
