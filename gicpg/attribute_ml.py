@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-# Created By  : Karl Thompson
-# Created Date: Mon March 25 17:34:00 CDT 2019
-# =============================================================================
 """infer_attributes_ml - Infer attributes of an architecture graph using
 the following machine learning approaches: k-nearest-neighbors, decision
 trees, gradient boosting, and random forest classification."""

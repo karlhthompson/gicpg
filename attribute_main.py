@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-# Created By  : Karl Thompson
-# Created Date: Thu April 18 12:12:00 CDT 2019
-# =============================================================================
-"""infer_attributes_gat - Infer attributes of an architecture graph using
-a graph attention network"""
+"""attribute_main - Infer attributes of the generated architecture graphs using
+a machine learning classification ensemble, defined in gicpg/attribute_ml.py"""
 # =============================================================================
 # Imports
 # =============================================================================
@@ -14,7 +11,8 @@ from os import listdir
 from os.path import isfile, join
 from gicpg.attribute_ml import infer_attributes_ml
 
-def main():
+if __name__ == '__main__':
+
     # Create a list of generated graph files
     graphfiles = [f for f in listdir("./graphs") if isfile(join("./graphs", f))]
 
@@ -38,5 +36,3 @@ def main():
         newgraphlist.append(graph)
 
     print()
-
-main()

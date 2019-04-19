@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""generate_data - Contains data processing functions for the Graph Generation 
+Component"""
+# =============================================================================
 # Imports
+# =============================================================================
 import torch
 import pickle
 import numpy as np

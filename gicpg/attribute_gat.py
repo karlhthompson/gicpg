@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-# Created By  : Karl Thompson
-# Created Date: Mon March 25 17:34:00 CDT 2019
-# =============================================================================
 """infer_attributes_gat - Infer attributes of an architecture graph using
 a graph attention network"""
 # =============================================================================

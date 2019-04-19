@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""generate_train - Contains training functions for the Graph Generation 
+Component"""
+# =============================================================================
 # Imports
+# =============================================================================
 import torch
 import time as tm
 import numpy as np

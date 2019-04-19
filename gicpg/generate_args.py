@@ -1,4 +1,8 @@
-# Configuration File for the Graph Generation Component
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""generate_args - Configuration File for the Graph Generation Component"""
+# =============================================================================
 class Args():
     def __init__(self):
         ### Network config

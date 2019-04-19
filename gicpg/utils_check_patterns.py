@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-# Created By  : Karl Thompson
-# Created Date: Mon March 25 17:34:00 CDT 2019
-# =============================================================================
 """check_patterns - Check whether a given graph contains a given pattern"""
 # =============================================================================
 # Imports

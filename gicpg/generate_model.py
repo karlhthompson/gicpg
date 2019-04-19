@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""generate_model - Contains model functions for the Graph Generation 
+Component"""
+# =============================================================================
 # Imports
+# =============================================================================
 import torch
 import torch.nn as nn
 import torch.nn.init as init

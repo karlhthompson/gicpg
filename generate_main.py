@@ -1,4 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""generate_main - Generate architecture graphs based on training data in the
+dataset folder. Training arguments are defined in gicpg/generate_args.py"""
+# =============================================================================
 # Imports
+# =============================================================================
 import os
 from gicpg.generate_args import Args
 from gicpg.generate_model import *
@@ -6,6 +13,7 @@ from gicpg.generate_data import *
 from gicpg.generate_train import *
 
 if __name__ == '__main__':
+
     # Load the training arguments
     args = Args()
 

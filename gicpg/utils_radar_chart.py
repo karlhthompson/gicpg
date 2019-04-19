@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# =============================================================================
+"""utils_radar_chart - Generate a radar chart comparing the attibutes of two 
+input graphs"""
+# =============================================================================
+# Imports
+# =============================================================================
 import matplotlib.pyplot as plt
 import pandas as pd
 from math import pi

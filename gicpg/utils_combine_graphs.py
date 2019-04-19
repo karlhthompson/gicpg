@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-# Created By  : Karl Thompson
-# Created Date: Mon March 25 17:34:00 CDT 2019
-# =============================================================================
 """combine_graphs - Combine two graphs and save the resulting graph"""
 # =============================================================================
 # Imports
