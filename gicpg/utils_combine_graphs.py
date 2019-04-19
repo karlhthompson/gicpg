@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-"""combine_graphs - Combine two graphs and save the resulting graph"""
+"""utils_combine_graphs - Combine two graphs and save the resulting graph"""
 # =============================================================================
 # Imports
 # =============================================================================

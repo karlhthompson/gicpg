@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-"""check_patterns - Check whether a given graph contains a given pattern"""
+"""utils_check_patterns - Check whether a given graph contains a given pattern"""
 # =============================================================================
 # Imports
 # =============================================================================
