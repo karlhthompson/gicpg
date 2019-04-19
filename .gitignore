@@ -115,6 +115,7 @@ graphs/
 tensorboard/
 models/
 pickles/
+attributed_graphs/
 *.vscode/
 .temp/
 
