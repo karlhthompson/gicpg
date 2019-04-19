@@ -36,7 +36,7 @@ if __name__ == '__main__':
     for graph in graphlist:
         graph = infer_attributes_ml(graph, archname, savepred=False)
         newgraphlist.append(graph)
-        print('Progress: graph', count)
+        print('Progress: graph %i out of %i' %(count, len(graphlist)))
         count += 1
 
     # Save attributed graphs to file
@@ -45,5 +45,3 @@ if __name__ == '__main__':
     with open('attributed_graphs/att_graphs_'+str(epoch)+'_'+str(sampling)+
             '.pkl', 'wb') as f:
         pickle.dump(newgraphlist, f)
-
-    print()
