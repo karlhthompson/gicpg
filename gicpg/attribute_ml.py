@@ -22,8 +22,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import VotingClassifier
+from sklearn.model_selection import train_test_split
 
-def infer_attributes_ml(Gnx, archname, savepred=True):
+def infer_attributes_ml(Gnx, archname, savepred=False, test=False):
     # Load the architecture graph(s)
     archG = nx.read_graphml("dataset/" + archname + ".graphml")
     nodes = list(archG.nodes)
@@ -47,10 +48,10 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
     close_cent = np.asarray([[v] for k, v in nx.algorithms.closeness_centrality(archG).items()])
     between_cent = np.asarray([[v] for k, v in nx.algorithms.betweenness_centrality(archG).items()])
     sq_clustering = np.asarray([[v] for k, v in nx.algorithms.square_clustering(archG).items()])
-    # pagerank = np.asarray([[v] for k, v in nx.algorithms.pagerank(archG).items()])
+    pagerank = np.asarray([[v] for k, v in nx.algorithms.pagerank(archG).items()])
 
     node_data = np.hstack((indeg, outdeg, clustering_co, core_number, indeg_cent, 
-                        outdeg_cent, close_cent, between_cent, sq_clustering))
+                        outdeg_cent, close_cent, between_cent, sq_clustering, pagerank))
 
     # Create node data matrix for the generated graph
     indeg2 = np.asarray([[v] for k, v in Gnx.in_degree])
@@ -62,10 +63,10 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
     close_cent2 = np.asarray([[v] for k, v in nx.algorithms.closeness_centrality(Gnx).items()])
     between_cent2 = np.asarray([[v] for k, v in nx.algorithms.betweenness_centrality(Gnx).items()])
     sq_clustering2 = np.asarray([[v] for k, v in nx.algorithms.square_clustering(Gnx).items()])
-    # pagerank2 = np.asarray([[v] for k, v in nx.algorithms.pagerank(Gnx).items()])
+    pagerank2 = np.asarray([[v] for k, v in nx.algorithms.pagerank(Gnx).items()])
 
     node_data2 = np.hstack((indeg2, outdeg2, clustering_co2, core_number2, indeg_cent2, 
-                        outdeg_cent2, close_cent2, between_cent2, sq_clustering2))
+                        outdeg_cent2, close_cent2, between_cent2, sq_clustering2, pagerank2))
 
     # Define the classifier functions
     clf1 = DecisionTreeClassifier()
@@ -76,11 +77,15 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
             ('clf3', clf3), ('clf4', clf4)], voting='soft', weights=[1,2,1,1])
 
     # Predict node labels
-    X = normalize(node_data)
-    Xdash = normalize(node_data2)
+    X = node_data
     y = node_type.astype(np.int)
-    y_pred = clf.fit(X, y).predict(Xdash)
-
+    if test:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15)
+        y_pred = clf.fit(X_train, y_train).predict(X_test)
+    else:
+        Xdash = node_data2
+        y_pred = clf.fit(X, y).predict(Xdash)
+    
     # Print model validation results
     if len(archG) == len(Gnx):
         print("Number of mislabeled nodes out of a total %d nodes : %d"
@@ -170,7 +175,7 @@ def infer_attributes_ml(Gnx, archname, savepred=True):
 
 if __name__ == '__main__':
     # Select which architecture graphs to learn from
-    archname = 'arch_1'
+    archname = 'arch_2'
     # Load the generated, unlabeled graph
     # import pickle
     # fname = 'graphs/GraphRNN_RNN_arch_4_128_pred_6000_1.dat'
@@ -180,4 +185,4 @@ if __name__ == '__main__':
     # Optional: load the same architecture graph for validation
     Gnx = nx.read_graphml('dataset/' + archname + '.graphml')
     # Call the inference function
-    Gnx = infer_attributes_ml(Gnx, archname, savepred=True)
+    Gnx = infer_attributes_ml(Gnx, archname, savepred=False, test=False)
