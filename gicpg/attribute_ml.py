@@ -24,7 +24,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import train_test_split
 
-def infer_attributes_ml(Gnx, archname, savepred=False, test=False):
+def infer_attributes_ml(Gnx, archname, savepred=False, testnodes=False):
     # Load the architecture graph(s)
     archG = nx.read_graphml("dataset/" + archname + ".graphml")
     nodes = list(archG.nodes)
@@ -79,19 +79,23 @@ def infer_attributes_ml(Gnx, archname, savepred=False, test=False):
     # Predict node labels
     X = node_data
     y = node_type.astype(np.int)
-    if test:
+    Xdash = node_data2
+    y_pred = clf.fit(X, y).predict(Xdash)
+    if testnodes:
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.15)
-        y_pred = clf.fit(X_train, y_train).predict(X_test)
-    else:
-        Xdash = node_data2
-        y_pred = clf.fit(X, y).predict(Xdash)
+        y_pred_part = clf.fit(X_train, y_train).predict(X_test)
     
     # Print model validation results
-    if len(archG) == len(Gnx):
+    if len(archG) == len(Gnx) and testnodes == False:
         print("Number of mislabeled nodes out of a total %d nodes : %d"
             % (node_data.shape[0],(y != y_pred).sum()))
         print("Percentage of correctly labeled nodes : %f %%"
             % np.divide((y == y_pred).sum()*100, (node_data.shape[0])))
+    elif len(archG) == len(Gnx) and testnodes == True:
+        print("Number of mislabeled nodes out of a total %d nodes : %d"
+            % (X_test.shape[0],(y_test != y_pred_part).sum()))
+        print("Percentage of correctly labeled nodes : %f %%"
+            % np.divide((y_test == y_pred_part).sum()*100, (X_test.shape[0])))
 
     # Return node labels to strings
     y_pred = y_pred.tolist()
@@ -185,4 +189,4 @@ if __name__ == '__main__':
     # Optional: load the same architecture graph for validation
     Gnx = nx.read_graphml('dataset/' + archname + '.graphml')
     # Call the inference function
-    Gnx = infer_attributes_ml(Gnx, archname, savepred=False, test=False)
+    Gnx = infer_attributes_ml(Gnx, archname, savepred=False, testnodes=False)
