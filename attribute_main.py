@@ -29,7 +29,7 @@ if __name__ == '__main__':
     with open('./graphs/' + fname, "rb") as f:
         graphlist = pickle.load(f)
 
-    # infer attributes of all graphs in graphlist
+    # Infer attributes of all graphs in graphlist
     archname = 'arch_1'
     newgraphlist = []
     count = 1
