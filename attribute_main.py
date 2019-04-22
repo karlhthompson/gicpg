@@ -45,15 +45,15 @@ if __name__ == '__main__':
         graph = graph.subgraph(graphund.nodes).copy()
         if (
             abs((nx.density(graph)/nx.density(ArchG))-1) >= 0.01 and #density ll
-            # abs((nx.density(graph)/nx.density(ArchG))-1) <= 0.20 and #density ul
+            abs((nx.density(graph)/nx.density(ArchG))-1) <= 0.20 and #density ul
             abs((nx.average_clustering(graph)/
                  nx.average_clustering(ArchG))-1) >= 0.01 and #clustering ll
             abs((nx.average_clustering(graph)/
                  nx.average_clustering(ArchG))-1) <= 0.20 and # clustering ul
             abs((nx.algorithms.local_efficiency(graphund)/
                  nx.algorithms.local_efficiency(ArchGund))-1) >= 0.01 and #efficiency ll
-            # abs((nx.algorithms.local_efficiency(graphund)/
-            #      nx.algorithms.local_efficiency(ArchGund))-1) <= 0.20 and #efficiency ul
+            abs((nx.algorithms.local_efficiency(graphund)/
+                 nx.algorithms.local_efficiency(ArchGund))-1) <= 0.20 and #efficiency ul
             abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and #radius ul
             abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4): #diameter ul
                 evalgraphlist.append(graph)
