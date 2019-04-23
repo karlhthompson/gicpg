@@ -52,27 +52,33 @@ if __name__ == '__main__':
             graphund = max((graph.to_undirected().subgraph(c) for c in 
                     nx.connected_components(graph.to_undirected())), key=len)
             graph = graph.subgraph(graphund.nodes).copy()
-            if (abs((nx.density(graph)/nx.density(ArchG))-1) >= 0.01 and
-                abs((nx.density(graph)/nx.density(ArchG))-1) <= 0.5 and
+            ll = 0.01
+            ul = 0.2
+            if (abs((nx.density(graph)/nx.density(ArchG))-1) >= ll and
+                abs((nx.density(graph)/nx.density(ArchG))-1) <= ul and
                 abs((nx.average_clustering(graph)/
-                    nx.average_clustering(ArchG))-1) >= 0.01 and
+                    nx.average_clustering(ArchG))-1) >= ll and
                 abs((nx.average_clustering(graph)/
-                    nx.average_clustering(ArchG))-1) <= 0.5 and 
-                abs((nx.algorithms.local_efficiency(graphund)/
-                    nx.algorithms.local_efficiency(ArchGund))-1) >= 0.01 and 
-                abs((nx.algorithms.local_efficiency(graphund)/
-                    nx.algorithms.local_efficiency(ArchGund))-1) <= 0.5 and 
+                    nx.average_clustering(ArchG))-1) <= ul and 
+                abs((nx.degree_assortativity_coefficient(graph)/
+                    nx.average_clustering(ArchG))-1) >= ll and
+                abs((nx.degree_assortativity_coefficient(graph)/
+                    nx.average_clustering(ArchG))-1) <= ul and 
+                # abs((nx.algorithms.local_efficiency(graphund)/
+                #     nx.algorithms.local_efficiency(ArchGund))-1) >= ll and 
+                # abs((nx.algorithms.local_efficiency(graphund)/
+                #     nx.algorithms.local_efficiency(ArchGund))-1) <= ul and 
                 abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and 
                 abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4): 
                     evalgraphlist.append(graph)
                     print('Graph added. Current length of evaluated graphs list is: %i' 
                         %(len(evalgraphlist)))
+            if len(evalgraphlist) == 1000: break
             print('Evaluation Progress: file %i out of %i: graph %i out of %i' 
                 %(fcount, len(graphfiles), gcount, len(graphlist)))
-            if len(evalgraphlist) == 1000: break
-            else: gcount += 1
+            gcount += 1
         if len(evalgraphlist) == 1000: break
-        else: fcount += 1
+        fcount += 1
     print('Evaluation complete. Final length of evaluated graphs list is: %i' 
         %(len(evalgraphlist)))
 
