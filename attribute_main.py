@@ -53,23 +53,27 @@ if __name__ == '__main__':
                     nx.connected_components(graph.to_undirected())), key=len)
             graph = graph.subgraph(graphund.nodes).copy()
             if (abs((nx.density(graph)/nx.density(ArchG))-1) >= 0.01 and
-                abs((nx.density(graph)/nx.density(ArchG))-1) <= 0.25 and
+                abs((nx.density(graph)/nx.density(ArchG))-1) <= 0.5 and
                 abs((nx.average_clustering(graph)/
                     nx.average_clustering(ArchG))-1) >= 0.01 and
                 abs((nx.average_clustering(graph)/
-                    nx.average_clustering(ArchG))-1) <= 0.25 and 
+                    nx.average_clustering(ArchG))-1) <= 0.5 and 
                 abs((nx.algorithms.local_efficiency(graphund)/
                     nx.algorithms.local_efficiency(ArchGund))-1) >= 0.01 and 
                 abs((nx.algorithms.local_efficiency(graphund)/
-                    nx.algorithms.local_efficiency(ArchGund))-1) <= 0.25 and 
+                    nx.algorithms.local_efficiency(ArchGund))-1) <= 0.5 and 
                 abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and 
                 abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4): 
                     evalgraphlist.append(graph)
+                    print('Graph added. Current length of evaluated graphs list is: %i' 
+                        %(len(evalgraphlist)))
             print('Evaluation Progress: file %i out of %i: graph %i out of %i' 
                 %(fcount, len(graphfiles), gcount, len(graphlist)))
-            gcount += 1
-        fcount += 1
-    print('Evaluation complete. Length of evaluated graphs list is: %i' 
+            if len(evalgraphlist) == 1000: break
+            else: gcount += 1
+        if len(evalgraphlist) == 1000: break
+        else: fcount += 1
+    print('Evaluation complete. Final length of evaluated graphs list is: %i' 
         %(len(evalgraphlist)))
 
     # Infer attributes of all evaluated graphs
