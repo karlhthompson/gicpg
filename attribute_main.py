@@ -61,9 +61,9 @@ if __name__ == '__main__':
                 abs((nx.average_clustering(graph)/
                     nx.average_clustering(ArchG))-1) <= ul and 
                 abs((nx.degree_assortativity_coefficient(graph)/
-                    nx.average_clustering(ArchG))-1) >= ll and
+                    nx.degree_assortativity_coefficient(ArchG))-1) >= ll and
                 abs((nx.degree_assortativity_coefficient(graph)/
-                    nx.average_clustering(ArchG))-1) <= ul and 
+                    nx.degree_assortativity_coefficient(ArchG))-1) <= ul and 
                 # abs((nx.algorithms.local_efficiency(graphund)/
                 #     nx.algorithms.local_efficiency(ArchGund))-1) >= ll and 
                 # abs((nx.algorithms.local_efficiency(graphund)/
