@@ -18,6 +18,7 @@ if __name__ == '__main__':
     
     # Create a list of generated graph files
     graphfiles = [f for f in listdir("./graphs") if isfile(join("./graphs",f))]
+    graphfiles.reverse()
 
     # # Input desired epoch and sampling time of the generated graphs
     # epoch = 3500
@@ -52,32 +53,30 @@ if __name__ == '__main__':
             graphund = max((graph.to_undirected().subgraph(c) for c in 
                     nx.connected_components(graph.to_undirected())), key=len)
             graph = graph.subgraph(graphund.nodes).copy()
-            ll = 0.01
-            ul = 0.2
-            if (abs((nx.density(graph)/nx.density(ArchG))-1) >= ll and
+            ll = 0.01   # lower limit
+            ul = 0.25   # upper limit
+            sl = 10     # sample limit
+            if (
+                abs((nx.density(graph)/nx.density(ArchG))-1) >= ll and
                 abs((nx.density(graph)/nx.density(ArchG))-1) <= ul and
                 abs((nx.average_clustering(graph)/
                     nx.average_clustering(ArchG))-1) >= ll and
                 abs((nx.average_clustering(graph)/
                     nx.average_clustering(ArchG))-1) <= ul and 
-                abs((nx.degree_assortativity_coefficient(graph)/
-                    nx.degree_assortativity_coefficient(ArchG))-1) >= ll and
-                abs((nx.degree_assortativity_coefficient(graph)/
-                    nx.degree_assortativity_coefficient(ArchG))-1) <= ul and 
-                # abs((nx.algorithms.local_efficiency(graphund)/
-                #     nx.algorithms.local_efficiency(ArchGund))-1) >= ll and 
-                # abs((nx.algorithms.local_efficiency(graphund)/
-                #     nx.algorithms.local_efficiency(ArchGund))-1) <= ul and 
+                abs((nx.algorithms.local_efficiency(graphund)/
+                    nx.algorithms.local_efficiency(ArchGund))-1) >= ll and 
+                abs((nx.algorithms.local_efficiency(graphund)/
+                    nx.algorithms.local_efficiency(ArchGund))-1) <= ul and 
                 abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and 
                 abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4): 
                     evalgraphlist.append(graph)
                     print('Graph added. Current length of evaluated graphs list is: %i' 
                         %(len(evalgraphlist)))
-            if len(evalgraphlist) == 1000: break
+            if len(evalgraphlist) == sl: break
             print('Evaluation Progress: file %i out of %i: graph %i out of %i' 
                 %(fcount, len(graphfiles), gcount, len(graphlist)))
             gcount += 1
-        if len(evalgraphlist) == 1000: break
+        if len(evalgraphlist) == sl: break
         fcount += 1
     print('Evaluation complete. Final length of evaluated graphs list is: %i' 
         %(len(evalgraphlist)))
