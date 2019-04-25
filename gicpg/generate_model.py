@@ -13,9 +13,9 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence
 
-def binary_cross_entropy_weight(y_pred, y, has_weight=False, weight_length=1, weight_max=10):
+def binary_cross_entropy_weight(y_pred, y, has_weight=False, weight_length=1, 
+                                weight_max=10):
     '''
-
     :param y_pred:
     :param y:
     :param weight_length: how long until the end of sequence shall we add weight
@@ -23,9 +23,11 @@ def binary_cross_entropy_weight(y_pred, y, has_weight=False, weight_length=1, we
     :return:
     '''
     if has_weight:
-        weight = torch.ones(y.size(0),y.size(1),y.size(2))
-        weight_linear = torch.arange(1,weight_length+1)/weight_length*weight_max
-        weight_linear = weight_linear.view(1,weight_length,1).repeat(y.size(0),1,y.size(2))
+        weight = torch.ones(y.size(0), y.size(1), y.size(2))
+        weight_linear = torch.arange(1, weight_length + 1) / 
+                        weight_length*weight_max
+        weight_linear = weight_linear.view(1, weight_length, 1).repeat(y.size(0), 
+                        1, y.size(2))
         weight[:,-1*weight_length:,:] = weight_linear
         loss = F.binary_cross_entropy(y_pred, y, weight=weight)
     else:
@@ -47,7 +49,7 @@ def sample_sigmoid(y, sample, thresh=0.5, sample_time=2):
     # do sampling
     if sample:
         if sample_time > 1:
-            y_result = Variable(torch.rand(y.size(0),y.size(1),y.size(2)))
+            y_result = Variable(torch.rand(y.size(0), y.size(1), y.size(2)))
             # loop over all batches
             for i in range(y_result.size(0)):
                 # do 'multi_sample' times sampling
@@ -56,11 +58,9 @@ def sample_sigmoid(y, sample, thresh=0.5, sample_time=2):
                     y_result[i] = torch.gt(y[i], y_thresh).float()
                     if (torch.sum(y_result[i]).data > 0).any():
                         break
-                    # else:
-                    #     print('all zero',j)
         else:
-            y_thresh = Variable(torch.rand(y.size(0),y.size(1),y.size(2)))
-            y_result = torch.gt(y,y_thresh).float()
+            y_thresh = Variable(torch.rand(y.size(0), y.size(1), y.size(2)))
+            y_result = torch.gt(y, y_thresh).float()
     # do max likelihood based on some threshold
     else:
         y_thresh = Variable(torch.ones(y.size(0), y.size(1), y.size(2))*thresh)
@@ -69,7 +69,8 @@ def sample_sigmoid(y, sample, thresh=0.5, sample_time=2):
 
 # plain GRU model
 class GRU_plain(nn.Module):
-    def __init__(self, input_size, embedding_size, hidden_size, num_layers, has_input=True, has_output=False, output_size=None):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, 
+                 has_input=True, has_output=False, output_size=None):
         super(GRU_plain, self).__init__()
         self.num_layers = num_layers
         self.hidden_size = hidden_size
@@ -78,10 +79,11 @@ class GRU_plain(nn.Module):
 
         if has_input:
             self.input = nn.Linear(input_size, embedding_size)
-            self.rnn = nn.GRU(input_size=embedding_size, hidden_size=hidden_size, num_layers=num_layers,
-                              batch_first=True)
+            self.rnn = nn.GRU(input_size=embedding_size, hidden_size=hidden_size, 
+                              num_layers=num_layers, batch_first=True)
         else:
-            self.rnn = nn.GRU(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers, batch_first=True)
+            self.rnn = nn.GRU(input_size=input_size, hidden_size=hidden_size, 
+                              num_layers=num_layers, batch_first=True)
         if has_output:
             self.output = nn.Sequential(
                 nn.Linear(hidden_size, embedding_size),
@@ -97,10 +99,12 @@ class GRU_plain(nn.Module):
             if 'bias' in name:
                 nn.init.constant_(param, 0.25)
             elif 'weight' in name:
-                nn.init.xavier_uniform_(param,gain=nn.init.calculate_gain('sigmoid'))
+                nn.init.xavier_uniform_(param, 
+                                        gain=nn.init.calculate_gain('sigmoid'))
         for m in self.modules():
             if isinstance(m, nn.Linear):
-                m.weight.data = init.xavier_uniform_(m.weight.data, gain=nn.init.calculate_gain('relu'))
+                m.weight.data = init.xavier_uniform_(m.weight.data, 
+                                    gain=nn.init.calculate_gain('relu'))
 
     def init_hidden(self, batch_size):
         return Variable(torch.zeros(self.num_layers, batch_size, self.hidden_size))
@@ -133,7 +137,8 @@ class MLP_plain(nn.Module):
 
         for m in self.modules():
             if isinstance(m, nn.Linear):
-                m.weight.data = init.xavier_uniform_(m.weight.data, gain=nn.init.calculate_gain('relu'))
+                m.weight.data = init.xavier_uniform_(m.weight.data, 
+                                    gain=nn.init.calculate_gain('relu'))
 
     def forward(self, h):
         y = self.deterministic_output(h)
