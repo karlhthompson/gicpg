@@ -19,18 +19,6 @@ if __name__ == '__main__':
     # Create a list of generated graph files
     graphfiles = [f for f in listdir("./graphs") if isfile(join("./graphs",f))]
     graphfiles.reverse()
-
-    # # Input desired epoch and sampling time of the generated graphs
-    # epoch = 3500
-    # sampling = 3
-
-    # # Load the generated graphs file  with the desired attributes
-    # att = str(epoch) + '_' + str(sampling)
-    # for graphfile in graphfiles:
-    #     if att in graphfile:
-    #         fname = graphfile
-    # with open('./graphs/' + fname, "rb") as f:
-    #     graphlist = pickle.load(f)
         
     # Load the original architecture graph
     archname = 'arch_1'
