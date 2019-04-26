@@ -56,7 +56,8 @@ if __name__ == '__main__':
                 abs((nx.algorithms.local_efficiency(graphund)/
                     nx.algorithms.local_efficiency(ArchGund))-1) <= ul and 
                 abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and 
-                abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4): 
+                abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4
+                ): 
                     evalgraphlist.append(graph)
                     print('Graph added. Current length of evaluated graphs list is: %i' 
                         %(len(evalgraphlist)))
