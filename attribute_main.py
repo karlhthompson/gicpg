@@ -55,7 +55,7 @@ if __name__ == '__main__':
             graph = graph.subgraph(graphund.nodes).copy()
             ll = 0.01   # lower limit
             ul = 0.25   # upper limit
-            sl = 10     # sample limit
+            sl = 1000     # sample limit
             if (
                 abs((nx.density(graph)/nx.density(ArchG))-1) >= ll and
                 abs((nx.density(graph)/nx.density(ArchG))-1) <= ul and
