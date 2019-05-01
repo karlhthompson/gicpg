@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # =============================================================================
-"""infer_attributes_ml - Infer attributes of an architecture graph using
-the following machine learning approaches: k-nearest-neighbors, decision
-trees, gradient boosting, and random forest classification."""
+"""infer_attributes_ml - Infer attributes of an architecture graph using an
+ensemble of random forests (an averaging method) and gradient tree boosting 
+(a boosting method)."""
 # =============================================================================
 # Imports
 # =============================================================================
@@ -14,8 +14,6 @@ from sklearn import linear_model
 from sklearn.preprocessing import normalize
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import VotingClassifier
@@ -66,12 +64,9 @@ def infer_attributes_ml(Gnx, archname, savepred=False, testnodes=False):
                         outdeg_cent2, close_cent2, between_cent2, sq_clustering2, pagerank2))
 
     # Define the classifier functions
-    clf1 = DecisionTreeClassifier()
+    clf1 = RandomForestClassifier(n_estimators=10)
     clf2 = GradientBoostingClassifier()
-    clf3 = KNeighborsClassifier(n_neighbors=10, weights='distance')
-    clf4 = RandomForestClassifier(n_estimators=10)
-    clf = VotingClassifier(estimators=[('clf1', clf1), ('clf2', clf2), 
-            ('clf3', clf3), ('clf4', clf4)], voting='soft', weights=[1,2,1,1])
+    clf = VotingClassifier(estimators=[('clf1', clf1), ('clf2', clf2)], voting='soft')
 
     # Predict node labels
     X = node_data
@@ -186,4 +181,4 @@ if __name__ == '__main__':
     # Optional: load the same architecture graph for validation
     Gnx = nx.read_graphml('dataset/' + archname + '.graphml')
     # Call the inference function
-    Gnx = infer_attributes_ml(Gnx, archname, savepred=False, testnodes=False)
+    Gnx = infer_attributes_ml(Gnx, archname, savepred=True, testnodes=False)
