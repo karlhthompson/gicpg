@@ -41,8 +41,9 @@ if __name__ == '__main__':
             graphund = max((graph.to_undirected().subgraph(c) for c in 
                     nx.connected_components(graph.to_undirected())), key=len)
             graph = graph.subgraph(graphund.nodes).copy()
-            ll = 0.01   # lower limit
-            ul = 0.25   # upper limit
+            ll = 0.01     # lower limit
+            ul = 0.25     # upper limit
+            el = 4        # eccentricity limit 
             sl = 1000     # sample limit
             if (
                 abs((nx.density(graph)/nx.density(ArchG))-1) >= ll and
@@ -55,8 +56,8 @@ if __name__ == '__main__':
                     nx.algorithms.local_efficiency(ArchGund))-1) >= ll and 
                 abs((nx.algorithms.local_efficiency(graphund)/
                     nx.algorithms.local_efficiency(ArchGund))-1) <= ul and 
-                abs((nx.radius(graphund)-nx.radius(ArchGund))) <= 4 and 
-                abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= 4
+                abs((nx.radius(graphund)-nx.radius(ArchGund))) <= el and 
+                abs((nx.diameter(graphund)-nx.diameter(ArchGund))) <= el
                 ): 
                     evalgraphlist.append(graph)
                     print('Graph added. Current length of evaluated graphs list is: %i' 
