@@ -105,12 +105,12 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# project files
+# Project files
 readgraph.py
 attribute_rule.py
 test.py
 
-# project folders
+# Project folders
 graphs/
 tensorboard/
 models/
@@ -118,4 +118,3 @@ pickles/
 attributed_graphs/
 *.vscode/
 .temp/
-
