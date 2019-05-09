@@ -264,31 +264,14 @@ def infer_attributes_gat(Gnx, savepred=True, plot=False):
 
 if __name__ == '__main__':
     # Load the architecture graph
-    graphname = "arch_2"
+    graphname = "arch_1"
     Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
     nodes = list(Gnx.nodes)
     Gnx.node[nodes[0]]['data'] = 'Package'
     Gnx.node[nodes[-1]]['data'] = 'Package'
-    # for node in nodes:
-    #     if Gnx.node[node]['data'] == 'Port':
-    #         Gnx.node[node]['data'] = 'Package'
-    #     elif Gnx.node[node]['data'] == 'Profile':
-    #         Gnx.node[node]['data'] = 'Package'
-    #     elif Gnx.node[node]['data'] == 'Signal':
-    #         Gnx.node[node]['data'] = 'Package'
-    #     elif Gnx.node[node]['data'] == 'Extension':
-    #         Gnx.node[node]['data'] = 'Dependency'
-    #     elif Gnx.node[node]['data'] == 'Stereotype':
-    #         Gnx.node[node]['data'] = 'Dependency'
-    #     elif Gnx.node[node]['data'] == 'Parameter':
-    #         Gnx.node[node]['data'] = 'Dependency'
-    #     elif Gnx.node[node]['data'] == 'Operation':
-    #         Gnx.node[node]['data'] = 'Dependency'
 
     # Increase number of input data points
     # Gnx = nx.disjoint_union_all([Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx])
-    Gnx = nx.disjoint_union_all([Gnx])
-    nodes = list(Gnx.nodes)
 
     # Call the inference function
     df = infer_attributes_gat(Gnx, savepred=True, plot=True)
