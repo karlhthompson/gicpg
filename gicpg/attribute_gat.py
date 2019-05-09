@@ -119,8 +119,8 @@ def infer_attributes_gat(Gnx, savepred=True, plot=False):
     node_data = shuffle(node_data)
 
     # Split the data
-    train_data, test_data = model_selection.train_test_split(node_data, train_size=int(0.80*len(Gnx)), test_size=None, stratify=node_data['node_type'])
-    val_data, test_data = model_selection.train_test_split(test_data, train_size=int(0.15*len(Gnx)), test_size=None, stratify=test_data['node_type'])
+    train_data, test_data = model_selection.train_test_split(node_data, train_size=int(0.80*len(Gnx)))
+    val_data, test_data = model_selection.train_test_split(test_data, train_size=int(0.15*len(Gnx)))
 
     # Convert to numeric arrays
     target_encoding = feature_extraction.DictVectorizer(sparse=False)
@@ -264,26 +264,26 @@ def infer_attributes_gat(Gnx, savepred=True, plot=False):
 
 if __name__ == '__main__':
     # Load the architecture graph
-    graphname = "arch_1"
+    graphname = "arch_2"
     Gnx = nx.read_graphml("dataset/" + graphname + ".graphml")
     nodes = list(Gnx.nodes)
     Gnx.node[nodes[0]]['data'] = 'Package'
     Gnx.node[nodes[-1]]['data'] = 'Package'
-    for node in nodes:
-        if Gnx.node[node]['data'] == 'Port':
-            Gnx.node[node]['data'] = 'Package'
-        elif Gnx.node[node]['data'] == 'Profile':
-            Gnx.node[node]['data'] = 'Package'
-        elif Gnx.node[node]['data'] == 'Signal':
-            Gnx.node[node]['data'] = 'Package'
-        elif Gnx.node[node]['data'] == 'Extension':
-            Gnx.node[node]['data'] = 'Dependency'
-        elif Gnx.node[node]['data'] == 'Stereotype':
-            Gnx.node[node]['data'] = 'Dependency'
-        elif Gnx.node[node]['data'] == 'Parameter':
-            Gnx.node[node]['data'] = 'Dependency'
-        elif Gnx.node[node]['data'] == 'Operation':
-            Gnx.node[node]['data'] = 'Dependency'
+    # for node in nodes:
+    #     if Gnx.node[node]['data'] == 'Port':
+    #         Gnx.node[node]['data'] = 'Package'
+    #     elif Gnx.node[node]['data'] == 'Profile':
+    #         Gnx.node[node]['data'] = 'Package'
+    #     elif Gnx.node[node]['data'] == 'Signal':
+    #         Gnx.node[node]['data'] = 'Package'
+    #     elif Gnx.node[node]['data'] == 'Extension':
+    #         Gnx.node[node]['data'] = 'Dependency'
+    #     elif Gnx.node[node]['data'] == 'Stereotype':
+    #         Gnx.node[node]['data'] = 'Dependency'
+    #     elif Gnx.node[node]['data'] == 'Parameter':
+    #         Gnx.node[node]['data'] = 'Dependency'
+    #     elif Gnx.node[node]['data'] == 'Operation':
+    #         Gnx.node[node]['data'] = 'Dependency'
 
     # Increase number of input data points
     # Gnx = nx.disjoint_union_all([Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx, Gnx])
