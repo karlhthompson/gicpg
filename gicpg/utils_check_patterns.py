@@ -50,12 +50,12 @@ def check_patterns(G1, G2, saveisolist=False, readisolist=False, plot=False):
 if __name__ == '__main__':
     # Load graphs
     G1 = nx.read_graphml('dataset/arch_1.graphml')
-    G2 = nx.read_graphml('dataset/patt_8.graphml')
+    G2 = nx.read_graphml('dataset/patt_1.graphml')
 
     # # Transform to undirected
     # G1 = G1.to_undirected()
     # G2 = G2.to_undirected()
 
     # Check whether the graphs contain the pattern
-    isomorph = check_patterns(G1, G2)
+    isomorph = check_patterns(G1, G2, saveisolist=False, readisolist=False, plot=False)
     print("Is the generated and pattern graphs isomorphic: %s" % isomorph)
