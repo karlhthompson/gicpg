@@ -51,7 +51,7 @@ def combine_graphs(archgraph, pattgraphs, print_info=False, plot=False):
         # Check isomorphism
         isolist = []
         for patt in pattgraphs:
-            isomorph = check_patterns(combgraph, patt)
+            isomorph = check_patterns(combgraph.to_undirected(), patt.to_undirected())
             isolist.append(isomorph)
         print("Are the generated and pattern graphs isomorphic: %s" % all(isolist))
         print()
@@ -89,9 +89,8 @@ if __name__ == '__main__':
         pattgraphs.append(G2)
 
     # Combine all the graphs
-    G3 = combine_graphs(archgraph, pattgraphs, print_info=True, plot=True)
+    combgraph = combine_graphs(archgraph, pattgraphs, print_info=True, plot=True)
 
-    # # Save generated graph
-    # path = 'dataset/' + archname + '_' + pattname + '.graphml'
-    # if isomorph and connected:
-    #     nx.write_graphml(G3, path, encoding='utf-8', prettyprint=True, infer_numeric_types=False)
+    # Save generated graph
+    path = 'dataset/' + archname + '_' + 'plus' + '.graphml'
+    nx.write_graphml(combgraph, path, encoding='utf-8', prettyprint=True, infer_numeric_types=False)
