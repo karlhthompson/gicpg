@@ -19,29 +19,6 @@ FLAGS = flags.FLAGS
 _LAYER_UIDS = {}
 
 
-def load_data(dataset):
-
-    ############################# TEMPORARY ####################################
-    archG = nx.read_graphml("dataset/" + 'arch_1' + ".graphml")
-    nodes = list(archG.nodes)
-    archG.node[nodes[0]]['data'] = 'Package'
-    archG.node[nodes[-1]]['data'] = 'Package'
-    ############################# TEMPORARY ####################################
-
-    node_type_s = np.asarray([[v] for k, v in nx.get_node_attributes(archG, 'data').items()])
-    unique_types = np.unique(node_type_s)
-    le = LabelEncoder().fit(unique_types)
-    node_type = le.transform(node_type_s)
-    node_type = node_type.reshape(-1, 1)
-    enc = OneHotEncoder(handle_unknown='ignore').fit(node_type)
-    node_type = enc.transform(node_type).toarray()
-
-    adj = nx.adjacency_matrix(archG)
-    features = sp.csr_matrix(node_type)
-
-    return adj, features
-
-
 def sparse_to_tuple(sparse_mx):
     if not sp.isspmatrix_coo(sparse_mx):
         sparse_mx = sparse_mx.tocoo()
@@ -70,10 +47,6 @@ def construct_feed_dict(adj_normalized, adj, features, placeholders):
 
 
 def mask_test_edges(adj):
-    # Function to build test set with 10% positive links
-    # NOTE: Splits are randomized and results might slightly deviate from reported numbers in the paper.
-    # TODO: Clean up.
-
     # Remove diagonal elements
     adj = adj - sp.dia_matrix((adj.diagonal()[np.newaxis, :], [0]), shape=adj.shape)
     adj.eliminate_zeros()
@@ -83,7 +56,6 @@ def mask_test_edges(adj):
     adj_triu = sp.triu(adj)
     adj_tuple = sparse_to_tuple(adj_triu)
     edges = adj_tuple[0]
-    edges_all = sparse_to_tuple(adj)[0]
     num_test = int(np.floor(edges.shape[0] / 10.))
     num_val = int(np.floor(edges.shape[0] / 20.))
 
@@ -99,44 +71,6 @@ def mask_test_edges(adj):
         rows_close = np.all(np.round(a - b[:, None], tol) == 0, axis=-1)
         return np.any(rows_close)
 
-    test_edges_false = []
-    while len(test_edges_false) < len(test_edges):
-        idx_i = np.random.randint(0, adj.shape[0])
-        idx_j = np.random.randint(0, adj.shape[0])
-        if idx_i == idx_j:
-            continue
-        if ismember([idx_i, idx_j], edges_all):
-            continue
-        if test_edges_false:
-            if ismember([idx_j, idx_i], np.array(test_edges_false)):
-                continue
-            if ismember([idx_i, idx_j], np.array(test_edges_false)):
-                continue
-        test_edges_false.append([idx_i, idx_j])
-
-    val_edges_false = []
-    while len(val_edges_false) < len(val_edges):
-        idx_i = np.random.randint(0, adj.shape[0])
-        idx_j = np.random.randint(0, adj.shape[0])
-        if idx_i == idx_j:
-            continue
-        if ismember([idx_i, idx_j], train_edges):
-            continue
-        if ismember([idx_j, idx_i], train_edges):
-            continue
-        if ismember([idx_i, idx_j], val_edges):
-            continue
-        if ismember([idx_j, idx_i], val_edges):
-            continue
-        if val_edges_false:
-            if ismember([idx_j, idx_i], np.array(val_edges_false)):
-                continue
-            if ismember([idx_i, idx_j], np.array(val_edges_false)):
-                continue
-        val_edges_false.append([idx_i, idx_j])
-
-    assert ~ismember(test_edges_false, edges_all)
-    assert ~ismember(val_edges_false, edges_all)
     assert ~ismember(val_edges, train_edges)
     assert ~ismember(test_edges, train_edges)
     assert ~ismember(val_edges, test_edges)
@@ -146,8 +80,6 @@ def mask_test_edges(adj):
     # Re-build adj matrix
     adj_train = sp.csr_matrix((data, (train_edges[:, 0], train_edges[:, 1])), shape=adj.shape)
     adj_train = adj_train + adj_train.T
-
-    # NOTE: these edge lists only contain single direction of edge!
     return adj_train
 
 
@@ -342,48 +274,6 @@ class GCNModelAE(Model):
                                       logging=self.logging)(self.embeddings)
 
 
-class GCNModelVAE(Model):
-    def __init__(self, placeholders, num_features, num_nodes, features_nonzero, **kwargs):
-        super(GCNModelVAE, self).__init__(**kwargs)
-
-        self.inputs = placeholders['features']
-        self.input_dim = num_features
-        self.features_nonzero = features_nonzero
-        self.n_samples = num_nodes
-        self.adj = placeholders['adj']
-        self.dropout = placeholders['dropout']
-        self.build()
-
-    def _build(self):
-        self.hidden1 = GraphConvolutionSparse(input_dim=self.input_dim,
-                                              output_dim=FLAGS.hidden1,
-                                              adj=self.adj,
-                                              features_nonzero=self.features_nonzero,
-                                              act=tf.nn.relu,
-                                              dropout=self.dropout,
-                                              logging=self.logging)(self.inputs)
-
-        self.z_mean = GraphConvolution(input_dim=FLAGS.hidden1,
-                                       output_dim=FLAGS.hidden2,
-                                       adj=self.adj,
-                                       act=lambda x: x,
-                                       dropout=self.dropout,
-                                       logging=self.logging)(self.hidden1)
-
-        self.z_log_std = GraphConvolution(input_dim=FLAGS.hidden1,
-                                          output_dim=FLAGS.hidden2,
-                                          adj=self.adj,
-                                          act=lambda x: x,
-                                          dropout=self.dropout,
-                                          logging=self.logging)(self.hidden1)
-
-        self.z = self.z_mean + tf.random_normal([self.n_samples, FLAGS.hidden2]) * tf.exp(self.z_log_std)
-
-        self.reconstructions = InnerProductDecoder(input_dim=FLAGS.hidden2,
-                                      act=lambda x: x,
-                                      logging=self.logging)(self.z)
-
-
 class OptimizerAE(object):
     def __init__(self, preds, labels, pos_weight, norm):
         preds_sub = preds
@@ -391,28 +281,6 @@ class OptimizerAE(object):
 
         self.cost = norm * tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=preds_sub, targets=labels_sub, pos_weight=pos_weight))
         self.optimizer = tf.train.AdamOptimizer(learning_rate=FLAGS.learning_rate)  # Adam Optimizer
-
-        self.opt_op = self.optimizer.minimize(self.cost)
-        self.grads_vars = self.optimizer.compute_gradients(self.cost)
-
-        self.correct_prediction = tf.equal(tf.cast(tf.greater_equal(tf.sigmoid(preds_sub), 0.5), tf.int32),
-                                           tf.cast(labels_sub, tf.int32))
-        self.accuracy = tf.reduce_mean(tf.cast(self.correct_prediction, tf.float32))
-
-
-class OptimizerVAE(object):
-    def __init__(self, preds, labels, model, num_nodes, pos_weight, norm):
-        preds_sub = preds
-        labels_sub = labels
-
-        self.cost = norm * tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=preds_sub, targets=labels_sub, pos_weight=pos_weight))
-        self.optimizer = tf.train.AdamOptimizer(learning_rate=FLAGS.learning_rate)  # Adam Optimizer
-
-        # Latent loss
-        self.log_lik = self.cost
-        self.kl = (0.5 / num_nodes) * tf.reduce_mean(tf.reduce_sum(1 + 2 * model.z_log_std - tf.square(model.z_mean) -
-                                                                   tf.square(tf.exp(model.z_log_std)), 1))
-        self.cost -= self.kl
 
         self.opt_op = self.optimizer.minimize(self.cost)
         self.grads_vars = self.optimizer.compute_gradients(self.cost)
