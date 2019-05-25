@@ -13,11 +13,6 @@ import scipy.sparse as sp
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
-flags = tf.app.flags
-FLAGS = flags.FLAGS
-
-_LAYER_UIDS = {}
-
 
 def sparse_to_tuple(sparse_mx):
     if not sp.isspmatrix_coo(sparse_mx):
@@ -93,6 +88,7 @@ def weight_variable_glorot(input_dim, output_dim, name=""):
     return tf.Variable(initial, name=name)
 
 
+_LAYER_UIDS = {}
 def get_layer_uid(layer_name=''):
     """Helper function, assigns unique layer IDs
     """
@@ -205,6 +201,22 @@ class InnerProductDecoder(Layer):
         return outputs
 
 
+class OptimizerAE(object):
+    def __init__(self, preds, labels, pos_weight, norm):
+        preds_sub = preds
+        labels_sub = labels
+
+        self.cost = norm * tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=preds_sub, targets=labels_sub, pos_weight=pos_weight))
+        self.optimizer = tf.train.AdamOptimizer(learning_rate=FLAGS.learning_rate)  # Adam Optimizer
+
+        self.opt_op = self.optimizer.minimize(self.cost)
+        self.grads_vars = self.optimizer.compute_gradients(self.cost)
+
+        self.correct_prediction = tf.equal(tf.cast(tf.greater_equal(tf.sigmoid(preds_sub), 0.5), tf.int32),
+                                           tf.cast(labels_sub, tf.int32))
+        self.accuracy = tf.reduce_mean(tf.cast(self.correct_prediction, tf.float32))
+
+
 class Model(object):
     def __init__(self, **kwargs):
         allowed_kwargs = {'name', 'logging'}
@@ -272,19 +284,3 @@ class GCNModelAE(Model):
         self.reconstructions = InnerProductDecoder(input_dim=FLAGS.hidden2,
                                       act=lambda x: x,
                                       logging=self.logging)(self.embeddings)
-
-
-class OptimizerAE(object):
-    def __init__(self, preds, labels, pos_weight, norm):
-        preds_sub = preds
-        labels_sub = labels
-
-        self.cost = norm * tf.reduce_mean(tf.nn.weighted_cross_entropy_with_logits(logits=preds_sub, targets=labels_sub, pos_weight=pos_weight))
-        self.optimizer = tf.train.AdamOptimizer(learning_rate=FLAGS.learning_rate)  # Adam Optimizer
-
-        self.opt_op = self.optimizer.minimize(self.cost)
-        self.grads_vars = self.optimizer.compute_gradients(self.cost)
-
-        self.correct_prediction = tf.equal(tf.cast(tf.greater_equal(tf.sigmoid(preds_sub), 0.5), tf.int32),
-                                           tf.cast(labels_sub, tf.int32))
-        self.accuracy = tf.reduce_mean(tf.cast(self.correct_prediction, tf.float32))

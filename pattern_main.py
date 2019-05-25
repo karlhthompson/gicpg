@@ -33,3 +33,11 @@ for n in range(len(graph_list)):
     emb = embed_graphs(graph_list[n], FLAGS)
     emb_list.append(emb)
     print('Embedding Progress: graph %i out of %i' %(n+1, len(graph_list)))
+
+# Save graph embeddings to file
+if not os.path.isdir('./pickles/'):
+    os.makedirs('./pickles/')
+filename = 'graph_embs_' + str(len(emb_list)) + '.pkl'
+with open('pickles/' + filename, 'wb') as f:
+    pickle.dump(emb_list, f)
+print('Embedding complete. Saved graph embeddings to file: ' + filename)
