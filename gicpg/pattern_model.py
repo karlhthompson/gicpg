@@ -13,6 +13,9 @@ import scipy.sparse as sp
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
+flags = tf.app.flags
+FLAGS = flags.FLAGS
+
 
 def sparse_to_tuple(sparse_mx):
     if not sp.isspmatrix_coo(sparse_mx):
