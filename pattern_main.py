@@ -19,7 +19,6 @@ flags.DEFINE_integer('epochs', 200, 'Number of epochs to train.')
 flags.DEFINE_integer('hidden1', 32, 'Number of units in hidden layer 1.')
 flags.DEFINE_integer('hidden2', 16, 'Number of units in hidden layer 2.')
 flags.DEFINE_float('dropout', 0., 'Dropout rate (1 - keep probability).')
-flags.DEFINE_string('model', 'gcn_vae', 'Model string.')
 
 # Load attributed graphs
 graph_file = [f for f in listdir("./attributed_graphs") if 
@@ -28,7 +27,9 @@ with open('attributed_graphs/'+graph_file, "rb") as f:
     graph_list = pickle.load(f)
 
 # Embed attributed graphs
-for graph in graph_list:
-    emb = embed_graphs(graph, FLAGS)
-
-    print()
+print('Embedding all graphs')
+emb_list = []
+for n in range(len(graph_list)):
+    emb = embed_graphs(graph_list[n], FLAGS)
+    emb_list.append(emb)
+    print('Embedding Progress: graph %i out of %i' %(n+1, len(graph_list)))
