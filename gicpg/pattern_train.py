@@ -20,7 +20,7 @@ def embed_graphs(graph, FLAGS):
     node_type_s = np.asarray([[v] for k, v in nx.get_node_attributes(graph, 'Type').items()])
     unique_types = np.unique(node_type_s)
     le = LabelEncoder().fit(unique_types)
-    node_type = le.transform(node_type_s)
+    node_type = le.transform(node_type_s.ravel())
     node_type = node_type.reshape(-1, 1)
     enc = OneHotEncoder(handle_unknown='ignore').fit(node_type)
     node_type = enc.transform(node_type).toarray()
