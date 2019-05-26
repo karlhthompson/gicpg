@@ -10,13 +10,17 @@ from __future__ import print_function
 
 import os
 import numpy as np
+import networkx as nx
 import tensorflow as tf
 import scipy.sparse as sp
 from gicpg.pattern_model import *
+from sklearn.preprocessing import Binarizer
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import OneHotEncoder
 
 
 def embed_graphs(graph, FLAGS):
-    # Load data
+    # Load node type data
     node_type_s = np.asarray([[v] for k, v in nx.get_node_attributes(graph, 
                              'Type').items()])
     unique_types = np.unique(node_type_s)
@@ -26,9 +30,32 @@ def embed_graphs(graph, FLAGS):
     enc = OneHotEncoder(handle_unknown='ignore').fit(node_type)
     node_type = enc.transform(node_type).toarray()
 
+    # Load node property data
+    idg = np.asarray([[v] for k, v in graph.in_degree])
+    idg = Binarizer(threshold=np.median(idg)).fit(idg).transform(idg)
+    odg = np.asarray([[v] for k, v in graph.out_degree])
+    odg = Binarizer(threshold=np.median(odg)).fit(odg).transform(odg)
+    cco = np.asarray([[v] for k, v in nx.algorithms.clustering(graph).items()])
+    cco = Binarizer(threshold=np.median(cco)).fit(cco).transform(cco)
+    cnm = np.asarray([[v] for k, v in nx.algorithms.core_number(graph).items()])
+    cnm = Binarizer(threshold=np.median(cnm)).fit(cnm).transform(cnm)
+    idc = np.asarray([[v] for k, v in nx.algorithms.in_degree_centrality(graph).items()])
+    idc = Binarizer(threshold=np.median(idc)).fit(idc).transform(idc)
+    odc = np.asarray([[v] for k, v in nx.algorithms.out_degree_centrality(graph).items()])
+    odc = Binarizer(threshold=np.median(odc)).fit(odc).transform(odc)
+    clc = np.asarray([[v] for k, v in nx.algorithms.closeness_centrality(graph).items()])
+    clc = Binarizer(threshold=np.median(clc)).fit(clc).transform(clc)
+    btc = np.asarray([[v] for k, v in nx.algorithms.betweenness_centrality(graph).items()])
+    btc = Binarizer(threshold=np.median(btc)).fit(btc).transform(btc)
+    sqc = np.asarray([[v] for k, v in nx.algorithms.square_clustering(graph).items()])
+    sqc = Binarizer(threshold=np.median(sqc)).fit(sqc).transform(sqc)
+    pgr = np.asarray([[v] for k, v in nx.algorithms.pagerank(graph).items()])
+    pgr = Binarizer(threshold=np.median(pgr)).fit(pgr).transform(pgr)
+    node_data = np.hstack((idg, odg, cco, cnm, idc, odc, clc, btc, sqc, pgr))
+
     # Define adjacency and feature matrices
     adj = nx.adjacency_matrix(graph)
-    features = sp.csr_matrix(node_type)
+    features = sp.csr_matrix(np.hstack((node_data, node_type)))
 
     # Store original adjacency matrix (without diagonal entries) for later
     adj_orig = adj

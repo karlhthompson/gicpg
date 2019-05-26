@@ -7,11 +7,8 @@ Component"""
 # Imports
 # =============================================================================
 import numpy as np
-import networkx as nx
 import tensorflow as tf
 import scipy.sparse as sp
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import OneHotEncoder
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS
