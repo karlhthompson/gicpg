@@ -10,6 +10,7 @@ from os import listdir
 import tensorflow as tf
 from os.path import isfile, join
 from gicpg.pattern_train import *
+from sklearn.cluster import AgglomerativeClustering
 
 # Embedding settings
 flags = tf.app.flags
@@ -26,18 +27,38 @@ graph_file = [f for f in listdir("./attributed_graphs") if
 with open('attributed_graphs/'+graph_file, "rb") as f:
     graph_list = pickle.load(f)
 
-# Embed attributed graphs
-print('Embedding all graphs')
-emb_list = []
+# Start the main loop
+subgraph_list = []
 for n in range(len(graph_list)):
-    emb = embed_graphs(graph_list[n], FLAGS)
-    emb_list.append(emb)
-    print('Embedding Progress: graph %i out of %i' %(n+1, len(graph_list)))
 
-# Save graph embeddings to file
+    # Embed each attributed graph
+    emb = embed_graphs(graph_list[n], FLAGS)
+
+    # Cluster the graph embedding
+    clr = AgglomerativeClustering(n_clusters=16,
+          connectivity=nx.adjacency_matrix(graph_list[n])).fit(emb)
+
+    # Extract individual clusters
+    nodes = list(graph_list[n].nodes)
+    for label in np.unique(clr.labels_):
+        subgraph_nodes = [nodes[i] for i in range(len(graph_list[n])) if (
+                          clr.labels_==label)[i]]
+        subgraph = graph_list[n].subgraph(subgraph_nodes)
+        subgraph_list.append(subgraph)
+    
+    # Print processing status
+    print('Processing graph %i out of %i' %(n+1, len(graph_list)))
+    
+# Save extracted subgraphs to file
 if not os.path.isdir('./pickles/'):
     os.makedirs('./pickles/')
-filename = 'graph_embs_' + str(len(emb_list)) + '.pkl'
+filename = 'extracted_subgraphs_' + str(len(subgraph_list)) + '.pkl'
 with open('pickles/' + filename, 'wb') as f:
-    pickle.dump(emb_list, f)
-print('Embedding complete. Saved graph embeddings to file: ' + filename)
+    pickle.dump(subgraph_list, f)
+print('Saved extracted subgraphs to file: ' + filename)
+
+# Load extracted subgraphs
+with open('pickles/' + filename, "rb") as f:
+    subgraph_list = pickle.load(f)
+
+
