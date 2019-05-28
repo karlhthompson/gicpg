@@ -30,7 +30,7 @@ with open('attributed_graphs/'+graph_file, "rb") as f:
 
 # Start the main loop
 subgraph_list = []
-for n in range(10): #range(len(graph_list))
+for n in range(len(graph_list)):
 
     # Print processing status
     print('Processing graph %i out of %i' %(n+1, len(graph_list)))
@@ -47,34 +47,34 @@ for n in range(10): #range(len(graph_list))
     for label in np.unique(clr.labels_):
         subgraph_nodes = [nodes[i] for i in range(len(graph_list[n])) if (
                           clr.labels_==label)[i]]
-        subgraph = graph_list[n].subgraph(subgraph_nodes)
+        subgraph = graph_list[n].subgraph(subgraph_nodes).copy()
         subgraph_list.append(subgraph)
     
-# # Save extracted subgraphs to file
-# if not os.path.isdir('./pickles/'):
-#     os.makedirs('./pickles/')
-# filename = 'extracted_subgraphs_' + str(len(subgraph_list)) + '.pkl'
-# with open('pickles/' + filename, 'wb') as f:
-#     pickle.dump(subgraph_list, f)
-# print('Saved extracted subgraphs to file: ' + filename)
+# Save extracted subgraphs to file
+if not os.path.isdir('./pickles/'):
+    os.makedirs('./pickles/')
+filename = 'extracted_subgraphs_' + str(len(subgraph_list)) + '.pkl'
+with open('pickles/' + filename, 'wb') as f:
+    pickle.dump(subgraph_list, f)
+print('Saved extracted subgraphs to file: ' + filename)
 
 # # Load extracted subgraphs
 # with open('pickles/' + filename, "rb") as f:
 #     subgraph_list = pickle.load(f)
 
-# Calculate subgraph density
-density_list = []
-for m in range(len(subgraph_list)):
-    density = nx.density(subgraph_list[m])
-    density_list.append(density)
-    print('Processing subgraph %i out of %i' %(m+1, len(subgraph_list)))
+# # Calculate subgraph density
+# density_list = []
+# for m in range(len(subgraph_list)):
+#     density = nx.density(subgraph_list[m])
+#     density_list.append(density)
+#     print('Processing subgraph %i out of %i' %(m+1, len(subgraph_list)))
 
-# Find frequently occuring subgraphs
-density_series = pd.Series(density_list)
-frequency = density_series.value_counts(normalize=False)
+# # Find frequently occuring subgraphs
+# density_series = pd.Series(density_list)
+# frequency = density_series.value_counts(normalize=False)
 
-for den in frequency.index:
-    subgraph_ind = [i for i, x in enumerate(str(density_list==den)) if x]
-    nx.draw(subgraph_list[subgraph_ind[0]])
-    import matplotlib.pyplot as plt
-    plt.show()
+# for den in frequency.index:
+#     subgraph_ind = [i for i, x in enumerate(str(density_list==den)) if x]
+#     nx.draw(subgraph_list[subgraph_ind[0]])
+#     import matplotlib.pyplot as plt
+#     plt.show()
